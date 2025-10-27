@@ -43,38 +43,40 @@
 \contentsline {section}{\numberline {3.3}Tareas y costes}{33}{section.3.3}%
 \contentsline {subsection}{\numberline {3.3.1}Definición de tareas}{33}{subsection.3.3.1}%
 \contentsline {subsection}{\numberline {3.3.2}Estimación temporal}{33}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Diagrama de Gantt}{34}{subsection.3.3.3}%
-\contentsline {subsection}{\numberline {3.3.4}Estimación de costes}{36}{subsection.3.3.4}%
-\contentsline {section}{\numberline {3.4}Riesgos}{36}{section.3.4}%
-\contentsline {section}{\numberline {3.5}Viabilidad}{38}{section.3.5}%
-\contentsline {subsection}{\numberline {3.5.1}Viabilidad legal}{38}{subsection.3.5.1}%
-\contentsline {subsection}{\numberline {3.5.2}Viabilidad técnica}{38}{subsection.3.5.2}%
-\contentsline {subsection}{\numberline {3.5.3}Viabilidad económica}{38}{subsection.3.5.3}%
-\contentsline {chapter}{\numberline {4}Análisis}{39}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Diagramas de análisis}{39}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Diagrama de casos de uso}{39}{subsection.4.1.1}%
-\contentsline {chapter}{\numberline {5}Diseño}{41}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Arquitectura general del sistema}{41}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Diagramas UML}{41}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Diagrama de clases}{42}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Diagramas de secuencia}{43}{subsection.5.2.2}%
-\contentsline {paragraph}{Gestión de carrito}{43}{section*.21}%
-\contentsline {paragraph}{Compra estándar}{44}{section*.22}%
-\contentsline {paragraph}{Generación de factura}{46}{section*.23}%
-\contentsline {paragraph}{Abandono de carrito}{47}{section*.24}%
-\contentsline {paragraph}{Bajo stock}{48}{section*.25}%
-\contentsline {section}{\numberline {5.3}Diseño de la base de datos}{49}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}Modelo entidad–relación}{49}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}Modelo relacional y prototipo inicial}{49}{subsection.5.3.2}%
-\contentsline {chapter}{\numberline {6}Implementación y pruebas}{51}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Implementación}{51}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Pruebas funcionales}{51}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Pruebas de rendimiento}{51}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Pruebas de usabilidad}{51}{section.6.4}%
-\contentsline {chapter}{\numberline {7}Conclusiones}{53}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Revisión de costes}{53}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Conclusiones}{53}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Trabajo futuro}{53}{section.7.3}%
-\contentsline {chapter}{\numberline {A}Apéndice}{55}{appendix.Alph1}%
-\contentsline {section}{\numberline {A.1}Ejemplos del lenguaje de marcado Latex}{55}{section.Alph1.1}%
-\contentsline {chapter}{Bibliografía}{56}{lstnumber.-2.4}%
+\contentsline {subsection}{\numberline {3.3.3}Diagrama de Gantt}{35}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.4}Estimación de costes}{37}{subsection.3.3.4}%
+\contentsline {section}{\numberline {3.4}Riesgos}{38}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Viabilidad}{39}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Viabilidad legal}{39}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}Viabilidad técnica}{39}{subsection.3.5.2}%
+\contentsline {subsection}{\numberline {3.5.3}Viabilidad económica}{39}{subsection.3.5.3}%
+\contentsline {chapter}{\numberline {4}Análisis}{41}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Diagramas de análisis}{41}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Diagrama de casos de uso}{41}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Diagrama de clases de análisis}{42}{subsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.1.3}Diagrama de secuencia general del sistema (DSGS)}{43}{subsection.4.1.3}%
+\contentsline {chapter}{\numberline {5}Diseño}{45}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Arquitectura general del sistema}{45}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Diagramas UML}{45}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Diagrama de clases}{46}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Diagramas de secuencia}{47}{subsection.5.2.2}%
+\contentsline {paragraph}{Gestión de carrito}{47}{section*.21}%
+\contentsline {paragraph}{Compra estándar}{48}{section*.22}%
+\contentsline {paragraph}{Generación de factura}{50}{section*.23}%
+\contentsline {paragraph}{Abandono de carrito}{51}{section*.24}%
+\contentsline {paragraph}{Bajo stock}{52}{section*.25}%
+\contentsline {section}{\numberline {5.3}Diseño de la base de datos}{53}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Modelo entidad–relación}{53}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Modelo relacional y prototipo inicial}{53}{subsection.5.3.2}%
+\contentsline {chapter}{\numberline {6}Implementación y pruebas}{55}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Implementación}{55}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Pruebas funcionales}{55}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Pruebas de rendimiento}{55}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Pruebas de usabilidad}{55}{section.6.4}%
+\contentsline {chapter}{\numberline {7}Conclusiones}{57}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Revisión de costes}{57}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Conclusiones}{57}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Trabajo futuro}{57}{section.7.3}%
+\contentsline {chapter}{\numberline {A}Apéndice}{59}{appendix.Alph1}%
+\contentsline {section}{\numberline {A.1}Ejemplos del lenguaje de marcado Latex}{59}{section.Alph1.1}%
+\contentsline {chapter}{Bibliografía}{60}{lstnumber.-2.4}%

@@ -6,14 +6,56 @@
 
 \subsection{Diagrama de casos de uso}
 
-Para representar las interacciones entre los diferentes actores del sistema, se ha elaborado el diagrama de casos de uso mostrado en la Figura~\ref{fig:casos_uso}. Este permite visualizar de forma general las funcionalidades principales y la relación entre el cliente, el administrador y el agente automatizador n8n.
+Para representar las interacciones entre los diferentes actores del sistema se ha elaborado el diagrama de casos de uso mostrado en la Figura~\ref{fig:casos_uso}. 
+Este permite visualizar de forma general las funcionalidades principales y la relación entre el cliente, el administrador y el agente automatizador \textit{n8n}.
 
 \begin{figure}[H]
     \centering
     \includegraphics[height=1\textwidth, width=1.05\textwidth, keepaspectratio]{figs/Caso_de uso_def.png}
-    \caption{Diagrama de casos de uso del sistema}
+    \caption{Diagrama de casos de uso del sistema.}
     \label{fig:casos_uso}
 \end{figure}
+\clearpage
+
+\subsection{Diagrama de clases de análisis}
+
+En la Figura~\ref{fig:clases_analisis} se muestra el \textbf{diagrama de clases de análisis} del sistema. 
+Este modelo conceptual identifica las principales entidades que intervienen en el dominio de la aplicación, 
+así como las relaciones que existen entre ellas. 
+El cliente dispone de un carrito y puede realizar múltiples pedidos, 
+cada uno de los cuales está asociado a un pago y a varios productos. 
+Además, el cliente puede almacenar varias direcciones de envío, 
+y los productos se agrupan dentro de categorías. 
+El diagrama abstrae los detalles técnicos y se centra únicamente en los conceptos del negocio, 
+sirviendo como base para el posterior diagrama de clases de diseño.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{figs/CasosdeUsoAnalisis.png}
+    \caption{Diagrama de clases de análisis del sistema.}
+    \label{fig:clases_analisis}
+\end{figure}
+\clearpage
+
+\subsection{Diagrama de secuencia general del sistema (DSGS)}
+
+La Figura~\ref{fig:dsgs} muestra el \textbf{diagrama de secuencia general del sistema (DSGS)}, 
+que representa de forma dinámica las interacciones entre los principales actores externos 
+y la \textit{WebApp}. En él se detalla el flujo completo de una compra, 
+desde el inicio de sesión del cliente, la selección de productos y la realización del pedido, 
+hasta la comunicación con la pasarela de pago \textit{Stripe} 
+y la notificación del resultado a la plataforma de automatización \textit{n8n}. 
+El diagrama también incluye un flujo alternativo en el que se muestra el manejo de un posible error de pago. 
+Este modelo complementa al diagrama de casos de uso al ofrecer una visión temporal del comportamiento global del sistema.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{figs/DSGS.png}
+    \caption{Diagrama de secuencia general del sistema (DSGS).}
+    \label{fig:dsgs}
+\end{figure}
+
+\clearpage
 
 
 
