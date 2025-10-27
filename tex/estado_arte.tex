@@ -1,0 +1,444 @@
+% ======================================
+% CAPÍTULO 2 - ESTADO DEL ARTE
+% ======================================
+
+\section{Análisis de aplicaciones similares}
+En el mercado actual la gran variedad de plataformas que nos ofrecen servicios para
+crear nuestra propia tienda online sin necesidad de tener algún tipo de conocimiento sobre
+programar es muy extenso. Algunas de las más representativas son:
+
+\subsection{Wix eCommerce}
+Wix proporciona un sistema de creación de páginas basado en el uso de herramientas
+de arrastrar y soltar, lo que facilita a cualquier usuario construir una tienda en poco
+tiempo \cite{wixHelp}. Sin embargo, esta simplicidad también conlleva limitaciones, especialmente en lo
+que respecta a la personalización avanzada y al control sobre el backend, aspectos que resultan esenciales en proyectos con requisitos específicos.
+
+\textbf{Ventajas:}
+\begin{itemize}
+    \item Interfaz intuitiva y sistema de diseño drag-and-drop.
+    \item Plantillas atractivas y actualizadas.
+    \item Incluye hosting y mantenimiento automático.
+    \item Integración sencilla con herramientas externas.
+\end{itemize}
+
+\textbf{Desventajas:}
+\begin{itemize}
+    \item Escasa flexibilidad para personalizaciones complejas.
+    \item Limitaciones en el acceso al código fuente.
+    \item Dificultades para escalar proyectos grandes.
+    \item Dependencia total del ecosistema de Wix.
+\end{itemize}
+
+\subsection{Squarespace}
+Squarespace está orientado a usuarios que priorizan el diseño visual y la facilidad de
+uso \cite{squarespaceHelp}. Sus plantillas resultan intuitivas y permiten crear páginas atractivas sin dificultad. No
+obstante, su ecosistema de integraciones es más limitado, lo que restringe su aplicabilidad
+en proyectos que requieren funcionalidades técnicas más avanzadas.
+
+\textbf{Ventajas:}
+\begin{itemize}
+    \item Excelente diseño visual y acabados profesionales.
+    \item Plataforma todo en uno (hosting, dominio y soporte).
+    \item Adaptación automática a dispositivos móviles.
+    \item Seguridad gestionada por la propia plataforma.
+\end{itemize}
+
+\textbf{Desventajas:}
+\begin{itemize}
+    \item Pocas integraciones con APIs o sistemas externos.
+    \item Costes mensuales relativamente altos.
+    \item Escasa libertad para modificar la estructura del sitio.
+    \item Dependencia del entorno cerrado de Squarespace.
+\end{itemize}
+
+\subsection{PrestaShop}
+PrestaShop es una solución de código abierto muy popular para la creación de tiendas
+online \cite{prestashopDocs}. Ofrece una gran capacidad de personalización mediante módulos y plantillas, lo que la convierte en una opción atractiva para pequeñas y medianas empresas. No obstante, requiere ciertos conocimientos técnicos para su instalación y mantenimiento, y en proyectos de mayor tamaño puede presentar dificultades de rendimiento si no se configura correctamente.
+
+\textbf{Ventajas:}
+\begin{itemize}
+    \item Open source y altamente personalizable.
+    \item Gran comunidad de desarrolladores.
+    \item Amplio catálogo de módulos y temas.
+    \item Permite control total sobre el servidor y la base de datos.
+\end{itemize}
+
+\textbf{Desventajas:}
+\begin{itemize}
+    \item Necesita conocimientos técnicos para instalación y soporte.
+    \item Requiere mantenimiento y actualizaciones manuales.
+    \item Puede presentar problemas de rendimiento en tiendas grandes.
+    \item Algunos módulos son de pago y elevan los costes.
+\end{itemize}
+
+\subsection{Comparación con la propuesta del TFG}
+Las plataformas analizadas muestran distintas formas de crear una tienda online sin
+necesidad de conocimientos de programación. Wix y Squarespace destacan por su sencillez
+y diseño intuitivo, aunque sacrifican flexibilidad y control sobre la aplicación. Por su
+parte, PrestaShop ofrece mayor capacidad de personalización, pero exige un nivel técnico
+más elevado y puede presentar limitaciones de rendimiento en proyectos de gran escala. En
+contraste, la propuesta de este TFG plantea el desarrollo de una solución a medida
+utilizando tecnologías modernas como Angular, Spring Boot, SQL y n8n, lo que permitirá
+un control total sobre la arquitectura, la seguridad y las integraciones externas.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|c|c|c|}
+\hline
+\textbf{Criterio} & \textbf{Wix} & \textbf{Squarespace} & \textbf{PrestaShop} \\ \hline
+Facilidad de uso & Muy alta & Alta & Media \\ \hline
+Personalización & Baja & Media & Alta \\ \hline
+Escalabilidad & Limitada & Media & Alta \\ \hline
+Requiere conocimientos técnicos & No & No & Sí \\ \hline
+Coste & Medio & Medio & Variable \\ \hline
+\end{tabular}
+\caption{Comparativa de plataformas de creación de tiendas online}
+\end{table}
+
+
+\section{Tecnologías}
+
+\subsection{Frameworks frontend}
+
+\subsubsection{Angular}
+Angular es un framework desarrollado por Google y basado en TypeScript \cite{angularDocs}. Ofrece una solución completa para el desarrollo de aplicaciones web a gran escala, con herramientas integradas como enrutamiento y gestión de formularios. Su principal desventaja es la necesidad de contar con conocimientos previos más avanzados, lo que incrementa la curva de aprendizaje.
+
+\textbf{Ventajas:}
+\begin{itemize}
+    \item Framework completo con soporte oficial de Google.
+    \item Tipado fuerte con TypeScript, que mejora la robustez del código.
+    \item Soporte integrado para testing, formularios y enrutamiento.
+    \item Comunidad amplia y documentación exhaustiva.
+\end{itemize}
+
+\textbf{Desventajas:}
+\begin{itemize}
+    \item Curva de aprendizaje pronunciada.
+    \item Tamaño inicial del proyecto elevado.
+    \item Requiere experiencia previa en TypeScript.
+    \item Sintaxis más compleja frente a otras alternativas.
+\end{itemize}
+
+\subsubsection{React}
+React es una tecnología desarrollada por Meta \cite{reactDocs}. Se trata de una biblioteca para la construcción de interfaces de usuario, que destaca por su flexibilidad y por el rendimiento que ofrece gracias al uso del Virtual DOM. Sin embargo, al no ser un framework completo, depende de librerías de la comunidad para cubrir funcionalidades adicionales o más avanzadas.
+
+\textbf{Ventajas:}
+\begin{itemize}
+    \item Excelente rendimiento gracias al Virtual DOM.
+    \item Gran comunidad y recursos de aprendizaje.
+    \item Compatible con múltiples librerías y frameworks.
+    \item Curva de aprendizaje accesible para principiantes.
+\end{itemize}
+
+\textbf{Desventajas:}
+\begin{itemize}
+    \item Necesidad de integrar herramientas externas (routing, estado).
+    \item Menor estructura definida que Angular.
+    \item Frecuentes actualizaciones y cambios en librerías.
+    \item Requiere experiencia para mantener proyectos grandes.
+\end{itemize}
+
+\subsubsection{Vue}
+Vue es un framework progresivo creado por Evan You, exingeniero de Google \cite{vueDocs}. Combina características de Angular y React, con un enfoque en la simplicidad y en la rapidez de aprendizaje. No obstante, su comunidad y ecosistema siguen siendo más reducidos en comparación con otras tecnologías consolidadas.
+
+\textbf{Ventajas:}
+\begin{itemize}
+    \item Ligero y de fácil adopción.
+    \item Documentación clara y organizada.
+    \item Buena integración con proyectos existentes.
+    \item Sintaxis sencilla y curva de aprendizaje rápida.
+\end{itemize}
+
+\textbf{Desventajas:}
+\begin{itemize}
+    \item Ecosistema más limitado que Angular o React.
+    \item Menor presencia en grandes empresas.
+    \item Menos recursos de formación avanzada.
+    \item Riesgo de menor soporte a largo plazo.
+\end{itemize}
+
+\subsubsection{Comparación y elección}
+Los tres frameworks permiten crear aplicaciones modernas, pero Angular ofrece una
+estructura más completa desde el inicio. Para este TFG se ha optado por Angular, ya que
+es la tecnología utilizada en Capgemini, empresa en la que voy a realizar las prácticas. De
+esta forma, el proyecto servirá también como una preparación práctica, complementada
+con cursos de formación, para no comenzar esa experiencia sin conocimientos previos.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|c|c|c|}
+\hline
+\textbf{Criterio} & \textbf{Angular} & \textbf{React} & \textbf{Vue} \\ \hline
+Lenguaje principal & TypeScript & JavaScript & JavaScript \\ \hline
+Complejidad inicial & Alta & Media & Baja \\ \hline
+Ecosistema & Muy amplio & Amplio & Moderado \\ \hline
+Soporte empresarial & Alto & Alto & Medio \\ \hline
+Rendimiento general & Alto & Muy alto & Alto \\ \hline
+\end{tabular}
+\caption{Comparativa de frameworks frontend}
+\end{table}
+
+
+\subsection{Frameworks backend}
+
+\subsubsection{Spring Boot}
+Spring Boot es un framework del ecosistema Java que facilita la creación de aplicaciones backend robustas y escalables \cite{springDocs}. Entre sus principales ventajas se encuentran su amplia comunidad, la integración con múltiples librerías y la facilidad para configurar proyectos complejos. Como inconvenientes, requiere conocimientos previos en Java y, según el tamaño de la aplicación, puede resultar más pesado que otras alternativas.
+
+\textbf{Ventajas:}
+\begin{itemize}
+    \item Framework maduro con gran soporte empresarial.
+    \item Integración nativa con bases de datos y APIs REST.
+    \item Facilita pruebas y despliegues automáticos.
+    \item Gran estabilidad y seguridad.
+\end{itemize}
+
+\textbf{Desventajas:}
+\begin{itemize}
+    \item Requiere conocimientos avanzados en Java.
+    \item Consumo de recursos más alto que Node.js.
+    \item Curva de aprendizaje larga.
+    \item Configuraciones iniciales complejas.
+\end{itemize}
+
+\subsubsection{Node.js}
+Node.js es un entorno de ejecución de JavaScript que permite utilizar este lenguaje en la configuración y desarrollo de servidores \cite{nodeDocs}. Destaca por su rendimiento en aplicaciones en tiempo real y por la ventaja de compartir el mismo lenguaje en frontend y backend, lo que agiliza el desarrollo. Su principal limitación es que no está tan orientado a aplicaciones de gran escala como otros frameworks más consolidados.
+
+\textbf{Ventajas:}
+\begin{itemize}
+    \item Excelente rendimiento en tiempo real.
+    \item Usa el mismo lenguaje en cliente y servidor.
+    \item Amplia comunidad y soporte.
+    \item Ecosistema extenso con NPM.
+\end{itemize}
+
+\textbf{Desventajas:}
+\begin{itemize}
+    \item Menor rendimiento en tareas muy pesadas.
+    \item Dificultad para proyectos altamente estructurados.
+    \item Depende mucho de librerías externas.
+    \item Escalabilidad más limitada que Spring Boot.
+\end{itemize}
+
+\subsubsection{Django}
+Django es un framework de Python que sigue el principio "batteries included", lo que significa que incorpora numerosas funcionalidades listas para usar \cite{djangoDocs}. Es adecuado para el desarrollo rápido de prototipos y proyectos de tamaño medio, con una curva de aprendizaje moderada. Sin embargo, su rendimiento puede verse limitado en aplicaciones muy exigentes.
+
+\textbf{Ventajas:}
+\begin{itemize}
+    \item Gran cantidad de herramientas integradas.
+    \item Excelente para desarrollo rápido.
+    \item Seguridad y control de autenticación robusto.
+    \item Documentación muy completa.
+\end{itemize}
+
+\textbf{Desventajas:}
+\begin{itemize}
+    \item Menor rendimiento en aplicaciones grandes.
+    \item Menor integración con sistemas Java.
+    \item No tan extendido en entornos empresariales.
+    \item Difícil de optimizar para proyectos complejos.
+\end{itemize}
+
+\subsubsection{Comparación y elección}
+Spring Boot, Node.js y Django son alternativas viables para el desarrollo de un backend. Node.js destaca por su rapidez en tiempo real y Django por la simplicidad de Python, pero para este TFG se ha optado por Spring Boot. Esta elección responde a que es la tecnología utilizada en Capgemini, empresa en la que realizaré las prácticas, lo
+que me permite formarme previamente mediante cursos y adquirir los conceptos básicos necesarios. Además, Spring Boot destaca por su robustez, su madurez en entornos empresariales y porque complementa de forma óptima la arquitectura planteada con Angular y SQL.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|c|c|c|}
+\hline
+\textbf{Criterio} & \textbf{Spring Boot} & \textbf{Node.js} & \textbf{Django} \\ \hline
+Lenguaje base & Java & JavaScript & Python \\ \hline
+Escalabilidad & Alta & Media & Media \\ \hline
+Curva de aprendizaje & Alta & Media & Baja \\ \hline
+Rendimiento general & Alto & Alto & Medio \\ \hline
+Soporte empresarial & Muy alto & Medio & Medio \\ \hline
+\end{tabular}
+\caption{Comparativa de frameworks backend}
+\end{table}
+
+
+\subsection{Agentes de automatización}
+
+\subsubsection{Zapier}
+Zapier es una herramienta para automatizar tareas mediante la conexión de aplicaciones. Destaca por su simplicidad y facilidad de uso, aunque sus funcionalidades avanzadas requieren una suscripción de pago\cite{zapierDocs}.
+
+\textbf{Ventajas:}
+\begin{itemize}
+    \item Muy fácil de usar.
+    \item Gran catálogo de aplicaciones compatibles.
+    \item Ideal para tareas simples y rápidas.
+    \item Interfaz visual clara y moderna.
+\end{itemize}
+
+\textbf{Desventajas:}
+\begin{itemize}
+    \item Las funciones avanzadas requieren suscripción.
+    \item Limitado control sobre la configuración interna.
+    \item Escasa flexibilidad para integraciones complejas.
+    \item No permite autoalojamiento.
+\end{itemize}
+
+\subsubsection{Make}
+Make, anteriormente conocido como Integromat, es una herramienta que ofrece un
+sistema visual para crear flujos de trabajo más complejos que en Zapier. Es potente y
+flexible, aunque su uso intensivo también depende de planes de pago y de la integración
+con servicios externos\cite{makeDocs}.
+
+\textbf{Ventajas:}
+\begin{itemize}
+    \item Muy flexible para automatizaciones avanzadas.
+    \item Interfaz visual potente y configurable.
+    \item Permite múltiples pasos por flujo.
+    \item Buen equilibrio entre facilidad y personalización.
+\end{itemize}
+
+\textbf{Desventajas:}
+\begin{itemize}
+    \item Algunas funciones requieren plan de pago.
+    \item Requiere conexión constante a la nube.
+    \item Mayor complejidad de uso frente a Zapier.
+    \item Menor documentación en español.
+\end{itemize}
+
+\subsubsection{n8n}
+n8n es una plataforma de automatización de código abierto que permite crear flujos personalizados e instalarlos en servidores propios, sin necesidad de planes de pago. Ofrece un gran control sobre la configuración y resulta una herramienta intuitiva y fácil de utilizar \cite{n8nDocs}.
+
+\textbf{Ventajas:}
+\begin{itemize}
+    \item Totalmente open source y gratuita.
+    \item Puede instalarse en servidores propios.
+    \item Gran control sobre la configuración.
+    \item Compatible con múltiples servicios y APIs.
+\end{itemize}
+
+\textbf{Desventajas:}
+\begin{itemize}
+    \item Requiere configuración inicial manual.
+    \item Menor comunidad que Zapier.
+    \item No tan intuitiva para principiantes.
+    \item Necesita recursos del servidor donde se aloje.
+\end{itemize}
+
+\subsubsection{Comparación y elección}
+Zapier y Make destacan por su facilidad de uso y popularidad, pero dependen de planes de suscripción y de servicios externos, además de no ofrecer un control total sobre la configuración. En este TFG se ha optado por n8n por ser una solución open source, gratuita y altamente configurable, lo que facilita su integración con la arquitectura  propuesta.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|c|c|c|}
+\hline
+\textbf{Criterio} & \textbf{Zapier} & \textbf{Make} & \textbf{n8n} \\ \hline
+Tipo de licencia & De pago & Freemium & Open source \\ \hline
+Facilidad de uso & Muy alta & Alta & Media \\ \hline
+Control y personalización & Bajo & Medio & Alto \\ \hline
+Coste & Elevado & Medio & Gratuito \\ \hline
+Soporte técnico & Alto & Medio & Medio \\ \hline
+\end{tabular}
+\caption{Comparativa de agentes de automatización}
+\end{table}
+
+
+\subsection{Bases de datos}
+
+\subsubsection{SQL}
+Las bases de datos relacionales, como MySQL o PostgreSQL, utilizan un modelo basado en tablas y relaciones entre ellas \cite{mysqlDocs}. Destacan por su consistencia, su alto nivel de seguridad y por el uso del lenguaje SQL, que es un estándar ampliamente adoptado en el entorno empresarial.
+
+\subsubsection{NoSQL}
+Las bases de datos NoSQL, como MongoDB, almacenan la información en estructuras más flexibles, como documentos o grafos. Ofrecen mayor escalabilidad y rapidez en ciertas operaciones, aunque sacrifican consistencia y mecanismos de seguridad más avanzados. \cite{mongodbDocs}.
+
+\subsubsection{Comparación y elección}
+Para este TFG se ha optado por utilizar \textbf{MySQL} como sistema de gestión de bases de datos. La elección se debe a su estabilidad, su integración nativa con Spring Boot y su capacidad para garantizar la seguridad de los datos. Además, a lo largo de la carrera se ha trabajado ampliamente con bases de datos SQL, mientras que NoSQL apenas se ha tratado, por lo que MySQL resulta una opción más familiar y adecuada para el desarrollo del proyecto.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|c|c|}
+\hline
+\textbf{Criterio} & \textbf{SQL (MySQL)} & \textbf{NoSQL (MongoDB)} \\ \hline
+Estructura & Tablas relacionales & Documentos / grafos \\ \hline
+Consistencia & Alta & Media \\ \hline
+Seguridad & Alta & Media \\ \hline
+Escalabilidad & Media & Alta \\ \hline
+Soporte empresarial & Muy alto & Medio \\ \hline
+\end{tabular}
+\caption{Comparativa entre bases de datos SQL y NoSQL}
+\end{table}
+
+\subsection{Pasarelas de pago}
+
+\subsubsection{PayPal}
+PayPal es una de las plataformas de pago online más conocidas y utilizadas a nivel mundial \cite{paypalDocs}. Permite realizar transacciones de forma sencilla y segura, tanto con tarjeta como con saldo en cuenta. Es muy popular entre los usuarios por su rapidez y confianza, aunque cobra comisiones algo más altas que otras alternativas.
+
+\textbf{Ventajas:}
+\begin{itemize}
+    \item Gran confianza y reconocimiento internacional.
+    \item Permite pagar sin necesidad de introducir datos bancarios en cada compra.
+    \item Interfaz sencilla para el usuario.
+    \item Compatible con muchas plataformas de comercio electrónico.
+\end{itemize}
+
+\textbf{Desventajas:}
+\begin{itemize}
+    \item Comisiones elevadas por transacción.
+    \item Poca flexibilidad para personalizar el flujo de pago.
+    \item Integración técnica menos avanzada que otras opciones.
+    \item Posibles retenciones temporales de fondos en algunas operaciones.
+\end{itemize}
+
+
+\subsubsection{Redsys}
+Redsys es la pasarela de pago más extendida en España y se utiliza en la mayoría de tiendas online que trabajan con bancos nacionales \cite{redsysDocs}. Ofrece un alto nivel de seguridad y cumple con las normativas europeas, aunque su configuración inicial puede ser más compleja y su documentación menos accesible para desarrolladores.
+
+\textbf{Ventajas:}
+\begin{itemize}
+    \item Muy utilizada en España, con soporte por parte de los principales bancos.
+    \item Alta seguridad gracias al uso de sistemas 3D Secure.
+    \item Cumple con las normativas PSD2 y SCA.
+    \item Fiable y con buena reputación en entornos comerciales.
+\end{itemize}
+
+\textbf{Desventajas:}
+\begin{itemize}
+    \item Configuración inicial compleja.
+    \item Documentación técnica limitada.
+    \item Poco orientada a desarrolladores.
+    \item Limitada flexibilidad en integraciones personalizadas.
+\end{itemize}
+
+
+\subsubsection{Stripe}
+Stripe es una pasarela de pago moderna pensada especialmente para desarrolladores \cite{stripeDocs}. Su API es clara y bien documentada, lo que facilita mucho la integración con aplicaciones web. Permite gestionar pagos con tarjeta, transferencias y otros métodos de forma segura y rápida. Es una opción muy utilizada por startups y empresas tecnológicas por su facilidad de uso y sus amplias posibilidades de personalización.
+
+\textbf{Ventajas:}
+\begin{itemize}
+    \item API muy completa y fácil de integrar.
+    \item Admite múltiples métodos de pago y divisas.
+    \item Buen equilibrio entre seguridad y personalización.
+    \item Excelente documentación y comunidad activa.
+\end{itemize}
+
+\textbf{Desventajas:}
+\begin{itemize}
+    \item Requiere conocimientos técnicos básicos para la configuración.
+    \item Comisiones similares a las de PayPal.
+    \item Depende de una conexión estable con la API.
+    \item No disponible en todos los países.
+\end{itemize}
+
+
+\subsubsection{Comparación y elección}
+PayPal, Redsys y Stripe son tres opciones válidas para integrar pagos en una tienda online. PayPal destaca por su popularidad y facilidad de uso, mientras que Redsys es la alternativa más común en España y ofrece gran seguridad. Sin embargo, para este TFG se ha optado por \textbf{Stripe} debido a su flexibilidad, buena documentación y facilidad de integración con tecnologías modernas como Spring Boot y Angular. Además, su API REST simplifica la conexión con el backend y garantiza un proceso de pago seguro y fluido para el usuario.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|c|c|c|}
+\hline
+\textbf{Criterio} & \textbf{PayPal} & \textbf{Redsys} & \textbf{Stripe} \\ \hline
+Popularidad & Muy alta & Alta & Alta \\ \hline
+Facilidad de integración & Media & Baja & Alta \\ \hline
+Comisiones & Altas & Medias & Medias \\ \hline
+Orientación a desarrolladores & Baja & Baja & Muy alta \\ \hline
+Seguridad & Alta & Muy alta & Alta \\ \hline
+\end{tabular}
+\caption{Comparativa de pasarelas de pago}
+\end{table}
+
+

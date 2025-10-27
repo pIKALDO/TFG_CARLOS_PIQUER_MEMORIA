@@ -1,0 +1,151 @@
+% Contenidos del capítulo.
+% Las secciones presentadas son orientativas y no representan
+% necesariamente la organización que debe tener este capítulo.
+
+% Diagramas de clases, de secuencia, de despliegue, diseño de
+% pantallas, etc
+
+
+En este capítulo se presenta el proceso de diseño del sistema desarrollado, que abarca tanto la definición de la arquitectura general como los distintos diagramas UML que describen la estructura y el comportamiento de la aplicación. Finalmente, se incluye el diseño de la base de datos, que servirá como soporte a la implementación posterior.
+
+\section{Arquitectura general del sistema}
+
+El sistema se basa en una arquitectura de tres capas que facilita la separación de responsabilidades y la escalabilidad del proyecto:
+
+\begin{itemize}
+    \item \textbf{Frontend:} desarrollado con un framework moderno (Angular o React), encargado de la interacción con el usuario y la comunicación con el backend mediante peticiones HTTP.
+    \item \textbf{Backend:} implementado con \textit{Spring Boot}, que gestiona la lógica de negocio, las operaciones CRUD y la conexión con la base de datos.
+    \item \textbf{Base de datos:} gestionada con el motor \textit{MySQL}, donde se almacenan las entidades principales del sistema.
+\end{itemize}
+
+Además, el sistema integra un agente automatizador \textit{n8n} encargado de tareas como el envío de notificaciones post-compra, la generación automática de facturas o la detección de carritos abandonados.  
+Esta arquitectura modular permite una comunicación fluida entre componentes y facilita la futura ampliación del sistema.
+
+\section{Diagramas UML}
+
+Los diagramas UML se han elaborado con la herramienta \textit{Visual Paradigm} para representar de forma visual los componentes y sus interacciones. Se incluyen diagramas de casos de uso, clases y secuencia.
+
+\subsection{Diagrama de clases}
+
+En la Figura~\ref{fig:clases} se muestra el diagrama de clases que define la estructura interna del sistema, las entidades principales y sus relaciones.  
+Entre las clases más destacadas se encuentran:
+
+\begin{itemize}
+    \item \textbf{Usuario:} almacena la información del cliente o administrador.
+    \item \textbf{Producto:} contiene los datos de los artículos disponibles.
+    \item \textbf{Carrito} y \textbf{CarritoItems:} gestionan los productos añadidos por cada usuario.
+    \item \textbf{Pedido}, \textbf{Pago} y \textbf{Factura:} representan el flujo de compra y facturación.
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=1\textwidth, width=1.05\textwidth, keepaspectratio]{figs/clasesdef.png}
+    \caption{Diagrama de clases del sistema}
+    \label{fig:clases}
+\end{figure}
+\clearpage
+\subsection{Diagramas de secuencia}
+
+Los diagramas de secuencia reflejan los flujos de interacción entre los distintos componentes del sistema en diferentes escenarios funcionales. Estos esquemas permiten entender cómo se comunican los distintos servicios y agentes en cada proceso clave del sistema.
+
+\paragraph{Gestión de carrito}
+
+En este diagrama se representa el flujo de interacción entre el cliente, la aplicación web y los servicios del catálogo y del carrito.  
+El usuario puede añadir, modificar o eliminar productos del carrito, y el sistema actualiza los datos en tiempo real mostrando la información correspondiente a cada producto.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{figs/Gestiondecarrito.jpg}
+    \caption{Diagrama de secuencia — gestión del carrito}
+    \label{fig:carrito}
+\end{figure}
+\clearpage
+
+\paragraph{Compra estándar}
+
+A continuación, se muestra el flujo completo del proceso de compra.  
+Incluye la autenticación del usuario, la creación del checkout, la comunicación con el servicio de pago \textit{Stripe} y la confirmación del pedido.  
+También se representa la respuesta automatizada del agente \textit{n8n} para confirmar la compra, descontar el stock y generar la factura.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{figs/Compra_estandar_1.png}
+    \caption{Diagrama de secuencia — parte 1: autenticación y carrito}
+    \label{fig:compra1}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{figs/Compra_estandar_2.png}
+    \caption{Diagrama de secuencia — parte 2: proceso de checkout y confirmación}
+    \label{fig:compra2}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{figs/Compra_estandar_3.png}
+    \caption{Diagrama de secuencia — parte 3: flujo alternativo de pago fallido}
+    \label{fig:compra3}
+\end{figure}
+\clearpage
+
+\paragraph{Generación de factura}
+
+Este diagrama muestra el proceso automatizado de creación de facturas tras la confirmación de un pedido.  
+Una vez validado el pago, el sistema genera el documento asociado y lo envía al cliente mediante el agente \textit{n8n}, garantizando así un flujo de trabajo totalmente automatizado.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{figs/Generaciondefactura.jpg}
+    \caption{Diagrama de secuencia — generación de factura}
+    \label{fig:factura}
+\end{figure}
+\clearpage
+
+\paragraph{Abandono de carrito}
+
+Este diagrama refleja el funcionamiento del proceso de detección y eliminación de carritos inactivos.  
+Si un usuario añade productos pero no completa la compra en un tiempo determinado, el sistema marca el carrito como abandonado y libera los productos reservados.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{figs/Abandonodecarrito.jpg}
+    \caption{Diagrama de secuencia — abandono de carrito}
+    \label{fig:abandono}
+\end{figure}
+\clearpage
+
+\paragraph{Bajo stock}
+
+Por último, se representa el proceso de notificación de stock bajo.  
+Cuando el inventario de un producto alcanza un umbral mínimo, el sistema ejecuta una tarea automatizada que envía un aviso al administrador mediante el agente \textit{n8n}, permitiendo reponer el producto a tiempo.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{figs/Bajostock.jpg}
+    \caption{Diagrama de secuencia — notificación de bajo stock}
+    \label{fig:bajo_stock}
+\end{figure}
+\clearpage
+
+\section{Diseño de la base de datos}
+
+El diseño de la base de datos se llevó a cabo inicialmente mediante \textit{dbdiagram.io}, para definir de manera visual las entidades, sus atributos y relaciones.  
+Posteriormente, el modelo se validó e implementó en \textit{MySQL Workbench}, comprobando su coherencia con el backend en \textit{Spring Boot}.
+
+\subsection{Modelo entidad–relación}
+
+El modelo E/R del sistema representa las entidades principales (\textit{usuarios, productos, carritos, pedidos, pagos, facturas}) y las relaciones entre ellas.  
+Estas relaciones garantizan la integridad referencial mediante el uso de claves primarias, foráneas y restricciones de unicidad.
+
+\subsection{Modelo relacional y prototipo inicial}
+
+El modelo relacional resultante se compone de tablas como \texttt{usuarios}, \texttt{productos}, \texttt{carritos}, \texttt{carrito\_items}, \texttt{pedidos}, \texttt{pagos} y \texttt{facturas}.  
+La Figura~\ref{fig:prototipoBD} muestra el esquema final diseñado.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{figs/prototipoBD.png}
+    \caption{Prototipo de la base de datos relacional}
+    \label{fig:prototipoBD}
+\end{figure}

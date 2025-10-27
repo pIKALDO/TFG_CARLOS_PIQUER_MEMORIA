@@ -1,0 +1,110 @@
+\begin{thebibliography}{10}
+
+\bibitem{wixHelp}
+{Wix.com Ltd.}
+\newblock {Wix Help Center}.
+\newblock \url{https://support.wix.com/}, 2025.
+\newblock Consultado en octubre de 2025.
+
+\bibitem{squarespaceHelp}
+{Squarespace Inc.}
+\newblock {Squarespace Help Center}.
+\newblock \url{https://support.squarespace.com/}, 2025.
+\newblock Consultado en octubre de 2025.
+
+\bibitem{prestashopDocs}
+{PrestaShop S.A.}
+\newblock {Documentación Oficial de PrestaShop}.
+\newblock \url{https://devdocs.prestashop-project.org/}, 2025.
+\newblock Consultado en octubre de 2025.
+
+\bibitem{angularDocs}
+{Google Developers}.
+\newblock {Angular Documentation}.
+\newblock \url{https://angular.io/docs}, 2025.
+\newblock Consultado en octubre de 2025.
+
+\bibitem{reactDocs}
+{Meta Platforms, Inc.}
+\newblock {React Official Documentation}.
+\newblock \url{https://react.dev/}, 2025.
+\newblock Consultado en octubre de 2025.
+
+\bibitem{vueDocs}
+{Evan You}.
+\newblock {Vue.js Official Guide}.
+\newblock \url{https://vuejs.org/guide/introduction.html}, 2025.
+\newblock Consultado en octubre de 2025.
+
+\bibitem{springDocs}
+{VMware, Inc.}
+\newblock {Spring Boot Documentation}.
+\newblock \url{https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/}, 2025.
+\newblock Consultado en octubre de 2025.
+
+\bibitem{nodeDocs}
+{OpenJS Foundation}.
+\newblock {Node.js Documentation}.
+\newblock \url{https://nodejs.org/en/docs/}, 2025.
+\newblock Consultado en octubre de 2025.
+
+\bibitem{djangoDocs}
+{Django Software Foundation}.
+\newblock {Django Official Documentation}.
+\newblock \url{https://docs.djangoproject.com/en/5.0/}, 2025.
+\newblock Consultado en octubre de 2025.
+
+\bibitem{zapierDocs}
+{Zapier Inc.}
+\newblock {Zapier Help Center}.
+\newblock \url{https://help.zapier.com/}, 2025.
+\newblock Consultado en octubre de 2025.
+
+\bibitem{makeDocs}
+{Celonis SE}.
+\newblock {Make (formerly Integromat) Documentation}.
+\newblock \url{https://www.make.com/en/help}, 2025.
+\newblock Consultado en octubre de 2025.
+
+\bibitem{n8nDocs}
+{n8n.io}.
+\newblock {n8n Documentation}.
+\newblock \url{https://docs.n8n.io/}, 2025.
+\newblock Consultado en octubre de 2025.
+
+\bibitem{mysqlDocs}
+{Oracle Corporation}.
+\newblock {MySQL Documentation}.
+\newblock \url{https://dev.mysql.com/doc/}, 2025.
+\newblock Consultado en octubre de 2025.
+
+\bibitem{mongodbDocs}
+{MongoDB Inc.}
+\newblock {MongoDB Manual}.
+\newblock \url{https://www.mongodb.com/docs/}, 2025.
+\newblock Consultado en octubre de 2025.
+
+\bibitem{paypalDocs}
+{PayPal Holdings Inc.}
+\newblock {PayPal Developer Documentation}.
+\newblock \url{https://developer.paypal.com/docs/}, 2025.
+\newblock Consultado en octubre de 2025.
+
+\bibitem{redsysDocs}
+{Redsys Servicios de Procesamiento S.L.}
+\newblock {Manual de Integración de Pasarela de Pagos}.
+\newblock \url{https://pagosonline.redsys.es}, 2025.
+\newblock Consultado en octubre de 2025.
+
+\bibitem{stripeDocs}
+{Stripe Inc.}
+\newblock {Stripe API Documentation}.
+\newblock \url{https://stripe.com/docs/api}, 2025.
+\newblock Consultado en octubre de 2025.
+
+\bibitem{PMBOK2021}
+{Project Management Institute}.
+\newblock {\em A Guide to the Project Management Body of Knowledge (PMBOK\textsuperscript{\textregistered} Guide)}.
+\newblock PMI, Newtown Square, Pennsylvania, 2021.
+
+\end{thebibliography}

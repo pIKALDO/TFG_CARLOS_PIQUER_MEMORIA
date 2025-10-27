@@ -1,0 +1,265 @@
+% Contenidos del capítulo
+% Las secciones presentadas son orientativas y no representan
+% necesariamente la organización que debe tener este capítulo.
+% =============================
+% Capítulo 3: Requisitos, especificaciones, coste, riesgos y viabilidad
+% =============================
+En este capítulo se presenta un estudio inicial del proyecto, analizando los requisitos, especificaciones, costes, riesgos y viabilidad del sistema desarrollado. 
+El objetivo es definir las \textbf{funcionalidades necesarias} para el correcto funcionamiento de la aplicación, detallar sus \textbf{especificaciones técnicas}, estimar el \textbf{coste y el tiempo de desarrollo}, identificar los \textbf{principales riesgos} y, finalmente, valorar la \textbf{viabilidad global} del proyecto. A continuación, se detallan los distintos apartados que conforman este estudio.
+
+% Requisitos del sistema
+\section{Requisitos}
+
+El sistema propuesto consiste en una \textbf{plataforma web de comercio electrónico para una droguería} que permite a los usuarios registrarse, explorar productos, filtrar resultados, gestionar su carrito de compra, realizar pagos mediante un servicio externo (Stripe) y recibir notificaciones automáticas mediante el sistema n8n. 
+Por parte del administrador, el sistema debe permitir filtrar pedidos, añadir productos, así como consultar y modificar los pedidos existentes.
+
+A continuación, se detallan los requisitos funcionales y no funcionales definidos para el proyecto.
+
+\subsection{Requisitos funcionales}
+
+\begin{itemize}
+    \item \textbf{RF-01:} El sistema debe permitir el registro y autenticación de usuarios mediante correo electrónico y contraseña.
+    \item \textbf{RF-02:} El sistema debe permitir que los usuarios consulten y filtren el catálogo de productos disponible.
+    \item \textbf{RF-03:} El sistema debe permitir añadir, modificar o eliminar productos del carrito.
+    \item \textbf{RF-04:} El sistema debe permitir realizar pedidos a través de una pasarela de pago (Stripe).
+    \item \textbf{RF-05:} El sistema debe permitir al administrador gestionar el inventario de productos (crear, editar, eliminar).
+    \item \textbf{RF-06:} El sistema debe generar y almacenar facturas de los pedidos realizados.
+    \item \textbf{RF-07:} El sistema debe enviar notificaciones automáticas de confirmación de pedido y aviso de bajo stock mediante n8n.
+    \item \textbf{RF-08:} El sistema debe permitir consultar el historial de pedidos y su estado.
+    \item \textbf{RF-09:} El sistema debe eliminar automáticamente los carritos inactivos tras un periodo determinado.
+\end{itemize}
+
+\subsection{Requisitos no funcionales}
+
+\begin{itemize}
+    \item \textbf{RNF-01:} El sistema debe desarrollarse siguiendo una arquitectura cliente-servidor (Angular + Spring Boot + MySQL).
+    \item \textbf{RNF-02:} La interfaz debe ser intuitiva, responsiva y accesible desde distintos dispositivos.
+    \item \textbf{RNF-03:} El sistema debe garantizar la seguridad de los datos mediante cifrado de contraseñas y uso de HTTPS.
+    \item \textbf{RNF-04:} La base de datos debe permitir transacciones seguras y mantener la integridad referencial.
+    \item \textbf{RNF-05:} El código debe estar estructurado siguiendo buenas prácticas de desarrollo (modularización, uso de control de versiones).
+    \item \textbf{RNF-06:} El sistema debe permitir su despliegue local o en la nube sin necesidad de licencias adicionales.
+    \item \textbf{RNF-07:} Las automatizaciones mediante n8n deben ser ejecutadas en un entorno controlado y seguro.
+\end{itemize}
+
+% Especificación del sistema a partir de lo recogido en los requisitos
+\section{Especificaciones}
+
+El sistema está diseñado como una \textbf{aplicación web moderna} basada en una arquitectura \textbf{frontend-backend}, en la que el cliente (Angular) se comunica con el servidor (Spring Boot) mediante \textit{API REST}. 
+La base de datos utilizada es \textbf{MySQL}, encargada de almacenar toda la información relativa a usuarios, productos, pedidos, pagos y facturas. 
+Además, el sistema incorpora \textbf{n8n} como herramienta de automatización para gestionar tareas recurrentes, como el envío de correos postcompra o las notificaciones de bajo stock.
+
+El sistema distingue entre dos tipos principales de usuarios:
+
+\begin{itemize}
+    \item \textbf{Cliente:} puede registrarse, gestionar su carrito, realizar compras y consultar su historial de pedidos.
+    \item \textbf{Administrador:} gestiona el catálogo de productos, controla los pedidos y supervisa las automatizaciones.
+\end{itemize}
+
+La aplicación está desarrollada íntegramente en \textbf{español}, es \textbf{multiplataforma} y accesible desde cualquier navegador moderno. 
+Todos los componentes empleados son \textbf{gratuitos y de código abierto}, lo que facilita su instalación y mantenimiento sin coste adicional.
+
+% Costes temporales y económicos
+\section{Tareas y costes}
+
+Para planificar el desarrollo del proyecto se ha elaborado una \textbf{Estructura de Descomposición del Trabajo (EDT)} que organiza las actividades en cinco fases principales: estudio, análisis, diseño, implementación y pruebas. 
+Esta estructura permite identificar las dependencias entre tareas y establecer una secuencia lógica de ejecución.
+
+\subsection{Definición de tareas}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|p{9cm}|c|}
+\hline
+\textbf{ID} & \textbf{Nombre de la tarea} & \textbf{Dependencias} \\
+\hline
+1 & Estudio y especificación del proyecto & -- \\
+1.1 & Definición de requisitos & -- \\
+1.2 & Estimación de costes y planificación & 1.1 \\
+1.3 & Análisis de riesgos & 1.2 \\
+1.4 & Estudio de herramientas (Angular, Spring Boot, n8n) & 1.3 \\
+2 & Análisis del sistema & 1 \\
+2.1 & Casos de uso de la aplicación & 1.4 \\
+2.2 & Modelo de datos y entidades principales & 2.1 \\
+3 & Diseño del sistema & 2 \\
+3.1 & Arquitectura general (frontend-backend-n8n) & 2.2 \\
+3.2 & Diagramas UML y diseño de base de datos & 3.1 \\
+4 & Implementación & 3 \\
+4.1 & Desarrollo del backend en Spring Boot & 3.2 \\
+4.2 & Desarrollo del frontend en Angular & 4.1 \\
+4.3 & Integración con Stripe y MySQL & 4.2 \\
+4.4 & Configuración de flujos n8n & 4.3 \\
+5 & Pruebas y validación & 4 \\
+5.1 & Pruebas unitarias e integración & 4.4 \\
+5.2 & Validación con usuarios y optimización final & 5.1 \\
+\hline
+\end{tabular}
+\caption{Estructura de Descomposición del Trabajo (EDT) y dependencias entre tareas.}
+\end{table}
+
+\subsection{Estimación temporal}
+
+Para estimar la duración de cada fase se ha utilizado la técnica \textbf{PERT (Program Evaluation and Review Technique)}, 
+que permite obtener una estimación temporal basada en tres valores: el tiempo optimista, el más probable y el pesimista. 
+Esta metodología se fundamenta en los principios clásicos de estimación temporal descritos en la gestión de proyectos \cite{PMBOK2021} y 
+calcula el tiempo estimado (TE) mediante la fórmula:
+
+\[
+TE = \frac{O + 4M + P}{6}
+\]
+
+donde \textit{O} es el tiempo optimista, \textit{M} el más probable y \textit{P} el pesimista.
+
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+\textbf{Fase} & \textbf{O} & \textbf{M} & \textbf{P} & \textbf{TE (días)} \\
+\hline
+Estudio y especificación & 3 & 5 & 7 & 5 \\
+Análisis & 4 & 6 & 8 & 6 \\
+Diseño & 6 & 8 & 10 & 8 \\
+Implementación & 20 & 25 & 30 & 25 \\
+Pruebas & 6 & 8 & 10 & 8 \\
+\hline
+\textbf{Total estimado} &  &  &  & \textbf{52 días} \\
+\hline
+\end{tabular}
+\caption{Estimación temporal de las fases del proyecto mediante el método PERT.}
+\end{table}
+
+Además de la técnica \textbf{PERT}, se ha aplicado el método de \textbf{juicio de expertos} con el objetivo de validar las estimaciones obtenidas y asegurar que los tiempos calculados sean realistas. 
+Para ello, se han considerado las opiniones de tres perfiles con diferentes niveles de experiencia en el ámbito del desarrollo de software, lo que permitió ajustar las duraciones de las tareas y obtener una planificación más equilibrada:
+
+\begin{itemize}
+    \item \textbf{Perfil 1 — Estudiante avanzado:} estudiante de último curso del Grado en Ingeniería Informática, con experiencia en proyectos académicos y conocimientos de programación web. Su visión ayudó a estimar el esfuerzo que supone desarrollar un proyecto individual de este tipo.
+
+    \item \textbf{Perfil 2 — Desarrollador junior:} profesional con unos dos años de experiencia en el desarrollo de aplicaciones web. Sus aportaciones permitieron ajustar los tiempos de las fases de codificación y pruebas basándose en su experiencia práctica reciente.
+
+    \item \textbf{Perfil 3 — Desarrollador senior / jefe de proyecto:} profesional con más de cinco años de experiencia en la gestión y supervisión de proyectos informáticos. Su punto de vista ayudó a validar la coherencia general del calendario y la estimación global del esfuerzo.
+\end{itemize}
+
+El contraste de opiniones entre estos perfiles permitió confirmar que las estimaciones iniciales eran adecuadas y que la planificación final se ajusta razonablemente a la complejidad y alcance del proyecto.
+
+\subsection{Diagrama de Gantt}
+
+El siguiente diagrama de Gantt muestra la planificación temporal del proyecto de manera visual, 
+indicando la duración de cada fase y su relación con las tareas definidas en la estructura de descomposición del trabajo (EDT). 
+Se ha generado a partir de las estimaciones realizadas mediante la técnica PERT y validadas con el juicio de expertos.
+
+\begin{sidewaysfigure}
+\centering
+\includegraphics[width=\textwidth]{figs/GanttTodo.pdf}
+\caption{Diagrama de Gantt del proyecto (01/10/2025–07/01/2026).}
+\end{sidewaysfigure}
+
+
+\subsection{Estimación de costes}
+
+Para el cálculo de costes se han tenido en cuenta tanto los recursos humanos como los materiales y el software utilizado. 
+Aunque el proyecto ha sido desarrollado por una sola persona, se ha desglosado el trabajo según distintos perfiles habituales en el desarrollo de software: 
+jefe de proyecto, analista, desarrollador y tester. 
+De esta forma se obtiene una estimación más ajustada y realista del esfuerzo requerido.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|L{4.5cm}|L{7.5cm}|c|}
+\hline
+\textbf{Concepto} & \textbf{Detalle} & \textbf{Coste estimado} \\
+\hline
+\textbf{Coste de personal} & Jefe de proyecto / analista: 40 h × 18 €/h & 720 € \\
+ & Desarrollador backend: 140 h × 12 €/h & 1.680 € \\
+ & Desarrollador frontend: 100 h × 12 €/h & 1.200 € \\
+ & Tester / validación: 40 h × 10 €/h & 400 € \\
+\hline
+\textbf{Subtotal personal} & & \textbf{4.000 €} \\
+\hline
+\textbf{Coste de software} & Herramientas gratuitas (Angular, Spring Boot, MySQL, n8n, VSCode, Postman) & 0 € \\
+\hline
+\textbf{Coste de software con licencia universitaria} & Visual Paradigm (licencia académica proporcionada por la universidad) & 0 € \\
+\hline
+\textbf{Coste de hardware (amortizado)} & Portátil personal (1.200 € de valor, amortizado 4 meses sobre 4 años) & 100 € \\
+\hline
+\textbf{Total estimado del proyecto} & & \textbf{4.100 €} \\
+\hline
+\end{tabular}
+\caption{Estimación de costes detallada por perfil y recursos.}
+\vspace{0.3cm}
+\textit{Nota: el valor del hardware se ha amortizado en base a una vida útil estimada de cuatro años.}
+\end{table}
+
+Para la planificación temporal se ha aplicado la técnica \textbf{PERT}, combinada con el \textbf{juicio de expertos}, 
+comparando los valores calculados con estimaciones de proyectos similares y con referencias salariales obtenidas de portales como Indeed. 
+Además, se consultaron tres perfiles con diferente nivel de experiencia en el desarrollo de software, lo que permitió contrastar las horas estimadas y ajustar los tiempos de las tareas.
+
+El resultado confirma que el proyecto mantiene un coste razonable y acorde a su nivel de complejidad. 
+El uso de herramientas libres y de una infraestructura propia reduce significativamente el coste total, 
+manteniendo una buena relación entre esfuerzo, recursos y resultados obtenidos.
+
+% Riesgos que pueden incurrir en el desarrollo del sistema
+\section{Riesgos}
+
+La gestión de riesgos permite anticipar posibles incidencias y definir estrategias preventivas que minimicen su impacto en el desarrollo del proyecto. 
+En la siguiente tabla se resumen los principales riesgos identificados junto con su probabilidad, impacto y categoría general.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|L{6.5cm}|c|c|c|}
+\hline
+\textbf{Riesgo identificado} & \textbf{Probabilidad} & \textbf{Impacto} & \textbf{Categoría} \\
+\hline
+Problemas de integración entre módulos Angular–Spring Boot & Media & Alta & Técnica \\
+\hline
+Fallos en la pasarela de pago (Stripe) & Baja & Alta & Técnica \\
+\hline
+Cambios en los requisitos durante el desarrollo & Media & Media & Gestión \\
+\hline
+Sobrecarga de trabajo o retrasos en la planificación & Media & Media & Organización \\
+\hline
+Fallos de seguridad en la API o la base de datos & Baja & Alta & Seguridad \\
+\hline
+Falta de experiencia inicial con n8n & Media & Media & Técnica \\
+\hline
+\end{tabular}
+\caption{Principales riesgos identificados durante el desarrollo del proyecto.}
+\end{table}
+
+A continuación, se describen las medidas generales de \textbf{mitigación y contingencia} aplicadas a los riesgos identificados:
+
+\begin{itemize}
+    \item \textbf{Problemas de integración entre módulos Angular–Spring Boot:} se intentará detectar pronto cualquier error realizando pruebas cada vez que se conecten nuevas partes del sistema. También se mantendrá una buena organización del código para facilitar la comunicación entre ambos módulos.
+    
+    \item \textbf{Fallos en la pasarela de pago (Stripe):} antes de activar los pagos reales, se harán pruebas en el modo de simulación que ofrece la plataforma. En caso de error, se podrá reintentar el pago o registrar el pedido para revisarlo después.
+    
+    \item \textbf{Cambios en los requisitos durante el desarrollo:} se dejará algo de margen en la planificación para poder adaptarse a posibles cambios sin afectar al trabajo principal. Además, se priorizarán las funciones más importantes para tener siempre una versión funcional.
+    
+    \item \textbf{Sobrecarga de trabajo o retrasos en la planificación:} se dividirá el trabajo en tareas pequeñas y se intentará cumplir objetivos semanales. También se reservará algo de tiempo extra para posibles imprevistos o revisiones de última hora.
+    
+    \item \textbf{Fallos de seguridad en la aplicación o base de datos:} se harán copias de seguridad con frecuencia y se guardarán las contraseñas de forma segura. Además, se mantendrán las herramientas actualizadas para evitar problemas.
+    
+    \item \textbf{Falta de experiencia con n8n:} se dedicará tiempo a aprender su funcionamiento antes de integrarlo por completo. Se probarán ejemplos sencillos para entender cómo crear los flujos y se consultará la documentación cuando sea necesario.
+\end{itemize}
+Gracias a estas medidas, se espera que los riesgos identificados tengan un impacto limitado en el desarrollo y no comprometan los objetivos principales del proyecto.
+
+
+
+% Viabilidad del proyecto presentado
+\section{Viabilidad}
+
+\subsection{Viabilidad legal}
+
+El proyecto no presenta impedimentos legales, ya que no maneja datos personales sensibles y cumple con la normativa vigente, especialmente con el Reglamento General de Protección de Datos (RGPD). 
+Los pagos se realizan mediante la plataforma \textbf{Stripe}, que se encarga de procesar la información de forma segura y cifrada, evitando que el sistema tenga que almacenar datos de tarjetas. 
+Todas las tecnologías empleadas son de \textbf{código abierto} o disponen de \textbf{licencias académicas gratuitas}, por lo que su uso es totalmente legal en el contexto de un proyecto universitario.
+
+\subsection{Viabilidad técnica}
+
+El uso conjunto de \textbf{Angular}, \textbf{Spring Boot}, \textbf{MySQL} y \textbf{n8n} proporciona una solución estable, escalable y fácil de mantener. 
+Son herramientas actuales, bien documentadas y con una amplia comunidad de desarrolladores, lo que facilita la resolución de problemas y reduce el riesgo de incompatibilidades. 
+Además, el diseño modular del sistema permite incorporar futuras mejoras, como nuevos métodos de pago o automatizaciones adicionales, sin necesidad de modificar la estructura principal del proyecto.
+
+\subsection{Viabilidad económica}
+
+El proyecto resulta \textbf{económicamente viable}, ya que su desarrollo no requiere inversión en licencias ni en infraestructura adicional. 
+El software utilizado es \textbf{gratuito y de código abierto}, y el equipo empleado para el desarrollo es personal, por lo que los únicos costes reales corresponden al tiempo de dedicación y al uso del propio ordenador. 
+Teniendo en cuenta que el coste total estimado del proyecto es de aproximadamente \textbf{4.400 €}, se puede concluir que se trata de una solución accesible, eficiente y sostenible para un entorno académico o de pequeña empresa.

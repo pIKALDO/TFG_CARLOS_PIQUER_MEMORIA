@@ -1,0 +1,80 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {chapter}{\numberline {1}Introducción}{17}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Introducción}{17}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Motivación}{17}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Objetivos}{17}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Organización de la memoria}{17}{section.1.4}%
+\contentsline {chapter}{\numberline {2}Estado del arte}{19}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Análisis de aplicaciones similares}{19}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Wix eCommerce}{19}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Squarespace}{20}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}PrestaShop}{20}{subsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.1.4}Comparación con la propuesta del TFG}{21}{subsection.2.1.4}%
+\contentsline {section}{\numberline {2.2}Tecnologías}{21}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Frameworks frontend}{21}{subsection.2.2.1}%
+\contentsline {subsubsection}{Angular}{21}{section*.2}%
+\contentsline {subsubsection}{React}{22}{section*.3}%
+\contentsline {subsubsection}{Vue}{22}{section*.4}%
+\contentsline {subsubsection}{Comparación y elección}{23}{section*.5}%
+\contentsline {subsection}{\numberline {2.2.2}Frameworks backend}{23}{subsection.2.2.2}%
+\contentsline {subsubsection}{Spring Boot}{23}{section*.6}%
+\contentsline {subsubsection}{Node.js}{23}{section*.7}%
+\contentsline {subsubsection}{Django}{24}{section*.8}%
+\contentsline {subsubsection}{Comparación y elección}{25}{section*.9}%
+\contentsline {subsection}{\numberline {2.2.3}Agentes de automatización}{25}{subsection.2.2.3}%
+\contentsline {subsubsection}{Zapier}{25}{section*.10}%
+\contentsline {subsubsection}{Make}{26}{section*.11}%
+\contentsline {subsubsection}{n8n}{26}{section*.12}%
+\contentsline {subsubsection}{Comparación y elección}{27}{section*.13}%
+\contentsline {subsection}{\numberline {2.2.4}Bases de datos}{27}{subsection.2.2.4}%
+\contentsline {subsubsection}{SQL}{27}{section*.14}%
+\contentsline {subsubsection}{NoSQL}{27}{section*.15}%
+\contentsline {subsubsection}{Comparación y elección}{27}{section*.16}%
+\contentsline {subsection}{\numberline {2.2.5}Pasarelas de pago}{28}{subsection.2.2.5}%
+\contentsline {subsubsection}{PayPal}{28}{section*.17}%
+\contentsline {subsubsection}{Redsys}{28}{section*.18}%
+\contentsline {subsubsection}{Stripe}{29}{section*.19}%
+\contentsline {subsubsection}{Comparación y elección}{29}{section*.20}%
+\contentsline {chapter}{\numberline {3}Requisitos, especificaciones, coste, riesgos, viabilidad}{31}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Requisitos}{31}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Requisitos funcionales}{31}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Requisitos no funcionales}{32}{subsection.3.1.2}%
+\contentsline {section}{\numberline {3.2}Especificaciones}{32}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Tareas y costes}{33}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Definición de tareas}{33}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Estimación temporal}{33}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Diagrama de Gantt}{34}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.4}Estimación de costes}{36}{subsection.3.3.4}%
+\contentsline {section}{\numberline {3.4}Riesgos}{36}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Viabilidad}{38}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Viabilidad legal}{38}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}Viabilidad técnica}{38}{subsection.3.5.2}%
+\contentsline {subsection}{\numberline {3.5.3}Viabilidad económica}{38}{subsection.3.5.3}%
+\contentsline {chapter}{\numberline {4}Análisis}{39}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Diagramas de análisis}{39}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Diagrama de casos de uso}{39}{subsection.4.1.1}%
+\contentsline {chapter}{\numberline {5}Diseño}{41}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Arquitectura general del sistema}{41}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Diagramas UML}{41}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Diagrama de clases}{42}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Diagramas de secuencia}{43}{subsection.5.2.2}%
+\contentsline {paragraph}{Gestión de carrito}{43}{section*.21}%
+\contentsline {paragraph}{Compra estándar}{44}{section*.22}%
+\contentsline {paragraph}{Generación de factura}{46}{section*.23}%
+\contentsline {paragraph}{Abandono de carrito}{47}{section*.24}%
+\contentsline {paragraph}{Bajo stock}{48}{section*.25}%
+\contentsline {section}{\numberline {5.3}Diseño de la base de datos}{49}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Modelo entidad–relación}{49}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Modelo relacional y prototipo inicial}{49}{subsection.5.3.2}%
+\contentsline {chapter}{\numberline {6}Implementación y pruebas}{51}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Implementación}{51}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Pruebas funcionales}{51}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Pruebas de rendimiento}{51}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Pruebas de usabilidad}{51}{section.6.4}%
+\contentsline {chapter}{\numberline {7}Conclusiones}{53}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Revisión de costes}{53}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Conclusiones}{53}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Trabajo futuro}{53}{section.7.3}%
+\contentsline {chapter}{\numberline {A}Apéndice}{55}{appendix.Alph1}%
+\contentsline {section}{\numberline {A.1}Ejemplos del lenguaje de marcado Latex}{55}{section.Alph1.1}%
+\contentsline {chapter}{Bibliografía}{56}{lstnumber.-2.4}%

@@ -1,0 +1,50 @@
+This is BibTeX, Version 0.99d (TeX Live 2025)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: ejemplo-memoria.aux
+The style file: unsrt.bst
+Database file #1: bib/bibliografia.bib
+Warning--I didn't find a database entry for "latexcompanion"
+Warning--I didn't find a database entry for "einstein"
+Warning--I didn't find a database entry for "knuthwebsite"
+You've used 18 entries,
+            1791 wiz_defined-function locations,
+            542 strings with 5515 characters,
+and the built_in function-call counts, 2518 in all, are:
+= -- 234
+> -- 72
+< -- 0
++ -- 36
+- -- 18
+* -- 23
+:= -- 409
+add.period$ -- 71
+call.type$ -- 18
+change.case$ -- 17
+chr.to.int$ -- 0
+cite$ -- 18
+duplicate$ -- 95
+empty$ -- 326
+format.name$ -- 18
+if$ -- 598
+int.to.chr$ -- 0
+int.to.str$ -- 18
+missing$ -- 2
+newline$ -- 110
+num.names$ -- 18
+pop$ -- 108
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 35
+stack$ -- 0
+substring$ -- 0
+swap$ -- 18
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 18
+width$ -- 20
+write$ -- 217
+(There were 3 warnings)
