@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex ejemplo-memoria"] 1761587972.26211 "ejemplo-memoria.aux" "ejemplo-memoria.bbl" "ejemplo-memoria" 1761587976.79146 0
+["bibtex ejemplo-memoria"] 1762003684.51552 "ejemplo-memoria.aux" "ejemplo-memoria.bbl" "ejemplo-memoria" 1762003689.14342 0
   "./bib/bibliografia.bib" 1761558192 4515 df0d5592ce3622d467bd82ad1f1e3b87 ""
   "/usr/local/texlive/2025/texmf-dist/bibtex/bst/base/unsrt.bst" 1292289607 18030 1376b4b231b50c66211e47e42eda2875 ""
-  "ejemplo-memoria.aux" 1761587976.5382 17042 0c8d905a9b7f3941c62307393119438f "pdflatex"
+  "ejemplo-memoria.aux" 1762003688.89122 17612 6ddb731edffbd1f64596a2d7b0ebff0a "pdflatex"
   (generated)
   "ejemplo-memoria.bbl"
   "ejemplo-memoria.blg"
   (rewritten before read)
-["pdflatex"] 1761587972.33791 "/home/pikaldo/Escritorio/TFG_CARLOS_PIQUER/ejemplo-memoria.tex" "ejemplo-memoria.pdf" "ejemplo-memoria" 1761587976.79162 0
+["pdflatex"] 1762003684.5907 "/home/pikaldo/Escritorio/TFG_CARLOS_PIQUER/ejemplo-memoria.tex" "ejemplo-memoria.pdf" "ejemplo-memoria" 1762003689.14359 0
   "/home/pikaldo/Escritorio/TFG_CARLOS_PIQUER/ejemplo-memoria.tex" 1761565602.73655 2637 fcfd2bc7b683c40cd4c9d8eea999e31d ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
@@ -216,11 +216,11 @@
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1761563262 5528139 daf1353d2d3d7fed9df2ebbf1b26218e ""
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1761563345 3629246 e80357df3cc28c5e2b42579906520ba7 ""
   "/usr/local/texlive/2025/texmf.cnf" 1761563258.79175 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
-  "ejemplo-memoria.aux" 1761587976.5382 17042 0c8d905a9b7f3941c62307393119438f "pdflatex"
-  "ejemplo-memoria.bbl" 1761587972.33211 3263 f7bec65e072a5f7a2d4b296124276ecc "bibtex ejemplo-memoria"
-  "ejemplo-memoria.out" 1761587976.5402 10555 db8eb68886adb55b887bc6211b075bca "pdflatex"
+  "ejemplo-memoria.aux" 1762003688.89122 17612 6ddb731edffbd1f64596a2d7b0ebff0a "pdflatex"
+  "ejemplo-memoria.bbl" 1762003684.58515 3263 f7bec65e072a5f7a2d4b296124276ecc "bibtex ejemplo-memoria"
+  "ejemplo-memoria.out" 1762003688.89322 11084 cc4c38b43c5e902370891085d5a883c4 "pdflatex"
   "ejemplo-memoria.tex" 1761565602.73655 2637 fcfd2bc7b683c40cd4c9d8eea999e31d ""
-  "ejemplo-memoria.toc" 1761587976.5403 6307 ca27d729c41ebeb5d29c58d56e7c4198 "pdflatex"
+  "ejemplo-memoria.toc" 1762003688.89463 6505 d817a3919efa759ed04b682da2575b22 "pdflatex"
   "figs/Abandonodecarrito.jpg" 1761558192 33014 084d40707501145cdf97d5fd11327145 ""
   "figs/Bajostock.jpg" 1761558192 35165 2d25ce1b6ddbf59f8895b4cdeb4cf3f7 ""
   "figs/Caso_de uso_def.png" 1761558192 110021 96b8dc41bbd97e59f16a138dca2a6301 ""
@@ -233,6 +233,7 @@
   "figs/GanttTodo.pdf" 1761558192 718837 b5a8aa79b0ea5c8206689c4fe45b46e9 ""
   "figs/Generaciondefactura.jpg" 1761558192 49580 7fbe6e06e1da8ae428c47a8c585c0e85 ""
   "figs/Gestiondecarrito.jpg" 1761558192 51734 ba7fceed6fb9095f9436eec0ae384a61 ""
+  "figs/Prototipoinicio.png" 1762003144.98367 163232 05096461c59e92305c4f7f986a41c0a0 ""
   "figs/clasesdef.png" 1761558192 1728055 d7846b3f469343382b19dc6f8d05eda1 ""
   "figs/diagrama.pdf" 1761558192 41642 d9f206003e59025720ac2cfbe685caa5 ""
   "figs/escudo_logo_UV.jpg" 1761558192 310940 376783d0928649b2474a9fb34c2689b5 ""
@@ -241,7 +242,7 @@
   "tex/analisis.tex" 1761586306.89848 2771 4c2df63e796cedaf1bad2e61e3f37841 ""
   "tex/apendice.tex" 1761558192 2156 526e416d6adfcd52fda7716bd145a1be ""
   "tex/conclusiones.tex" 1761558192 236 75fb90dd8eb5d7b00a096af566d7c782 ""
-  "tex/diseno.tex" 1761558192 7457 e037571dff53160781b5bbe1ee5e0678 ""
+  "tex/diseno.tex" 1762003679.80608 8897 0b2d440b4bc98bd3f44ef6cf2ed097d2 ""
   "tex/estado_arte.tex" 1761558192 21494 eb590af84b6905d42aa012822838202c ""
   "tex/implementacion_pruebas.tex" 1761558192 282 594493fb05e72de12bdcc34f953add13 ""
   "tex/introduccion.tex" 1761558192 266 98b7b7a710d85656cf54473efcdcf15e ""
