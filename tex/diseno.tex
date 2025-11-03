@@ -87,7 +87,7 @@ También se representa la respuesta automatizada del agente \textit{n8n} para co
     \caption{Diagrama de secuencia — parte 3: flujo alternativo de pago fallido}
     \label{fig:compra3}
 \end{figure}
-\clearpage
+
 
 \paragraph{Generación de factura}
 
@@ -126,7 +126,6 @@ Cuando el inventario de un producto alcanza un umbral mínimo, el sistema ejecut
     \caption{Diagrama de secuencia — notificación de bajo stock}
     \label{fig:bajo_stock}
 \end{figure}
-\clearpage
 
 \section{Diseño de la base de datos}
 
@@ -137,6 +136,7 @@ Posteriormente, el modelo se validó e implementó en \textit{MySQL Workbench}, 
 
 El modelo E/R del sistema representa las entidades principales (\textit{usuarios, productos, carritos, pedidos, pagos, facturas}) y las relaciones entre ellas.  
 Estas relaciones garantizan la integridad referencial mediante el uso de claves primarias, foráneas y restricciones de unicidad.
+\clearpage  
 
 \subsection{Modelo relacional y prototipo inicial}
 
@@ -149,7 +149,7 @@ La Figura~\ref{fig:prototipoBD} muestra el esquema final diseñado.
     \caption{Prototipo de la base de datos relacional}
     \label{fig:prototipoBD}
 \end{figure} 
-
+\clearpage
 \section{Diseño de la interfaz de usuario}
 
 Además del diseño lógico y técnico del sistema, se ha desarrollado un prototipo visual que representa la estructura y apariencia de la aplicación web. 
@@ -169,4 +169,48 @@ Debajo se encuentran las categorías principales de productos, seguidas de una s
     \includegraphics[width=\textwidth, keepaspectratio]{figs/prototipoinicio.png}
     \caption{Prototipo de la página de inicio de la aplicación web.}
     \label{fig:prototipo_inicio}
+\end{figure}
+\clearpage
+\subsection{Prototipo del catálogo de productos}
+
+La Figura~\ref{fig:prototipo_catalogo} muestra el prototipo de la vista de catálogo, en la que el usuario puede explorar el inventario completo. 
+La interfaz mantiene la coherencia visual con la página de inicio (mismo encabezado y pie de página) e incorpora una barra de filtros en la parte superior con búsqueda por texto, selección de categoría, rango de precio, opción de disponibilidad (\textit{En stock}) y un control de \textit{Ordenar por}. 
+Bajo dicha barra se presenta una rejilla de productos (tarjetas con imagen, nombre, precio y botón \textit{Añadir al carrito}) organizada en filas y columnas para facilitar el escaneo visual.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth, keepaspectratio]{figs/catalogo_de_productos.png}
+    \caption{Prototipo del catálogo de productos con barra de filtros y rejilla de artículos.}
+    \label{fig:prototipo_catalogo}
+\end{figure}
+\clearpage
+\subsection{Prototipo del carrito de compra}
+
+La Figura~\ref{fig:prototipo_carrito} muestra el prototipo de la vista de carrito. 
+La interfaz mantiene la coherencia visual con el resto de pantallas (mismo encabezado y pie) y presenta una \textit{tabla de líneas} donde se visualiza cada producto añadido con su imagen, nombre, precio unitario, selector de cantidad y subtotal, además de la acción de eliminar. 
+En la parte inferior se destaca el importe \textbf{Total} y se incluyen los botones de navegación principales: \textit{Seguir comprando} y \textit{Finalizar compra}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth, keepaspectratio]{\string figs/carrito_de_compra.png}
+    \caption{Prototipo del carrito de compra con líneas de producto, total y acciones principales.}
+    \label{fig:prototipo_carrito}
+\end{figure}
+\clearpage
+
+\subsection{Prototipo del proceso de pago (\textit{Checkout})}
+
+La Figura~\ref{fig:prototipo_checkout} muestra el prototipo correspondiente a la vista de pago del sistema. 
+Esta pantalla representa la fase final del proceso de compra y mantiene la coherencia visual con el resto de interfaces, reutilizando la barra de navegación superior y el pie de página.
+
+La interfaz se estructura en distintos bloques claramente diferenciados: \textbf{Datos personales}, \textbf{Dirección de envío}, \textbf{Método de pago} y \textbf{Tarjeta}. 
+Cada sección incluye los campos necesarios para introducir la información correspondiente, priorizando la claridad y la usabilidad. 
+En la parte inferior derecha se presenta el \textbf{resumen del pedido}, donde se muestran los productos seleccionados, el desglose de precios (subtotal, envío y total) y las acciones finales: 
+\textit{Volver al carrito} y \textit{Confirmar pedido}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth, keepaspectratio]{\string figs/checkout_pago.png}
+    \caption{Prototipo del proceso de pago con formularios y resumen del pedido.}
+    \label{fig:prototipo_checkout}
 \end{figure}
