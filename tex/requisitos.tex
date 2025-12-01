@@ -95,6 +95,7 @@ Esta estructura permite identificar las dependencias entre tareas y establecer u
 \end{tabular}
 \caption{Estructura de Descomposición del Trabajo (EDT) y dependencias entre tareas.}
 \end{table}
+\clearpage  
 
 \subsection{Estimación temporal}
 
@@ -141,11 +142,10 @@ Para ello, se han considerado las opiniones de tres perfiles con diferentes nive
     \item \textbf{Perfil 3 — Desarrollador senior/jefe de proyecto:} profesional con más de cinco años de experiencia en la gestión y supervisión de proyectos informáticos. 
     Consideró que el proyecto podría completarse en torno a \textbf{48 días}, optimizando las fases de diseño e implementación gracias a una mejor planificación y experiencia previa en proyectos similares. Su punto de vista permitió validar la coherencia general del calendario y la estimación global del esfuerzo.
 \end{itemize}
-
+\clearpage
 El contraste de opiniones entre estos perfiles permitió confirmar que las estimaciones iniciales eran adecuadas, situándose todas en un rango comprendido entre los 48 y 55 días, con una media aproximada de \textbf{50 días}. 
 A partir de sus aportaciones, se fijó una duración final de \textbf{52 días}, incorporando un pequeño margen de contingencia que refleja un equilibrio entre las distintas perspectivas.
 
-\clearpage
 \subsection{Diagrama de Gantt}
 
 El siguiente diagrama de Gantt muestra la planificación temporal del proyecto de manera visual, 
@@ -168,6 +168,23 @@ De esta forma se obtiene una estimación más ajustada y realista del esfuerzo r
 
 \begin{table}[H]
 \centering
+\begin{tabular}{|L{4.5cm}|c|}
+\hline
+\textbf{Perfil} & \textbf{Horas asignadas} \\
+\hline
+Jefe de proyecto / Analista & 40 h \\
+Desarrollador backend & 140 h \\
+Desarrollador frontend & 100 h \\
+Tester / Validación & 40 h \\
+\hline
+\textbf{Total de horas estimadas} & \textbf{320 h} \\
+\hline
+\end{tabular}
+\caption{Reparto de horas por perfil utilizado para la estimación de costes.}
+\end{table}
+
+\begin{table}[H]
+\centering
 \begin{tabular}{|L{4.5cm}|L{7.5cm}|c|}
 \hline
 \textbf{Concepto} & \textbf{Detalle} & \textbf{Coste estimado} \\
@@ -179,27 +196,52 @@ De esta forma se obtiene una estimación más ajustada y realista del esfuerzo r
 \hline
 \textbf{Subtotal personal} & & \textbf{4.000 €} \\
 \hline
+\textbf{Seguridad Social (30 \%)} & Aplicado al coste de personal (30 \% × 4.000 €) & \textbf{1.200 €} \\
+\hline
 \textbf{Coste de software} & Herramientas gratuitas (Angular, Spring Boot, MySQL, n8n, VSCode, Postman) & 0 € \\
 \hline
 \textbf{Coste de software con licencia universitaria} & Visual Paradigm (licencia académica proporcionada por la universidad) & 0 € \\
 \hline
 \textbf{Coste de hardware (amortizado)} & Portátil personal (1.200 € de valor, amortizado 4 meses sobre 4 años) & 100 € \\
 \hline
-\textbf{Total estimado del proyecto} & & \textbf{4.100 €} \\
+\textbf{Costes indirectos} & Electricidad, Internet y agua durante el desarrollo (estimado) & 80 € \\
+\hline
+\textbf{Total estimado del proyecto} & & \textbf{5.380 €} \\
 \hline
 \end{tabular}
 \caption{Estimación de costes detallada por perfil y recursos.}
 \vspace{0.3cm}
 \textit{Nota: el valor del hardware se ha amortizado en base a una vida útil estimada de cuatro años.}
 \end{table}
+\clearpage
+Además, se incluyen las características del equipo utilizado durante el desarrollo, ya que impactan tanto en la amortización del hardware como en el rendimiento del proceso de trabajo:
+
+\begin{itemize}
+    \item \textbf{CPU:} Intel Core i7-12700H
+    \item \textbf{RAM:} 16 GB DDR5
+    \item \textbf{Almacenamiento:} SSD NVMe 1 TB
+    \item \textbf{Gráfica:} NVIDIA RTX 3050 Ti
+    \item \textbf{Sistema operativo:} Windows 11
+\end{itemize}
 
 Para la planificación temporal se ha aplicado la técnica \textbf{PERT}, combinada con el \textbf{juicio de expertos}, 
-comparando los valores calculados con estimaciones de proyectos similares y con referencias salariales obtenidas de portales como Indeed. 
+comparando los valores calculados con estimaciones de proyectos similares y con referencias salariales obtenidas de portales como Indeed \cite{Indeed2025}. 
 Además, se consultaron tres perfiles con diferente nivel de experiencia en el desarrollo de software, lo que permitió contrastar las horas estimadas y ajustar los tiempos de las tareas.
+
+Finalmente, el coste total del proyecto se obtiene mediante la siguiente expresión:
+
+\[
+C_{\text{total}} = C_{\text{personal}} + C_{\text{SeguridadSocial}} + C_{\text{hardware}} + C_{\text{software}} + C_{\text{indirectos}}
+\]
+
+\[
+C_{\text{total}} = 4\,000 + 1\,200 + 100 + 0 + 80 = \textbf{5\,380\,€}
+\]
 
 El resultado confirma que el proyecto mantiene un coste razonable y acorde a su nivel de complejidad. 
 El uso de herramientas libres y de una infraestructura propia reduce significativamente el coste total, 
 manteniendo una buena relación entre esfuerzo, recursos y resultados obtenidos.
+
 
 % Riesgos que pueden incurrir en el desarrollo del sistema
 \clearpage

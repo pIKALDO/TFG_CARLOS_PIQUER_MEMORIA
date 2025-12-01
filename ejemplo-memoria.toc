@@ -42,14 +42,14 @@
 \contentsline {section}{\numberline {3.2}Especificaciones}{34}{section.3.2}%
 \contentsline {section}{\numberline {3.3}Tareas y costes}{35}{section.3.3}%
 \contentsline {subsection}{\numberline {3.3.1}Definición de tareas}{35}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Estimación temporal}{35}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.2}Estimación temporal}{36}{subsection.3.3.2}%
 \contentsline {subsection}{\numberline {3.3.3}Diagrama de Gantt}{37}{subsection.3.3.3}%
 \contentsline {subsection}{\numberline {3.3.4}Estimación de costes}{39}{subsection.3.3.4}%
-\contentsline {section}{\numberline {3.4}Riesgos}{40}{section.3.4}%
-\contentsline {section}{\numberline {3.5}Viabilidad}{41}{section.3.5}%
-\contentsline {subsection}{\numberline {3.5.1}Viabilidad legal}{41}{subsection.3.5.1}%
-\contentsline {subsection}{\numberline {3.5.2}Viabilidad técnica}{41}{subsection.3.5.2}%
-\contentsline {subsection}{\numberline {3.5.3}Viabilidad económica}{41}{subsection.3.5.3}%
+\contentsline {section}{\numberline {3.4}Riesgos}{41}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Viabilidad}{42}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Viabilidad legal}{42}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}Viabilidad técnica}{42}{subsection.3.5.2}%
+\contentsline {subsection}{\numberline {3.5.3}Viabilidad económica}{42}{subsection.3.5.3}%
 \contentsline {chapter}{\numberline {4}Análisis}{43}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Diagramas de análisis}{43}{section.4.1}%
 \contentsline {subsection}{\numberline {4.1.1}Diagrama de casos de uso}{43}{subsection.4.1.1}%
@@ -58,7 +58,7 @@
 \contentsline {chapter}{\numberline {5}Diseño}{47}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Arquitectura general del sistema}{47}{section.5.1}%
 \contentsline {section}{\numberline {5.2}Diagramas UML}{47}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Diagrama de clases}{48}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.1}Diagrama de clases}{47}{subsection.5.2.1}%
 \contentsline {subsection}{\numberline {5.2.2}Diagramas de secuencia}{49}{subsection.5.2.2}%
 \contentsline {paragraph}{Gestión de carrito}{49}{section*.21}%
 \contentsline {paragraph}{Compra estándar}{50}{section*.22}%
