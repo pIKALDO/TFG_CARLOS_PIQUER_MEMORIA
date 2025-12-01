@@ -54,6 +54,45 @@ Este modelo complementa al diagrama de casos de uso al ofrecer una visión tempo
     \caption{Diagrama de secuencia general del sistema (DSGS).}
     \label{fig:dsgs}
 \end{figure}
+\subsubsection{DSGS-00 Diagrama de secuencia general del sistema}
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{|m{0.28\textwidth}|m{0.65\textwidth}|}
+\hline
+\textbf{Nombre} & DSGS-00 Diagrama de secuencia general del sistema \\ \hline
+
+\textbf{Actor(es)} & Cliente, WebApp, Stripe, n8n \\ \hline
+
+\textbf{Descripción} &
+Representa el flujo global del sistema durante el proceso de compra: inicio de sesión del cliente,
+gestión del carrito, procesamiento del pago a través de Stripe y notificación del resultado a n8n,
+incluyendo un flujo alternativo en caso de error de pago. \\ \hline
+
+\textbf{Precondiciones} &
+El cliente debe tener acceso a la WebApp y existir conexión con Stripe y n8n. \\ \hline
+
+\textbf{Postcondiciones} &
+El pedido queda confirmado o rechazado, y n8n recibe la notificación para ejecutar las tareas automáticas. \\ \hline
+
+\textbf{Flujo principal} &
+1. El cliente inicia sesión. \newline
+2. Añade productos al carrito. \newline
+3. Realiza el pedido. \newline
+4. La WebApp envía el pago a Stripe. \newline
+5. Stripe confirma el pago. \newline
+6. La WebApp confirma el pedido. \newline
+7. La WebApp notifica a n8n para ejecutar tareas post-compra. \\ \hline
+
+\textbf{Flujos alternativos} &
+4.a Stripe devuelve un error → la WebApp muestra el fallo al cliente. \\ \hline
+
+\textbf{Requisitos funcionales relacionados} &
+RF-01, RF-02, RF-04, RF-06 \\ \hline
+\end{tabular}
+\caption{Especificación del flujo DSGS-00 — Diagrama de secuencia del sistema.}
+\end{table}
 
 \clearpage
 

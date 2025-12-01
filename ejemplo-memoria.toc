@@ -55,33 +55,41 @@
 \contentsline {subsection}{\numberline {4.1.1}Diagrama de casos de uso}{43}{subsection.4.1.1}%
 \contentsline {subsection}{\numberline {4.1.2}Diagrama de clases de análisis}{44}{subsection.4.1.2}%
 \contentsline {subsection}{\numberline {4.1.3}Diagrama de secuencia general del sistema (DSGS)}{45}{subsection.4.1.3}%
+\contentsline {subsubsection}{DSGS-00 Diagrama de secuencia general del sistema}{46}{section*.21}%
 \contentsline {chapter}{\numberline {5}Diseño}{47}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Arquitectura general del sistema}{47}{section.5.1}%
 \contentsline {section}{\numberline {5.2}Diagramas UML}{47}{section.5.2}%
 \contentsline {subsection}{\numberline {5.2.1}Diagrama de clases}{47}{subsection.5.2.1}%
 \contentsline {subsection}{\numberline {5.2.2}Diagramas de secuencia}{49}{subsection.5.2.2}%
-\contentsline {paragraph}{Gestión de carrito}{49}{section*.21}%
-\contentsline {paragraph}{Compra estándar}{50}{section*.22}%
-\contentsline {paragraph}{Generación de factura}{51}{section*.23}%
-\contentsline {paragraph}{Abandono de carrito}{52}{section*.24}%
-\contentsline {paragraph}{Bajo stock}{53}{section*.25}%
-\contentsline {section}{\numberline {5.3}Diseño de la base de datos}{53}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}Modelo entidad–relación}{53}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}Modelo relacional y prototipo inicial}{54}{subsection.5.3.2}%
-\contentsline {section}{\numberline {5.4}Diseño de la interfaz de usuario}{55}{section.5.4}%
-\contentsline {subsection}{\numberline {5.4.1}Prototipo de la página de inicio}{55}{subsection.5.4.1}%
-\contentsline {subsection}{\numberline {5.4.2}Prototipo del catálogo de productos}{56}{subsection.5.4.2}%
-\contentsline {subsection}{\numberline {5.4.3}Prototipo del carrito de compra}{57}{subsection.5.4.3}%
-\contentsline {subsection}{\numberline {5.4.4}Prototipo del proceso de pago (\textit {Checkout})}{58}{subsection.5.4.4}%
-\contentsline {chapter}{\numberline {6}Implementación y pruebas}{59}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Implementación}{59}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Pruebas funcionales}{59}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Pruebas de rendimiento}{59}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Pruebas de usabilidad}{59}{section.6.4}%
-\contentsline {chapter}{\numberline {7}Conclusiones}{61}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Revisión de costes}{61}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Conclusiones}{61}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Trabajo futuro}{61}{section.7.3}%
-\contentsline {chapter}{\numberline {A}Apéndice}{63}{appendix.Alph1}%
-\contentsline {section}{\numberline {A.1}Ejemplos del lenguaje de marcado Latex}{63}{section.Alph1.1}%
-\contentsline {chapter}{Bibliografía}{64}{lstnumber.-2.4}%
+\contentsline {paragraph}{Gestión de carrito}{49}{section*.22}%
+\contentsline {subsubsection}{DSGS-01 Gestión de carrito}{50}{section*.23}%
+\contentsline {paragraph}{Compra estándar}{50}{section*.24}%
+\contentsline {subsubsection}{DSGS-02 Compra estándar — Parte 1 (autenticación y carrito)}{51}{section*.25}%
+\contentsline {subsubsection}{DSGS-03 Compra estándar — Parte 2 (checkout y pago)}{52}{section*.26}%
+\contentsline {subsubsection}{DSGS-04 Compra estándar — Parte 3 (pago fallido)}{52}{section*.27}%
+\contentsline {paragraph}{Generación de factura}{53}{section*.28}%
+\contentsline {subsubsection}{DSGS-05 Generación de factura}{53}{section*.29}%
+\contentsline {paragraph}{Abandono de carrito}{54}{section*.30}%
+\contentsline {subsubsection}{DSGS-06 Abandono de carrito}{54}{section*.31}%
+\contentsline {paragraph}{Bajo stock}{55}{section*.32}%
+\contentsline {subsubsection}{DSGS-07 Bajo stock}{55}{section*.33}%
+\contentsline {section}{\numberline {5.3}Diseño de la base de datos}{56}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Modelo entidad–relación}{56}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Modelo relacional y prototipo inicial}{57}{subsection.5.3.2}%
+\contentsline {section}{\numberline {5.4}Diseño de la interfaz de usuario}{58}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Prototipo de la página de inicio}{58}{subsection.5.4.1}%
+\contentsline {subsection}{\numberline {5.4.2}Prototipo del catálogo de productos}{59}{subsection.5.4.2}%
+\contentsline {subsection}{\numberline {5.4.3}Prototipo del carrito de compra}{60}{subsection.5.4.3}%
+\contentsline {subsection}{\numberline {5.4.4}Prototipo del proceso de pago (\textit {Checkout})}{61}{subsection.5.4.4}%
+\contentsline {chapter}{\numberline {6}Implementación y pruebas}{63}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Implementación}{63}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Pruebas funcionales}{63}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Pruebas de rendimiento}{63}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Pruebas de usabilidad}{63}{section.6.4}%
+\contentsline {chapter}{\numberline {7}Conclusiones}{65}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Revisión de costes}{65}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Conclusiones}{65}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Trabajo futuro}{65}{section.7.3}%
+\contentsline {chapter}{\numberline {A}Apéndice}{67}{appendix.Alph1}%
+\contentsline {section}{\numberline {A.1}Ejemplos del lenguaje de marcado Latex}{67}{section.Alph1.1}%
+\contentsline {chapter}{Bibliografía}{68}{lstnumber.-2.4}%

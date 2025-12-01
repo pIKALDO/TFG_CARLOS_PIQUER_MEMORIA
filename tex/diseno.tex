@@ -59,7 +59,45 @@ El usuario puede añadir, modificar o eliminar productos del carrito, y el siste
     \caption{Diagrama de secuencia — gestión del carrito}
     \label{fig:carrito}
 \end{figure}
-\clearpage
+
+\subsubsection{DSGS-01 Gestión de carrito}
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{|p{0.28\textwidth}|p{0.65\textwidth}|}
+\hline
+\textbf{Nombre} & DSGS-01 Gestión de carrito \\ \hline
+
+\textbf{Actor(es)} & Cliente, WebApp \\ \hline
+
+\textbf{Descripción} & 
+Representa el flujo general mediante el cual el cliente gestiona su carrito de compra: 
+añadir productos, modificar cantidades o eliminar artículos, mientras la WebApp mantiene 
+los datos sincronizados. \\ \hline
+
+\textbf{Precondiciones} & 
+El cliente debe disponer de acceso a la WebApp y el catálogo debe estar operativo. \\ \hline
+
+\textbf{Postcondiciones} & 
+El carrito queda actualizado correctamente con los productos seleccionados y sus cantidades. \\ \hline
+
+\textbf{Flujo principal} & 
+1. El cliente visualiza el catálogo. \newline
+2. Selecciona un producto y lo añade al carrito. \newline
+3. La WebApp actualiza las unidades y el total del carrito. \newline
+4. El cliente modifica cantidades o elimina elementos. \newline
+5. El sistema mantiene los datos sincronizados. \\ \hline
+
+\textbf{Flujos alternativos} &
+2.a El producto no tiene suficiente stock y se muestra un aviso. \newline
+4.a Si el cliente no tiene carrito, el sistema crea uno automáticamente. \\ \hline
+
+\textbf{Requisitos funcionales relacionados} & RF-02, RF-03 \\ \hline
+\end{tabular}
+\caption{Especificación del flujo DSGS-01 Gestión de carrito.}
+\end{table}
+
 
 \paragraph{Compra estándar}
 
@@ -74,6 +112,47 @@ También se representa la respuesta automatizada del agente \textit{n8n} para co
     \label{fig:compra1}
 \end{figure}
 
+\subsubsection{DSGS-02 Compra estándar — Parte 1 (autenticación y carrito)}
+\begingroup
+\setlength{\intextsep}{0pt}%
+\setlength{\abovecaptionskip}{0pt}%
+\setlength{\belowcaptionskip}{0pt}%
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{|p{0.28\textwidth}|p{0.65\textwidth}|}
+\hline
+\textbf{Nombre} & DSGS-02 Compra estándar — Parte 1 \\ \hline
+
+\textbf{Actor(es)} & Cliente, WebApp \\ \hline
+
+\textbf{Descripción} & 
+Describe el inicio del proceso de compra: autenticación del cliente y revisión del carrito antes de continuar al checkout. \\ \hline
+
+\textbf{Precondiciones} & 
+El cliente debe estar registrado y tener acceso a la WebApp. \\ \hline
+
+\textbf{Postcondiciones} & 
+El cliente queda autenticado y el carrito listo para proceder al pago. \\ \hline
+
+\textbf{Flujo principal} & 
+1. El cliente accede a la WebApp. \newline
+2. El sistema solicita autenticación. \newline
+3. El cliente introduce sus credenciales. \newline
+4. La WebApp valida la autenticación. \newline
+5. El cliente revisa el carrito y continúa al checkout. \\ \hline
+
+\textbf{Flujos alternativos} &
+4.a Credenciales incorrectas → se muestra un mensaje de error. \\ \hline
+
+\textbf{Requisitos funcionales relacionados} & RF-01, RF-02 \\ \hline
+\end{tabular}
+\caption{Especificación del flujo DSGS-02 Compra estándar — Parte 1.}
+\end{table}
+\endgroup
+
+
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.95\textwidth]{figs/Compra_estandar_2.png}
@@ -81,12 +160,92 @@ También se representa la respuesta automatizada del agente \textit{n8n} para co
     \label{fig:compra2}
 \end{figure}
 
+\subsubsection{DSGS-03 Compra estándar — Parte 2 (checkout y pago)}
+\begingroup
+\setlength{\intextsep}{0pt}%
+\setlength{\abovecaptionskip}{0pt}%
+\setlength{\belowcaptionskip}{0pt}%
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{|p{0.28\textwidth}|p{0.65\textwidth}|}
+\hline
+\textbf{Nombre} & DSGS-03 Compra estándar — Parte 2 \\ \hline
+
+\textbf{Actor(es)} & Cliente, WebApp, Stripe, n8n \\ \hline
+
+\textbf{Descripción} & 
+Describe el proceso del checkout: introducción de datos, creación del pedido y procesamiento del pago mediante Stripe. \\ \hline
+
+\textbf{Precondiciones} & 
+El cliente debe estar autenticado y disponer de un carrito válido. \\ \hline
+
+\textbf{Postcondiciones} & 
+El pago se confirma, el pedido se marca como “pagado” y se notifican las automatizaciones en n8n. \\ \hline
+
+\textbf{Flujo principal} & 
+1. El cliente accede al checkout. \newline
+2. Introduce datos personales y dirección. \newline
+3. Selecciona el método de pago. \newline
+4. La WebApp crea el pedido en estado “pendiente”. \newline
+5. Stripe procesa el pago. \newline
+6. Stripe confirma el pago a la WebApp. \newline
+7. La WebApp notifica a n8n para automatizaciones post-compra. \\ \hline
+
+\textbf{Flujos alternativos} &
+5.a Stripe requiere autenticación adicional (3D Secure). \newline
+7.a Error notificando a n8n → reintento automático. \\ \hline
+
+\textbf{Requisitos funcionales relacionados} & RF-04, RF-05, RF-06 \\ \hline
+\end{tabular}
+\caption{Especificación del flujo DSGS-03 Compra estándar — Parte 2.}
+\end{table}
+\endgroup
+
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.95\textwidth]{figs/Compra_estandar_3.png}
     \caption{Diagrama de secuencia — parte 3: flujo alternativo de pago fallido}
     \label{fig:compra3}
 \end{figure}
+
+\subsubsection{DSGS-04 Compra estándar — Parte 3 (pago fallido)}
+\begingroup
+\setlength{\intextsep}{0pt}%
+\setlength{\abovecaptionskip}{0pt}%
+\setlength{\belowcaptionskip}{0pt}%
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{|p{0.28\textwidth}|p{0.65\textwidth}|}
+\hline
+\textbf{Nombre} & DSGS-04 Compra estándar — Parte 3 \\ \hline
+
+\textbf{Actor(es)} & Cliente, WebApp, Stripe \\ \hline
+
+\textbf{Descripción} & 
+Representa el flujo alternativo donde el pago es rechazado por la pasarela de pago Stripe. \\ \hline
+
+\textbf{Precondiciones} & 
+El cliente se encuentra en el proceso de pago. \\ \hline
+
+\textbf{Postcondiciones} & 
+El pedido no se completa y se informa al cliente del error. \\ \hline
+
+\textbf{Flujo principal} & 
+1. Stripe intenta procesar el pago. \newline
+2. Stripe devuelve una respuesta de error. \newline
+3. La WebApp muestra un mensaje indicando que el pago ha fallado. \\ \hline
+
+\textbf{Flujos alternativos} &
+— No aplica. \\ \hline
+
+\textbf{Requisitos funcionales relacionados} & RF-05 \\ \hline
+\end{tabular}
+\caption{Especificación del flujo DSGS-04 Compra estándar — Parte 3.}
+\end{table}
+\endgroup
 
 
 \paragraph{Generación de factura}
@@ -100,6 +259,44 @@ Una vez validado el pago, el sistema genera el documento asociado y lo envía al
     \caption{Diagrama de secuencia — generación de factura}
     \label{fig:factura}
 \end{figure}
+
+\subsubsection{DSGS-05 Generación de factura}
+\begingroup
+\setlength{\intextsep}{0pt}%
+\setlength{\abovecaptionskip}{0pt}%
+\setlength{\belowcaptionskip}{0pt}%
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{|p{0.28\textwidth}|p{0.65\textwidth}|}
+\hline
+\textbf{Nombre} & DSGS-05 Generación de factura \\ \hline
+
+\textbf{Actor(es)} & WebApp, n8n \\ \hline
+
+\textbf{Descripción} & 
+Una vez confirmado el pago del pedido, la WebApp notifica a n8n, que genera la factura correspondiente y la envía al cliente. \\ \hline
+
+\textbf{Precondiciones} & 
+El pedido debe estar registrado como pagado. \\ \hline
+
+\textbf{Postcondiciones} & 
+La factura queda creada, almacenada y enviada al cliente. \\ \hline
+
+\textbf{Flujo principal} & 
+1. La WebApp envía un webhook a n8n indicando que el pedido está pagado. \newline
+2. n8n genera la factura. \newline
+3. n8n almacena o registra la factura en el sistema. \newline
+4. n8n envía la factura por correo al cliente. \\ \hline
+
+\textbf{Flujos alternativos} &
+2.a Error generando la factura → n8n programa un reintento. \\ \hline
+
+\textbf{Requisitos funcionales relacionados} & RF-07 \\ \hline
+\end{tabular}
+\caption{Especificación del flujo DSGS-05 Generación de factura.}
+\end{table}
+\endgroup
 \clearpage
 
 \paragraph{Abandono de carrito}
@@ -113,6 +310,44 @@ Si un usuario añade productos pero no completa la compra en un tiempo determina
     \caption{Diagrama de secuencia — abandono de carrito}
     \label{fig:abandono}
 \end{figure}
+
+\subsubsection{DSGS-06 Abandono de carrito}
+\begingroup
+\setlength{\intextsep}{0pt}%
+\setlength{\abovecaptionskip}{0pt}%
+\setlength{\belowcaptionskip}{0pt}%
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{|p{0.28\textwidth}|p{0.65\textwidth}|}
+\hline
+\textbf{Nombre} & DSGS-06 Abandono de carrito \\ \hline
+
+\textbf{Actor(es)} & WebApp, n8n \\ \hline
+
+\textbf{Descripción} & 
+Proceso automatizado que detecta carritos inactivos y libera el stock asociado. \\ \hline
+
+\textbf{Precondiciones} & 
+Debe existir un carrito inactivo durante un periodo de tiempo determinado. \\ \hline
+
+\textbf{Postcondiciones} & 
+El carrito se marca como abandonado y el stock se libera. \\ \hline
+
+\textbf{Flujo principal} & 
+1. n8n ejecuta un flujo programado. \newline
+2. Identifica los carritos inactivos. \newline
+3. Marca estos carritos como abandonados. \newline
+4. Libera stock en la base de datos. \\ \hline
+
+\textbf{Flujos alternativos} &
+4.a Error actualizando stock → n8n registra el error. \\ \hline
+
+\textbf{Requisitos funcionales relacionados} & RF-08 \\ \hline
+\end{tabular}
+\caption{Especificación del flujo DSGS-06 Abandono de carrito.}
+\end{table}
+\endgroup
 \clearpage
 
 \paragraph{Bajo stock}
@@ -126,6 +361,45 @@ Cuando el inventario de un producto alcanza un umbral mínimo, el sistema ejecut
     \caption{Diagrama de secuencia — notificación de bajo stock}
     \label{fig:bajo_stock}
 \end{figure}
+
+\subsubsection{DSGS-07 Bajo stock}
+\begingroup
+\setlength{\intextsep}{0pt}%
+\setlength{\abovecaptionskip}{0pt}%
+\setlength{\belowcaptionskip}{0pt}%
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{|p{0.28\textwidth}|p{0.65\textwidth}|}
+\hline
+\textbf{Nombre} & DSGS-07 Notificación de bajo stock \\ \hline
+
+\textbf{Actor(es)} & WebApp, n8n, Administrador \\ \hline
+
+\textbf{Descripción} & 
+Cuando el nivel de stock de un producto cae por debajo del umbral configurado, n8n envía una notificación al administrador. \\ \hline
+
+\textbf{Precondiciones} & 
+Debe existir al menos un producto cuyo stock esté por debajo del mínimo. \\ \hline
+
+\textbf{Postcondiciones} & 
+El administrador recibe un aviso para reponer el stock. \\ \hline
+
+\textbf{Flujo principal} & 
+1. La WebApp detecta el cambio de stock. \newline
+2. Notifica a n8n. \newline
+3. n8n verifica si el stock está por debajo del umbral. \newline
+4. n8n envía una alerta al administrador. \\ \hline
+
+\textbf{Flujos alternativos} &
+— No aplica. \\ \hline
+
+\textbf{Requisitos funcionales relacionados} & RF-09 \\ \hline
+\end{tabular}
+\caption{Especificación del flujo DSGS-07 Bajo stock.}
+\end{table}
+\endgroup
+\clearpage
 
 \section{Diseño de la base de datos}
 
