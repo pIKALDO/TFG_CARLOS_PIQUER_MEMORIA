@@ -7,7 +7,7 @@
 \subsection{Diagrama de casos de uso}
 
 Para representar las interacciones entre los diferentes actores del sistema se ha elaborado el diagrama de casos de uso mostrado en la Figura~\ref{fig:casos_uso}. 
-Este permite visualizar de forma general las funcionalidades principales y la relación entre el cliente, el administrador y el agente automatizador \textit{n8n}.
+Este permite visualizar de forma general las funcionalidades principales y la relación entre el cliente, el administrador y el \textit{bot de Telegram}.
 
 \begin{figure}[H]
     \centering
@@ -43,8 +43,8 @@ La Figura~\ref{fig:dsgs} muestra el \textbf{diagrama de secuencia general del si
 que representa de forma dinámica las interacciones entre los principales actores externos 
 y la \textit{WebApp}. En él se detalla el flujo completo de una compra, 
 desde el inicio de sesión del cliente, la selección de productos y la realización del pedido, 
-hasta la comunicación con la pasarela de pago \textit{Stripe} 
-y la notificación del resultado a la plataforma de automatización \textit{n8n}. 
+hasta la comunicación con la pasarela de pago \textit{Stripe}
+y la notificación del resultado al \textit{bot de Telegram}. 
 El diagrama también incluye un flujo alternativo en el que se muestra el manejo de un posible error de pago. 
 Este modelo complementa al diagrama de casos de uso al ofrecer una visión temporal del comportamiento global del sistema.
 
@@ -63,18 +63,18 @@ Este modelo complementa al diagrama de casos de uso al ofrecer una visión tempo
 \hline
 \textbf{Nombre} & DSGS-00 Diagrama de secuencia general del sistema \\ \hline
 
-\textbf{Actor(es)} & Cliente, WebApp, Stripe, n8n \\ \hline
+\textbf{Actor(es)} & Cliente, WebApp, Stripe, Bot de Telegram \\ \hline
 
 \textbf{Descripción} &
 Representa el flujo global del sistema durante el proceso de compra: inicio de sesión del cliente,
-gestión del carrito, procesamiento del pago a través de Stripe y notificación del resultado a n8n,
+gestión del carrito, procesamiento del pago a través de Stripe y notificación del resultado al bot de Telegram,
 incluyendo un flujo alternativo en caso de error de pago. \\ \hline
 
 \textbf{Precondiciones} &
-El cliente debe tener acceso a la WebApp y existir conexión con Stripe y n8n. \\ \hline
+El cliente debe tener acceso a la WebApp y existir conexión con Stripe y el bot de Telegram. \\ \hline
 
 \textbf{Postcondiciones} &
-El pedido queda confirmado o rechazado, y n8n recibe la notificación para ejecutar las tareas automáticas. \\ \hline
+El pedido queda confirmado o rechazado, y el bot de Telegram recibe la notificación para ejecutar las tareas automáticas. \\ \hline
 
 \textbf{Flujo principal} &
 1. El cliente inicia sesión. \newline
@@ -83,7 +83,7 @@ El pedido queda confirmado o rechazado, y n8n recibe la notificación para ejecu
 4. La WebApp envía el pago a Stripe. \newline
 5. Stripe confirma el pago. \newline
 6. La WebApp confirma el pedido. \newline
-7. La WebApp notifica a n8n para ejecutar tareas post-compra. \\ \hline
+7. La WebApp notifica al bot de Telegram para ejecutar tareas post-compra. \\ \hline
 
 \textbf{Flujos alternativos} &
 4.a Stripe devuelve un error → la WebApp muestra el fallo al cliente. \\ \hline

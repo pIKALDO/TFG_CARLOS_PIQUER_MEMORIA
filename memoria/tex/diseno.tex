@@ -18,7 +18,7 @@ El sistema se basa en una arquitectura de tres capas que facilita la separación
     \item \textbf{Base de datos:} gestionada con el motor \textit{MySQL}, donde se almacenan las entidades principales del sistema.
 \end{itemize}
 
-Además, el sistema integra un agente automatizador \textit{n8n} encargado de tareas como el envío de notificaciones post-compra, la generación automática de facturas o la detección de carritos abandonados.  
+Además, el sistema integra un \textit{bot de Telegram} encargado de tareas como el envío de notificaciones post-compra, la generación automática de facturas o la detección de carritos abandonados.  
 Esta arquitectura modular permite una comunicación fluida entre componentes y facilita la futura ampliación del sistema.
 
 \section{Diagramas UML}
@@ -103,7 +103,7 @@ El carrito queda actualizado correctamente con los productos seleccionados y sus
 
 A continuación, se muestra el flujo completo del proceso de compra.  
 Incluye la autenticación del usuario, la creación del checkout, la comunicación con el servicio de pago \textit{Stripe} y la confirmación del pedido.  
-También se representa la respuesta automatizada del agente \textit{n8n} para confirmar la compra, descontar el stock y generar la factura.
+También se representa la respuesta automatizada del \textit{bot de Telegram} para confirmar la compra, descontar el stock y generar la factura.
 
 \begin{figure}[H]
     \centering
@@ -172,29 +172,29 @@ El cliente queda autenticado y el carrito listo para proceder al pago. \\ \hline
 \hline
 \textbf{Nombre} & DSGS-03 Compra estándar — Parte 2 \\ \hline
 
-\textbf{Actor(es)} & Cliente, WebApp, Stripe, n8n \\ \hline
+\textbf{Actor(es)} & Cliente, WebApp, Stripe, Bot de Telegram \\ \hline
 
-\textbf{Descripción} & 
+\textbf{Descripción} &
 Describe el proceso del checkout: introducción de datos, creación del pedido y procesamiento del pago mediante Stripe. \\ \hline
 
-\textbf{Precondiciones} & 
+\textbf{Precondiciones} &
 El cliente debe estar autenticado y disponer de un carrito válido. \\ \hline
 
-\textbf{Postcondiciones} & 
-El pago se confirma, el pedido se marca como “pagado” y se notifican las automatizaciones en n8n. \\ \hline
+\textbf{Postcondiciones} &
+El pago se confirma, el pedido se marca como “pagado” y se notifica al bot de Telegram. \\ \hline
 
-\textbf{Flujo principal} & 
+\textbf{Flujo principal} &
 1. El cliente accede al checkout. \newline
 2. Introduce datos personales y dirección. \newline
 3. Selecciona el método de pago. \newline
 4. La WebApp crea el pedido en estado “pendiente”. \newline
 5. Stripe procesa el pago. \newline
 6. Stripe confirma el pago a la WebApp. \newline
-7. La WebApp notifica a n8n para automatizaciones post-compra. \\ \hline
+7. La WebApp notifica al bot de Telegram para las tareas post-compra. \\ \hline
 
 \textbf{Flujos alternativos} &
 5.a Stripe requiere autenticación adicional (3D Secure). \newline
-7.a Error notificando a n8n → reintento automático. \\ \hline
+7.a Error notificando al bot de Telegram → reintento automático. \\ \hline
 
 \textbf{Requisitos funcionales relacionados} & RF-04, RF-05, RF-06 \\ \hline
 \end{tabular}
@@ -250,8 +250,8 @@ El pedido no se completa y se informa al cliente del error. \\ \hline
 
 \paragraph{Generación de factura}
 
-Este diagrama muestra el proceso automatizado de creación de facturas tras la confirmación de un pedido.  
-Una vez validado el pago, el sistema genera el documento asociado y lo envía al cliente mediante el agente \textit{n8n}, garantizando así un flujo de trabajo totalmente automatizado.
+Este diagrama muestra el proceso automatizado de creación de facturas tras la confirmación de un pedido.
+Una vez validado el pago, el sistema genera el documento asociado y lo envía al cliente mediante el \textit{bot de Telegram}, garantizando así un flujo de trabajo totalmente automatizado.
 
 \begin{figure}[H]
     \centering
@@ -272,25 +272,25 @@ Una vez validado el pago, el sistema genera el documento asociado y lo envía al
 \hline
 \textbf{Nombre} & DSGS-05 Generación de factura \\ \hline
 
-\textbf{Actor(es)} & WebApp, n8n \\ \hline
+\textbf{Actor(es)} & WebApp, Bot de Telegram \\ \hline
 
-\textbf{Descripción} & 
-Una vez confirmado el pago del pedido, la WebApp notifica a n8n, que genera la factura correspondiente y la envía al cliente. \\ \hline
+\textbf{Descripción} &
+Una vez confirmado el pago del pedido, la WebApp notifica al bot de Telegram, que genera la factura correspondiente y la envía al cliente. \\ \hline
 
-\textbf{Precondiciones} & 
+\textbf{Precondiciones} &
 El pedido debe estar registrado como pagado. \\ \hline
 
-\textbf{Postcondiciones} & 
+\textbf{Postcondiciones} &
 La factura queda creada, almacenada y enviada al cliente. \\ \hline
 
-\textbf{Flujo principal} & 
-1. La WebApp envía un webhook a n8n indicando que el pedido está pagado. \newline
-2. n8n genera la factura. \newline
-3. n8n almacena o registra la factura en el sistema. \newline
-4. n8n envía la factura por correo al cliente. \\ \hline
+\textbf{Flujo principal} &
+1. La WebApp notifica al bot de Telegram indicando que el pedido está pagado. \newline
+2. El bot de Telegram genera la factura. \newline
+3. El bot de Telegram almacena o registra la factura en el sistema. \newline
+4. El bot de Telegram envía la factura por mensaje al cliente. \\ \hline
 
 \textbf{Flujos alternativos} &
-2.a Error generando la factura → n8n programa un reintento. \\ \hline
+2.a Error generando la factura → el bot de Telegram programa un reintento. \\ \hline
 
 \textbf{Requisitos funcionales relacionados} & RF-07 \\ \hline
 \end{tabular}
@@ -323,25 +323,25 @@ Si un usuario añade productos pero no completa la compra en un tiempo determina
 \hline
 \textbf{Nombre} & DSGS-06 Abandono de carrito \\ \hline
 
-\textbf{Actor(es)} & WebApp, n8n \\ \hline
+\textbf{Actor(es)} & WebApp, Bot de Telegram \\ \hline
 
-\textbf{Descripción} & 
+\textbf{Descripción} &
 Proceso automatizado que detecta carritos inactivos y libera el stock asociado. \\ \hline
 
-\textbf{Precondiciones} & 
+\textbf{Precondiciones} &
 Debe existir un carrito inactivo durante un periodo de tiempo determinado. \\ \hline
 
-\textbf{Postcondiciones} & 
+\textbf{Postcondiciones} &
 El carrito se marca como abandonado y el stock se libera. \\ \hline
 
-\textbf{Flujo principal} & 
-1. n8n ejecuta un flujo programado. \newline
+\textbf{Flujo principal} &
+1. El bot de Telegram ejecuta una tarea programada. \newline
 2. Identifica los carritos inactivos. \newline
 3. Marca estos carritos como abandonados. \newline
 4. Libera stock en la base de datos. \\ \hline
 
 \textbf{Flujos alternativos} &
-4.a Error actualizando stock → n8n registra el error. \\ \hline
+4.a Error actualizando stock → el bot de Telegram registra el error. \\ \hline
 
 \textbf{Requisitos funcionales relacionados} & RF-08 \\ \hline
 \end{tabular}
@@ -353,7 +353,7 @@ El carrito se marca como abandonado y el stock se libera. \\ \hline
 \paragraph{Bajo stock}
 
 Por último, se representa el proceso de notificación de stock bajo.  
-Cuando el inventario de un producto alcanza un umbral mínimo, el sistema ejecuta una tarea automatizada que envía un aviso al administrador mediante el agente \textit{n8n}, permitiendo reponer el producto a tiempo.
+Cuando el inventario de un producto alcanza un umbral mínimo, el sistema ejecuta una tarea automatizada que envía un aviso al administrador mediante el \textit{bot de Telegram}, permitiendo reponer el producto a tiempo.
 
 \begin{figure}[H]
     \centering
@@ -374,22 +374,22 @@ Cuando el inventario de un producto alcanza un umbral mínimo, el sistema ejecut
 \hline
 \textbf{Nombre} & DSGS-07 Notificación de bajo stock \\ \hline
 
-\textbf{Actor(es)} & WebApp, n8n, Administrador \\ \hline
+\textbf{Actor(es)} & WebApp, Bot de Telegram, Administrador \\ \hline
 
-\textbf{Descripción} & 
-Cuando el nivel de stock de un producto cae por debajo del umbral configurado, n8n envía una notificación al administrador. \\ \hline
+\textbf{Descripción} &
+Cuando el nivel de stock de un producto cae por debajo del umbral configurado, el bot de Telegram envía una notificación al administrador. \\ \hline
 
-\textbf{Precondiciones} & 
+\textbf{Precondiciones} &
 Debe existir al menos un producto cuyo stock esté por debajo del mínimo. \\ \hline
 
-\textbf{Postcondiciones} & 
+\textbf{Postcondiciones} &
 El administrador recibe un aviso para reponer el stock. \\ \hline
 
-\textbf{Flujo principal} & 
+\textbf{Flujo principal} &
 1. La WebApp detecta el cambio de stock. \newline
-2. Notifica a n8n. \newline
-3. n8n verifica si el stock está por debajo del umbral. \newline
-4. n8n envía una alerta al administrador. \\ \hline
+2. Notifica al bot de Telegram. \newline
+3. El bot de Telegram verifica si el stock está por debajo del umbral. \newline
+4. El bot de Telegram envía una alerta al administrador. \\ \hline
 
 \textbf{Flujos alternativos} &
 — No aplica. \\ \hline

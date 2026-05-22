@@ -254,83 +254,82 @@ Soporte empresarial & Muy alto & Medio & Medio \\ \hline
 \end{table}
 
 
-\subsection{Agentes de automatización}
+\subsection{Bots de Telegram}
 
-\subsubsection{Zapier}
-Zapier es una herramienta para automatizar tareas mediante la conexión de aplicaciones. Destaca por su simplicidad y facilidad de uso, aunque sus funcionalidades avanzadas requieren una suscripción de pago\cite{zapierDocs}.
+Los bots de Telegram son programas automatizados que interactúan con usuarios a través de la plataforma de mensajería Telegram mediante su API oficial. Permiten enviar notificaciones, gestionar comandos y ejecutar acciones en respuesta a eventos externos, lo que los convierte en una alternativa práctica para integrar comunicaciones automatizadas en aplicaciones web. A continuación se analizan las principales librerías disponibles para su desarrollo.
+
+\subsubsection{python-telegram-bot}
+python-telegram-bot es una librería de código abierto escrita en Python que proporciona una interfaz completa para interactuar con la API oficial de Telegram \cite{pythonTelegramBotDocs}. Ofrece soporte tanto para \textit{polling} como para \textit{webhooks}, y su diseño basado en \textit{handlers} facilita la estructuración del código. Sin embargo, al estar escrita en Python, su integración con proyectos Java como Spring Boot requiere desplegar un servicio adicional.
 
 \textbf{Ventajas:}
 \begin{itemize}
-    \item Muy fácil de usar.
-    \item Gran catálogo de aplicaciones compatibles.
-    \item Ideal para tareas simples y rápidas.
-    \item Interfaz visual clara y moderna.
+    \item Librería madura y bien documentada.
+    \item Soporte completo para la API de Telegram.
+    \item Gran comunidad activa y amplia cantidad de ejemplos.
+    \item Compatible con \textit{polling} y \textit{webhooks}.
 \end{itemize}
 
 \textbf{Desventajas:}
 \begin{itemize}
-    \item Las funciones avanzadas requieren suscripción.
-    \item Limitado control sobre la configuración interna.
-    \item Escasa flexibilidad para integraciones complejas.
-    \item No permite autoalojamiento.
+    \item Requiere un servicio Python independiente si el backend es Java.
+    \item Mayor complejidad de despliegue en proyectos políglotas.
+    \item Gestión de dependencias separada del proyecto principal.
+    \item Puede presentar latencias si no se configura correctamente el \textit{webhook}.
 \end{itemize}
 
-\subsubsection{Make}
-Make, anteriormente conocido como Integromat, es una herramienta que ofrece un
-sistema visual para crear flujos de trabajo más complejos que en Zapier. Es potente y
-flexible, aunque su uso intensivo también depende de planes de pago y de la integración
-con servicios externos\cite{makeDocs}.
+\subsubsection{Telegraf}
+Telegraf es un framework moderno para el desarrollo de bots de Telegram basado en Node.js y TypeScript \cite{telegrafDocs}. Destaca por su arquitectura orientada a \textit{middleware} y su sintaxis clara y expresiva, lo que facilita la creación de bots complejos con pocas líneas de código. Al igual que python-telegram-bot, requiere un entorno de ejecución independiente cuando se combina con un backend Java.
 
 \textbf{Ventajas:}
 \begin{itemize}
-    \item Muy flexible para automatizaciones avanzadas.
-    \item Interfaz visual potente y configurable.
-    \item Permite múltiples pasos por flujo.
-    \item Buen equilibrio entre facilidad y personalización.
+    \item Sintaxis moderna y expresiva basada en \textit{middleware}.
+    \item Soporte nativo para TypeScript.
+    \item Amplio ecosistema de plugins y extensiones.
+    \item Buena documentación y comunidad activa.
 \end{itemize}
 
 \textbf{Desventajas:}
 \begin{itemize}
-    \item Algunas funciones requieren plan de pago.
-    \item Requiere conexión constante a la nube.
-    \item Mayor complejidad de uso frente a Zapier.
-    \item Menor documentación en español.
+    \item Requiere entorno Node.js separado del backend Java.
+    \item Curva de aprendizaje mayor si no se tiene experiencia con Node.js.
+    \item Dependencia del ecosistema NPM.
+    \item Configuración adicional para despliegues en producción.
 \end{itemize}
 
-\subsubsection{n8n}
-n8n es una plataforma de automatización de código abierto que permite crear flujos personalizados e instalarlos en servidores propios, sin necesidad de planes de pago. Ofrece un gran control sobre la configuración y resulta una herramienta intuitiva y fácil de utilizar \cite{n8nDocs}.
+\subsubsection{TelegramBots (Java)}
+TelegramBots es una librería Java de código abierto que implementa la API de Telegram directamente en el ecosistema Java \cite{telegramBotsDocs}. Su integración nativa con Spring Boot permite incorporar el bot dentro del mismo proyecto sin necesidad de servicios adicionales, simplificando el despliegue y el mantenimiento. Es la opción más coherente para proyectos backend basados en Java.
 
 \textbf{Ventajas:}
 \begin{itemize}
-    \item Totalmente open source y gratuita.
-    \item Puede instalarse en servidores propios.
-    \item Gran control sobre la configuración.
-    \item Compatible con múltiples servicios y APIs.
+    \item Integración directa con Spring Boot sin servicios adicionales.
+    \item Mismo lenguaje y entorno que el resto del backend.
+    \item Soporte completo para la API de Telegram.
+    \item Simplifica el despliegue al unificar bot y backend en un solo proyecto.
 \end{itemize}
 
 \textbf{Desventajas:}
 \begin{itemize}
-    \item Requiere configuración inicial manual.
-    \item Menor comunidad que Zapier.
-    \item No tan intuitiva para principiantes.
-    \item Necesita recursos del servidor donde se aloje.
+    \item Comunidad más reducida que las alternativas en Python o Node.js.
+    \item Documentación menos extensa en comparación con python-telegram-bot.
+    \item Menor cantidad de ejemplos y recursos de aprendizaje.
+    \item Actualizaciones menos frecuentes que otras librerías.
 \end{itemize}
 
 \subsubsection{Comparación y elección}
-Zapier y Make destacan por su facilidad de uso y popularidad, pero dependen de planes de suscripción y de servicios externos, además de no ofrecer un control total sobre la configuración. En este TFG se ha optado por n8n por ser una solución open source, gratuita y altamente configurable, lo que facilita su integración con la arquitectura  propuesta.
+Las tres opciones analizadas permiten desarrollar bots funcionales para Telegram, pero difieren en el lenguaje y el entorno de ejecución requerido. python-telegram-bot y Telegraf destacan por su popularidad y documentación, aunque ambas necesitan un servicio independiente cuando el backend está desarrollado en Java. Para este TFG se ha optado por \textbf{TelegramBots (Java)} por su integración nativa con Spring Boot, lo que permite incorporar el bot directamente en el mismo proyecto sin añadir complejidad de despliegue. Esta elección mantiene la coherencia tecnológica de la arquitectura y facilita el mantenimiento del sistema.
 
 \begin{table}[H]
 \centering
 \begin{tabular}{|l|c|c|c|}
 \hline
-\textbf{Criterio} & \textbf{Zapier} & \textbf{Make} & \textbf{n8n} \\ \hline
-Tipo de licencia & De pago & Freemium & Open source \\ \hline
-Facilidad de uso & Muy alta & Alta & Media \\ \hline
-Control y personalización & Bajo & Medio & Alto \\ \hline
-Coste & Elevado & Medio & Gratuito \\ \hline
-Soporte técnico & Alto & Medio & Medio \\ \hline
+\textbf{Criterio} & \textbf{python-telegram-bot} & \textbf{Telegraf} & \textbf{TelegramBots (Java)} \\ \hline
+Lenguaje & Python & Node.js / TypeScript & Java \\ \hline
+Integración con Spring Boot & Indirecta & Indirecta & Nativa \\ \hline
+Facilidad de uso & Alta & Alta & Media \\ \hline
+Documentación & Muy completa & Completa & Limitada \\ \hline
+Despliegue en proyecto Java & Complejo & Complejo & Simple \\ \hline
 \end{tabular}
-\caption{Comparativa de agentes de automatización}
+\caption{Comparativa de librerías para bots de Telegram}
 \end{table}
 
 

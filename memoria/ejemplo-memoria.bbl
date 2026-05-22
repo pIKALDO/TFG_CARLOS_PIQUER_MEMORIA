@@ -54,22 +54,22 @@
 \newblock \url{https://docs.djangoproject.com/en/5.0/}, 2025.
 \newblock Consultado en octubre de 2025.
 
-\bibitem{zapierDocs}
-{Zapier Inc.}
-\newblock {Zapier Help Center}.
-\newblock \url{https://help.zapier.com/}, 2025.
+\bibitem{pythonTelegramBotDocs}
+{python-telegram-bot Contributors}.
+\newblock {python-telegram-bot Documentation}.
+\newblock \url{https://docs.python-telegram-bot.org/}, 2025.
 \newblock Consultado en octubre de 2025.
 
-\bibitem{makeDocs}
-{Celonis SE}.
-\newblock {Make (formerly Integromat) Documentation}.
-\newblock \url{https://www.make.com/en/help}, 2025.
+\bibitem{telegrafDocs}
+{Telegraf Contributors}.
+\newblock {Telegraf Documentation}.
+\newblock \url{https://telegraf.js.org/}, 2025.
 \newblock Consultado en octubre de 2025.
 
-\bibitem{n8nDocs}
-{n8n.io}.
-\newblock {n8n Documentation}.
-\newblock \url{https://docs.n8n.io/}, 2025.
+\bibitem{telegramBotsDocs}
+{Ruben Bermudez}.
+\newblock {TelegramBots Java Library}.
+\newblock \url{https://github.com/rubenlagus/TelegramBots}, 2025.
 \newblock Consultado en octubre de 2025.
 
 \bibitem{mysqlDocs}

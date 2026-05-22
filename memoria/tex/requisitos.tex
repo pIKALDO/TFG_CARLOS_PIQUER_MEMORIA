@@ -10,7 +10,7 @@ El objetivo es definir las \textbf{funcionalidades necesarias} para el correcto 
 % Requisitos del sistema
 \section{Requisitos}
 
-El sistema propuesto consiste en una \textbf{plataforma web de comercio electrónico para una droguería} que permite a los usuarios registrarse, explorar productos, filtrar resultados, gestionar su carrito de compra, realizar pagos mediante un servicio externo (Stripe) y recibir notificaciones automáticas mediante el sistema n8n. 
+El sistema propuesto consiste en una \textbf{plataforma web de comercio electrónico para una droguería} que permite a los usuarios registrarse, explorar productos, filtrar resultados, gestionar su carrito de compra, realizar pagos mediante un servicio externo (Stripe) y recibir notificaciones automáticas mediante el bot de Telegram. 
 Por parte del administrador, el sistema debe permitir filtrar pedidos, añadir productos, así como consultar y modificar los pedidos existentes.
 
 A continuación, se detallan los requisitos funcionales y no funcionales definidos para el proyecto.
@@ -24,7 +24,7 @@ A continuación, se detallan los requisitos funcionales y no funcionales definid
     \item \textbf{RF-04:} El sistema debe permitir realizar pedidos a través de una pasarela de pago (Stripe).
     \item \textbf{RF-05:} El sistema debe permitir al administrador gestionar el inventario de productos (crear, editar, eliminar).
     \item \textbf{RF-06:} El sistema debe generar y almacenar facturas de los pedidos realizados.
-    \item \textbf{RF-07:} El sistema debe enviar notificaciones automáticas de confirmación de pedido y aviso de bajo stock mediante n8n.
+    \item \textbf{RF-07:} El sistema debe enviar notificaciones automáticas de confirmación de pedido y aviso de bajo stock mediante el bot de Telegram.
     \item \textbf{RF-08:} El sistema debe permitir consultar el historial de pedidos y su estado.
     \item \textbf{RF-09:} El sistema debe eliminar automáticamente los carritos inactivos tras un periodo determinado.
 \end{itemize}
@@ -38,7 +38,7 @@ A continuación, se detallan los requisitos funcionales y no funcionales definid
     \item \textbf{RNF-04:} La base de datos debe permitir transacciones seguras y mantener la integridad referencial.
     \item \textbf{RNF-05:} El código debe estar estructurado siguiendo buenas prácticas de desarrollo (modularización, uso de control de versiones).
     \item \textbf{RNF-06:} El sistema debe permitir su despliegue local o en la nube sin necesidad de licencias adicionales.
-    \item \textbf{RNF-07:} Las automatizaciones mediante n8n deben ser ejecutadas en un entorno controlado y seguro.
+    \item \textbf{RNF-07:} Las notificaciones mediante el bot de Telegram deben ejecutarse en un entorno controlado y seguro.
 \end{itemize}
 
 % Especificación del sistema a partir de lo recogido en los requisitos
@@ -46,7 +46,7 @@ A continuación, se detallan los requisitos funcionales y no funcionales definid
 
 El sistema está diseñado como una \textbf{aplicación web moderna} basada en una arquitectura \textbf{frontend-backend}, en la que el cliente (Angular) se comunica con el servidor (Spring Boot) mediante \textit{API REST}. 
 La base de datos utilizada es \textbf{MySQL}, encargada de almacenar toda la información relativa a usuarios, productos, pedidos, pagos y facturas. 
-Además, el sistema incorpora \textbf{n8n} como herramienta de automatización para gestionar tareas recurrentes, como el envío de correos postcompra o las notificaciones de bajo stock.
+Además, el sistema incorpora un \textbf{bot de Telegram} para gestionar las notificaciones automáticas postcompra y los avisos de bajo stock.
 
 El sistema distingue entre dos tipos principales de usuarios:
 
@@ -76,18 +76,18 @@ Esta estructura permite identificar las dependencias entre tareas y establecer u
 1.1 & Definición de requisitos & -- \\
 1.2 & Estimación de costes y planificación & 1.1 \\
 1.3 & Análisis de riesgos & 1.2 \\
-1.4 & Estudio de herramientas (Angular, Spring Boot, n8n) & 1.3 \\
+1.4 & Estudio de herramientas (Angular, Spring Boot, bot de Telegram) & 1.3 \\
 2 & Análisis del sistema & 1 \\
 2.1 & Casos de uso de la aplicación & 1.4 \\
 2.2 & Modelo de datos y entidades principales & 2.1 \\
 3 & Diseño del sistema & 2 \\
-3.1 & Arquitectura general (frontend-backend-n8n) & 2.2 \\
+3.1 & Arquitectura general (frontend-backend-bot de Telegram) & 2.2 \\
 3.2 & Diagramas UML y diseño de base de datos & 3.1 \\
 4 & Implementación & 3 \\
 4.1 & Desarrollo del backend en Spring Boot & 3.2 \\
 4.2 & Desarrollo del frontend en Angular & 4.1 \\
 4.3 & Integración con Stripe y MySQL & 4.2 \\
-4.4 & Configuración de flujos n8n & 4.3 \\
+4.4 & Configuración del bot de Telegram & 4.3 \\
 5 & Pruebas y validación & 4 \\
 5.1 & Pruebas unitarias e integración & 4.4 \\
 5.2 & Validación con usuarios y optimización final & 5.1 \\
@@ -198,7 +198,7 @@ Tester / Validación & 40 h \\
 \hline
 \textbf{Seguridad Social (30 \%)} & Aplicado al coste de personal (30 \% × 4.000 €) & \textbf{1.200 €} \\
 \hline
-\textbf{Coste de software} & Herramientas gratuitas (Angular, Spring Boot, MySQL, n8n, VSCode, Postman) & 0 € \\
+\textbf{Coste de software} & Herramientas gratuitas (Angular, Spring Boot, MySQL, VSCode, Postman) & 0 € \\
 \hline
 \textbf{Coste de software con licencia universitaria} & Visual Paradigm (licencia académica proporcionada por la universidad) & 0 € \\
 \hline
@@ -266,7 +266,7 @@ Sobrecarga de trabajo o retrasos en la planificación & Media & Media & Organiza
 \hline
 Fallos de seguridad en la API o la base de datos & Baja & Alta & Seguridad \\
 \hline
-Falta de experiencia inicial con n8n & Media & Media & Técnica \\
+Falta de experiencia inicial con el bot de Telegram & Media & Media & Técnica \\
 \hline
 \end{tabular}
 \caption{Principales riesgos identificados durante el desarrollo del proyecto.}
@@ -285,7 +285,7 @@ A continuación, se describen las medidas generales de \textbf{mitigación y con
     
     \item \textbf{Fallos de seguridad en la aplicación o base de datos:} se harán copias de seguridad con frecuencia y se guardarán las contraseñas de forma segura. Además, se mantendrán las herramientas actualizadas para evitar problemas.
     
-    \item \textbf{Falta de experiencia con n8n:} se dedicará tiempo a aprender su funcionamiento antes de integrarlo por completo. Se probarán ejemplos sencillos para entender cómo crear los flujos y se consultará la documentación cuando sea necesario.
+    \item \textbf{Falta de experiencia con el bot de Telegram:} se dedicará tiempo a aprender el funcionamiento de la librería antes de integrarlo por completo. Se probarán ejemplos sencillos para entender cómo gestionar comandos y notificaciones, y se consultará la documentación cuando sea necesario.
 \end{itemize}
 Gracias a estas medidas, se espera que los riesgos identificados tengan un impacto limitado en el desarrollo y no comprometan los objetivos principales del proyecto.
 
@@ -302,9 +302,9 @@ Todas las tecnologías empleadas son de \textbf{código abierto} o disponen de \
 
 \subsection{Viabilidad técnica}
 
-El uso conjunto de \textbf{Angular}, \textbf{Spring Boot}, \textbf{MySQL} y \textbf{n8n} proporciona una solución estable, escalable y fácil de mantener. 
-Son herramientas actuales, bien documentadas y con una amplia comunidad de desarrolladores, lo que facilita la resolución de problemas y reduce el riesgo de incompatibilidades. 
-Además, el diseño modular del sistema permite incorporar futuras mejoras, como nuevos métodos de pago o automatizaciones adicionales, sin necesidad de modificar la estructura principal del proyecto.
+El uso conjunto de \textbf{Angular}, \textbf{Spring Boot}, \textbf{MySQL} y el \textbf{bot de Telegram} proporciona una solución estable, escalable y fácil de mantener.
+Son herramientas actuales, bien documentadas y con una amplia comunidad de desarrolladores, lo que facilita la resolución de problemas y reduce el riesgo de incompatibilidades.
+Además, el diseño modular del sistema permite incorporar futuras mejoras, como nuevos métodos de pago o notificaciones adicionales, sin necesidad de modificar la estructura principal del proyecto.
 
 \subsection{Viabilidad económica}
 

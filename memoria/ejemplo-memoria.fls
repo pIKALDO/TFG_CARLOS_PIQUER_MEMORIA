@@ -1,8 +1,8 @@
-PWD d:/UNI/4ºcurso/TFG/TFG_CARLOS_PIQUER_MEMORIA
+PWD d:/UNI/4ºcurso/TFG/TFG_CARLOS_PIQUER_MEMORIA/memoria
 INPUT c:/texlive/2025/texmf.cnf
 INPUT c:/texlive/2025/texmf-dist/web2c/texmf.cnf
 INPUT c:/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT d:/UNI/4ºcurso/TFG/TFG_CARLOS_PIQUER_MEMORIA/ejemplo-memoria.tex
+INPUT d:/UNI/4ºcurso/TFG/TFG_CARLOS_PIQUER_MEMORIA/memoria/ejemplo-memoria.tex
 OUTPUT ejemplo-memoria.log
 INPUT ./tfg.cls
 INPUT tfg.cls

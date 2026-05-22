@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex ejemplo-memoria"] 1764584290.96562 "ejemplo-memoria.aux" "ejemplo-memoria.bbl" "ejemplo-memoria" 1764584299.85398 0
-  "./bib/bibliografia.bib" 1762159111 4659 df0d5592ce3622d467bd82ad1f1e3b87 ""
+["bibtex ejemplo-memoria"] 1779461800.32555 "ejemplo-memoria.aux" "ejemplo-memoria.bbl" "ejemplo-memoria" 1779461813.40996 0
+  "./bib/bibliografia.bib" 1779460359 4759 158811b860e45c4fadea893c2499273b ""
   "c:/texlive/2025/texmf-dist/bibtex/bst/base/unsrt.bst" 1761754688 18030 1376b4b231b50c66211e47e42eda2875 ""
-  "ejemplo-memoria.aux" 1764584298 21709 e49752978358c8116db2243562b27a44 "pdflatex"
+  "ejemplo-memoria.aux" 1779461810 21786 66f8f3bbfbd2a5bc28ecfc2ce4a4b4bd "pdflatex"
   (generated)
   "ejemplo-memoria.bbl"
   "ejemplo-memoria.blg"
   (rewritten before read)
-["pdflatex"] 1764584291.57569 "d:/UNI/4ºcurso/TFG/TFG_CARLOS_PIQUER_MEMORIA/ejemplo-memoria.tex" "ejemplo-memoria.pdf" "ejemplo-memoria" 1764584299.85462 0
+["pdflatex"] 1779461801.18605 "d:/UNI/4ºcurso/TFG/TFG_CARLOS_PIQUER_MEMORIA/memoria/ejemplo-memoria.tex" "ejemplo-memoria.pdf" "ejemplo-memoria" 1779461813.41097 0
   "c:/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1761949396 2971 def0b6c1f0b107b3b936def894055589 ""
   "c:/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1761949396 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "c:/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1761950278 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -229,12 +229,12 @@
   "c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1761953391 5574015 a7b7a98a4f06bfabadaa7cfe571a4688 ""
   "c:/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1761953656 3629591 38785951eaf05a3411015ec08937776d ""
   "c:/texlive/2025/texmf.cnf" 1761953358 713 e69b156964470283e0530f5060668171 ""
-  "d:/UNI/4ºcurso/TFG/TFG_CARLOS_PIQUER_MEMORIA/ejemplo-memoria.tex" 1764583837 2799 ed32ed5e53e12857513e3dace161ae41 ""
-  "ejemplo-memoria.aux" 1764584298 21709 e49752978358c8116db2243562b27a44 "pdflatex"
-  "ejemplo-memoria.bbl" 1764584291 3263 f7bec65e072a5f7a2d4b296124276ecc "bibtex ejemplo-memoria"
-  "ejemplo-memoria.out" 1764584298 11947 568b48faac64e9c44f56e6d2f8ea3148 "pdflatex"
+  "d:/UNI/4ºcurso/TFG/TFG_CARLOS_PIQUER_MEMORIA/memoria/ejemplo-memoria.tex" 1764583837 2799 ed32ed5e53e12857513e3dace161ae41 ""
+  "ejemplo-memoria.aux" 1779461810 21786 66f8f3bbfbd2a5bc28ecfc2ce4a4b4bd "pdflatex"
+  "ejemplo-memoria.bbl" 1779461801 3364 08f7794a2d1cf9062d24b3b1177b971f "bibtex ejemplo-memoria"
+  "ejemplo-memoria.out" 1779461810 11899 eef823b3690473bac7b928fc382a0c89 "pdflatex"
   "ejemplo-memoria.tex" 1764583837 2799 ed32ed5e53e12857513e3dace161ae41 ""
-  "ejemplo-memoria.toc" 1764584298 7554 77ee2409a4fbce1e86639faf1c51c615 "pdflatex"
+  "ejemplo-memoria.toc" 1779461810 7577 7fdc0e68396d257f9337f7fa1c75c038 "pdflatex"
   "figs/Abandonodecarrito.jpg" 1762159111 33014 084d40707501145cdf97d5fd11327145 ""
   "figs/Bajostock.jpg" 1762159111 35165 2d25ce1b6ddbf59f8895b4cdeb4cf3f7 ""
   "figs/Caso_de uso_def.png" 1762159111 110021 7ac7223835786f0ba6172686baca7973 ""
@@ -256,14 +256,14 @@
   "figs/escudo_logo_UV.jpg" 1762159111 310940 255ff6567a10d16f1faf2018ca8ac99a ""
   "figs/logo-contraportada.png" 1762159111 13801 b6f42abe6ff21f3580c9d887b63413e6 ""
   "figs/prototipoBD.png" 1762159111 98924 c662f76c9ac6c2f3ee2b96d5fae4145c ""
-  "tex/analisis.tex" 1764584282 4377 491b09366abc75bc34b962b99de21c21 ""
+  "tex/analisis.tex" 1779460473 4415 7143f8d65bfbd6286a34463bafc0d2da ""
   "tex/apendice.tex" 1762159111 2237 526e416d6adfcd52fda7716bd145a1be ""
   "tex/conclusiones.tex" 1762159111 245 75fb90dd8eb5d7b00a096af566d7c782 ""
-  "tex/diseno.tex" 1764584079 21469 60a42484d9bf7c7bf995d04af583165c ""
-  "tex/estado_arte.tex" 1764580660 21914 ef59c9683ccb33b02487990802b9d34a ""
+  "tex/diseno.tex" 1779460671 21682 8ccb167fdb72bd566b19da7e5801ea14 ""
+  "tex/estado_arte.tex" 1779460285 23594 df5f0fa4d08f1c73f8789dca807bc407 ""
   "tex/implementacion_pruebas.tex" 1762159111 295 594493fb05e72de12bdcc34f953add13 ""
-  "tex/introduccion.tex" 1762159111 280 98b7b7a710d85656cf54473efcdcf15e ""
-  "tex/requisitos.tex" 1764580660 19571 6b4502d0813cfb6975ba4190f2624f36 ""
+  "tex/introduccion.tex" 1779461728 5611 33b56849f27fa1b159623430bd6e1c67 ""
+  "tex/requisitos.tex" 1779461049 19658 c226e840f6454e4ddab90609f7c95865 ""
   "tfg.cls" 1762159111 10193 00c0702f2eaaba6671dc2bf547a38c0c ""
   (generated)
   "ejemplo-memoria.aux"
