@@ -83,13 +83,16 @@
 \contentsline {subsection}{\numberline {5.4.4}Prototipo del proceso de pago (\textit {Checkout})}{63}{subsection.5.4.4}%
 \contentsline {chapter}{\numberline {6}Implementación y pruebas}{65}{chapter.6}%
 \contentsline {section}{\numberline {6.1}Implementación}{65}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Pruebas funcionales}{65}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Pruebas de rendimiento}{65}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Pruebas de usabilidad}{65}{section.6.4}%
-\contentsline {chapter}{\numberline {7}Conclusiones}{67}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Revisión de costes}{67}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Conclusiones}{67}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Trabajo futuro}{67}{section.7.3}%
-\contentsline {chapter}{\numberline {A}Apéndice}{69}{appendix.Alph1}%
-\contentsline {section}{\numberline {A.1}Ejemplos del lenguaje de marcado Latex}{69}{section.Alph1.1}%
-\contentsline {chapter}{Bibliografía}{70}{lstnumber.-2.4}%
+\contentsline {subsection}{\numberline {6.1.1}Creación de pedido}{65}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}Recuperación de contraseña}{66}{subsection.6.1.2}%
+\contentsline {subsection}{\numberline {6.1.3}Estadísticas del panel de administración}{67}{subsection.6.1.3}%
+\contentsline {section}{\numberline {6.2}Pruebas funcionales}{67}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Pruebas de rendimiento}{67}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Pruebas de usabilidad}{67}{section.6.4}%
+\contentsline {chapter}{\numberline {7}Conclusiones}{69}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Revisión de costes}{69}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Conclusiones}{69}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Trabajo futuro}{69}{section.7.3}%
+\contentsline {chapter}{\numberline {A}Apéndice}{71}{appendix.Alph1}%
+\contentsline {section}{\numberline {A.1}Ejemplos del lenguaje de marcado Latex}{71}{section.Alph1.1}%
+\contentsline {chapter}{Bibliografía}{72}{lstnumber.-2.4}%

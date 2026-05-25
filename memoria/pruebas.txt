@@ -1,0 +1,76 @@
+ Aquí tienes ejemplos de pruebas funcionales representativas para tu sistema, organizadas por bloque:
+
+  ---
+  Registro y autenticación (RF-01)
+  - Registro con datos válidos → usuario creado y redirige al inicio
+  - Registro con email ya existente → muestra error
+  - Login con credenciales correctas → accede a la cuenta
+  - Login con contraseña incorrecta → muestra error
+  - Recuperación de contraseña con email válido → llega el correo con el enlace
+
+  ---
+  Catálogo y carrito (RF-02, RF-03)
+  - Filtrar productos por categoría → muestra solo los de esa categoría
+  - Buscar producto por nombre → aparece en resultados
+  - Añadir producto al carrito → se refleja en el contador
+  - Modificar cantidad en el carrito → actualiza el total
+  - Eliminar producto del carrito → desaparece de la lista
+
+  ---
+  Proceso de compra (RF-04, RF-06)
+  - Completar compra con tarjeta Stripe válida → pedido confirmado, factura generada
+  - Intentar compra con tarjeta rechazada → muestra error de pago
+  - Verificar que el stock se descuenta tras la compra
+
+  ---
+  Administrador (RF-05, RF-08)
+  - Crear producto nuevo → aparece en el catálogo
+  - Editar precio de un producto → se actualiza
+  - Eliminar producto → desaparece del catálogo
+  - Ver historial de pedidos → lista correcta con estados
+
+  ---
+  Bot de Telegram (RF-07, RF-09)
+  - Completar una compra → llega notificación al admin por Telegram
+  - Bajar stock de un producto a ≤5 → llega alerta de bajo stock
+  - Dejar un carrito sin completar → se elimina automáticamente tras el tiempo configurado
+
+  ---
+  Haz las pruebas, anota si cada una pasa o falla, y cuando tengas los resultados me los dices y lo escribo en LaTeX con el formato de tabla
+   adecuado.
+
+✻ Brewed for 10s
+
+❯ y que tengo q anotar y apuntar?                                                                                                           
+
+● Para cada prueba apunta esto:
+
+  Lo mínimo necesario:
+  - ¿Ha pasado o ha fallado? (✓ / ✗)
+  - Si ha fallado, qué ha pasado exactamente
+
+  ---
+  Por ejemplo, para "Login con contraseña incorrecta":
+
+  ┌────────────────────┬────────────────────────────────────────────┐
+  │       Campo        │               Lo que apuntas               │
+  ├────────────────────┼────────────────────────────────────────────┤
+  │ ¿Pasó?             │ ✓                                          │
+  ├────────────────────┼────────────────────────────────────────────┤
+  │ Resultado obtenido │ Aparece mensaje "Credenciales incorrectas" │
+  └────────────────────┴────────────────────────────────────────────┘
+
+  ---
+  No hace falta que seas muy detallado, con saber si pasó o falló y una frase de lo que viste en pantalla es suficiente para redactarlo
+  bien.
+
+  Lo más fácil: abre un bloc de notas, vas probando una a una en tu aplicación, y para cada prueba escribes algo como:
+
+  Login contraseña incorrecta → OK, sale mensaje de error
+  Filtrar por categoría → OK, muestra bien
+  Compra tarjeta válida → OK, llega confirmación
+  Stock descuenta → OK
+  Bot Telegram compra → OK, llega mensaje
+  Carrito abandonado → no lo he probado
+
+  Con eso me es suficiente para escribir las tablas.

@@ -3,6 +3,90 @@
 % necesariamente la organización que debe tener este capítulo.
 \section{Implementación}
 
+En este capítulo se describe el proceso de desarrollo de la aplicación, haciendo especial énfasis en los fragmentos de código más representativos del backend. Se han seleccionado tres funciones que ilustran aspectos clave del sistema: la gestión del flujo de compra, la seguridad en la recuperación de contraseñas y la generación de estadísticas para el panel de administración.
+
+\subsection{Creación de pedido}
+
+El método \texttt{crearPedido}, ubicado en \texttt{PedidoController.java}, constituye el núcleo del flujo de compra del sistema. Se ejecuta dentro de una transacción \texttt{@Transactional}, lo que garantiza que, si se produce cualquier error durante el proceso —por ejemplo, stock insuficiente en alguno de los artículos—, todas las operaciones realizadas hasta ese momento se deshacen automáticamente, preservando la integridad de los datos.
+
+Para cada producto del carrito, el sistema verifica la disponibilidad de stock antes de proceder al descuento. El fragmento siguiente muestra esta comprobación, junto con la lógica de actualización del inventario y el disparo automático de la alerta de bajo stock:
+
+\begin{lstlisting}[language=Java, caption={Verificación de stock y notificación al administrador (PedidoController.java).}]
+// Verificar stock
+if (productoReal.getStock() < item.getCantidad()) {
+    throw new RuntimeException(
+        "Stock insuficiente para: " + productoReal.getNombre());
+}
+// Restar stock y persistir
+int nuevoStock = productoReal.getStock() - item.getCantidad();
+productoReal.setStock(nuevoStock);
+productoRepository.save(productoReal);
+// Alerta Telegram si stock bajo
+if (nuevoStock <= 5) {
+    telegramService.notificarStockBajo(
+        productoReal.getNombre(), nuevoStock);
+}
+\end{lstlisting}
+
+Los cálculos monetarios se realizan con \texttt{BigDecimal} en lugar de tipos de coma flotante primitivos, evitando los errores de precisión habituales en operaciones aritméticas con decimales. Una vez completado el proceso, el sistema dispara dos notificaciones externas de forma automática: un correo electrónico de confirmación al cliente y un mensaje al administrador a través del bot de Telegram. Cabe destacar que el estado inicial del pedido depende del método de pago seleccionado: los pagos con Bizum arrancan en estado \texttt{PENDIENTE\_PAGO} hasta que el administrador confirma la transferencia de forma manual.
+
+\subsection{Recuperación de contraseña}
+
+El módulo de recuperación de contraseña, implementado en \texttt{PasswordController.java}, sigue un flujo en dos pasos diseñado con criterios de seguridad. En el primer paso, el sistema genera un token único mediante \texttt{UUID.randomUUID()} y lo almacena en la base de datos junto con una marca de caducidad de una hora. A continuación, envía al usuario un enlace de recuperación por correo electrónico. En el segundo paso, el sistema valida el token recibido, comprueba que no haya expirado y actualiza la contraseña con el nuevo valor proporcionado.
+
+\begin{lstlisting}[language=Java, caption={Generación de token y validación en el reset de contraseña (PasswordController.java).}]
+// PASO 1 — Generar token con caducidad de 1 hora
+String token = UUID.randomUUID().toString();
+usuario.setResetToken(token);
+usuario.setTokenExpiration(LocalDateTime.now().plusHours(1));
+usuarioRepository.save(usuario);
+emailService.sendPasswordResetEmail(email, usuario.getNombre(), token);
+
+// Respuesta ambigua intencionada (evita user enumeration)
+return "Si el correo existe, se ha enviado un enlace.";
+
+// PASO 2 — Comprobar caducidad y actualizar contraseña
+if (usuario.getTokenExpiration().isBefore(LocalDateTime.now())) {
+    return "Error: El enlace ha caducado.";
+}
+usuario.setPassword(passwordEncoder.encode(newPassword));
+usuario.setResetToken(null);
+usuario.setTokenExpiration(null);
+\end{lstlisting}
+
+Merece especial mención el mensaje de respuesta del primer paso: la formulación \textit{"Si el correo existe, se ha enviado un enlace"} es intencionalmente ambigua. Esta técnica evita la enumeración de usuarios (\textit{user enumeration}), impidiendo que un atacante pueda deducir qué direcciones de correo están registradas en el sistema a partir de las respuestas del servidor. Tras completar el reset, el token se elimina de la base de datos para que no pueda reutilizarse, y la nueva contraseña se almacena hasheada con \textit{BCrypt}, garantizando que nunca se persista en texto plano.
+
+\clearpage
+\subsection{Estadísticas del panel de administración}
+
+El endpoint \texttt{getStats}, definido en \texttt{StatsController.java}, centraliza en una única llamada todos los datos que alimentan el dashboard del administrador, consolidando información procedente de cuatro repositorios distintos: pedidos, productos, detalles de pedido y usuarios.
+
+\begin{lstlisting}[language=Java, caption={Cálculo de ingresos y métricas de stock en el panel de administración (StatsController.java).}]
+// Ingresos del mes actual vs. mes anterior
+LocalDateTime inicioMes =
+    LocalDate.now().withDayOfMonth(1).atStartOfDay();
+BigDecimal ingresosMes =
+    pedidoRepository.sumIngresosPorPeriodo(
+        inicioMes, inicioMes.plusMonths(1));
+BigDecimal ingresosMesAnterior =
+    pedidoRepository.sumIngresosPorPeriodo(
+        inicioMes.minusMonths(1), inicioMes);
+
+// Productos con stock crítico
+List<Producto> stockCritico =
+    productoRepository
+        .findByStockLessThanEqualOrderByStockAsc(5);
+long sinStock =
+    stockCritico.stream()
+        .filter(p -> p.getStock() == 0).count();
+
+// Top 5 productos más vendidos
+for (Object[] row : detallePedidoRepository
+        .findTopProductos(PageRequest.of(0, 5))) { ... }
+\end{lstlisting}
+
+La comparativa de ingresos entre el mes actual y el mes anterior permite al administrador detectar tendencias de ventas de forma inmediata. El cálculo excluye los pedidos cancelados y los pendientes de pago, de modo que el valor mostrado refleja únicamente ingresos reales confirmados. En cuanto al inventario, el panel diferencia entre productos sin stock (\texttt{stock = 0}) y productos con stock bajo (\texttt{stock} $\leq$ \texttt{5}), proporcionando dos niveles de alerta independientes. El listado de los cinco productos más vendidos se obtiene mediante una consulta JPQL con agregación y paginación controlada con \texttt{PageRequest}, limitando el resultado a los primeros cinco registros.
+
 
 \section{Pruebas funcionales}
 

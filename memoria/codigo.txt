@@ -1,0 +1,125 @@
+● Aquí tienes el texto listo para pasarle al otro agente:
+
+  ---
+  SECCIÓN: IMPLEMENTACIÓN — FUNCIONES DESTACADAS DEL BACKEND
+
+  Redacta un apartado de implementación para una memoria de TFG (tono técnico pero sin ser excesivamente formal, nivel
+  universitario). Para cada función explica qué hace, por qué es relevante y comenta brevemente el fragmento de código. NO
+  pongas el código completo, solo los fragmentos indicados. No uses listas de bullet points, redacta en párrafos.
+
+  ────────────────────────────────────────
+  FUNCIÓN 1: Creación de pedido (crearPedido)
+  Archivo: PedidoController.java
+  ────────────────────────────────────────
+
+  Contexto: Es el endpoint principal del sistema. Gestiona todo el flujo de compra dentro de una única transacción
+  @Transactional. Si algo falla, todo se deshace.
+
+  Fragmento a comentar:
+
+  // Verificar Stock
+  if (productoReal.getStock() < item.getCantidad()) {
+      throw new RuntimeException("Stock insuficiente para: " + productoReal.getNombre());
+  }
+
+  // Restar Stock
+  int nuevoStock = productoReal.getStock() - item.getCantidad();
+  productoReal.setStock(nuevoStock);
+  productoRepository.save(productoReal);
+
+  // Alerta Telegram si stock bajo
+  if (nuevoStock <= 5) {
+      telegramService.notificarStockBajo(productoReal.getNombre(), nuevoStock);
+  }
+
+  // Calcular Subtotal
+  BigDecimal subtotal = productoReal.getPrecio().multiply(new BigDecimal(item.getCantidad()));
+  totalCalculado = totalCalculado.add(subtotal);
+
+  // Al final: notificar nuevo pedido y enviar email al cliente
+  telegramService.notificarNuevoPedido(pedidoGuardado);
+  emailService.sendOrderConfirmationEmail(...);
+
+  Puntos a destacar en la redacción:
+  - El uso de @Transactional garantiza que si falla cualquier producto del carrito, no se descuenta stock ni se guarda nada.
+  - Se usa BigDecimal (no double) para los cálculos monetarios, evitando errores de precisión de coma flotante.
+  - Tras completar el pedido se disparan dos notificaciones externas: email al cliente y mensaje Telegram al administrador.
+  - Si el stock de un producto baja de 5 unidades tras la venta, se envía automáticamente una alerta al administrador por
+  Telegram.
+  - El estado inicial del pedido varía según el método de pago: Bizum arranca como PENDIENTE_PAGO hasta que el admin confirme
+  manualmente.
+
+  ────────────────────────────────────────
+  FUNCIÓN 2: Recuperación de contraseña (processForgotPassword + processResetPassword)
+  Archivo: PasswordController.java
+  ────────────────────────────────────────
+
+  Contexto: Flujo completo de recuperación de contraseña en dos pasos. Primero el usuario solicita el reset, luego lo confirma
+  con el token recibido por email.
+
+  Fragmento a comentar:
+
+  // PASO 1 — Generar token y guardarlo con caducidad
+  String token = UUID.randomUUID().toString();
+  usuario.setResetToken(token);
+  usuario.setTokenExpiration(LocalDateTime.now().plusHours(1));
+  usuarioRepository.save(usuario);
+  emailService.sendPasswordResetEmail(email, usuario.getNombre(), token);
+
+  // Respuesta ambigua intencionada (evita user enumeration)
+  return "Si el correo existe, se ha enviado un enlace.";
+
+  // PASO 2 — Validar token, comprobar caducidad y actualizar contraseña
+  if (usuario.getTokenExpiration().isBefore(LocalDateTime.now())) {
+      return "Error: El enlace ha caducado.";
+  }
+  usuario.setPassword(passwordEncoder.encode(newPassword));
+  usuario.setResetToken(null);
+  usuario.setTokenExpiration(null);
+
+  Puntos a destacar en la redacción:
+  - El token se genera con UUID.randomUUID(), lo que garantiza unicidad e impredecibilidad.
+  - Tiene caducidad de 1 hora almacenada en base de datos; pasado ese tiempo el enlace queda inválido.
+  - Tras el reset, el token se elimina de la base de datos para que no pueda reutilizarse.
+  - La contraseña nueva se hashea con BCrypt antes de guardarse; nunca se almacena en texto plano.
+  - La respuesta al paso 1 es intencionalmente ambigua ("si el correo existe...") para evitar que un atacante pueda saber qué
+  emails están registrados en el sistema (técnica conocida como user enumeration).
+
+  ────────────────────────────────────────
+  FUNCIÓN 3: Estadísticas del panel de administración (getStats)
+  Archivo: StatsController.java
+  ────────────────────────────────────────
+
+  Contexto: Endpoint único que alimenta el dashboard del administrador con datos agregados de toda la aplicación en una sola
+  llamada.
+
+  Fragmento a comentar:
+
+  // Ingresos del mes actual vs mes anterior
+  LocalDateTime inicioMes = LocalDate.now().withDayOfMonth(1).atStartOfDay();
+  BigDecimal ingresosMes = pedidoRepository.sumIngresosPorPeriodo(inicioMes, inicioMes.plusMonths(1));
+  BigDecimal ingresosMesAnterior = pedidoRepository.sumIngresosPorPeriodo(inicioMes.minusMonths(1), inicioMes);
+
+  // Productos con stock crítico
+  List<Producto> stockCritico = productoRepository.findByStockLessThanEqualOrderByStockAsc(5);
+  long sinStock = stockCritico.stream().filter(p -> p.getStock() == 0).count();
+
+  // Top 5 productos más vendidos
+  for (Object[] row : detallePedidoRepository.findTopProductos(PageRequest.of(0, 5))) { ... }
+
+  // Pedidos por estado
+  for (Object[] row : pedidoRepository.countByEstadoGroup()) { ... }
+
+  Puntos a destacar en la redacción:
+  - Consolida en un único endpoint datos de cuatro repositorios distintos (pedidos, productos, detalles, usuarios).
+  - La comparativa de ingresos mes actual vs. mes anterior permite al administrador detectar tendencias de ventas de un
+  vistazo.
+  - El cálculo de ingresos excluye pedidos cancelados y pendientes de pago, reflejando solo ingresos reales confirmados.
+  - El top de productos más vendidos usa una query JPQL con agregación y paginación (PageRequest) para limitar a los 5
+  primeros.
+  - Diferencia entre productos sin stock (stock = 0) y productos con stock bajo (stock ≤ 5), dando al administrador dos niveles
+   de alerta.
+
+  ---
+  Está estructurado para que el otro agente sepa exactamente qué código mostrar, qué explicar de cada fragmento y el tono que
+  debe usar. Solo tienes que pegárselo.

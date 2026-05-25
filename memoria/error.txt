@@ -1,0 +1,715 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex.fmt)
+ restricted \write18 enabled.
+entering extended mode
+(c:/Users/cpiquerm/Documents/Memoria/TFG_CARLOS_PIQUER_MEMORIA/memoria/ejemplo-memoria.tex
+LaTeX2e <2025-11-01>
+L3 programming layer <2025-12-24>
+(tfg.cls
+Document Class: tfg 2020/03/26 Plantilla para la memoria del TFG
+(C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/latex/base\book.cls
+Document Class: book 2025/01/22 v1.4n Standard LaTeX document class
+(C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/latex/base\bk12.clo)) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def)
+*************************************
+* Local config file bblopts.cfg used
+*
+(C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/latex/arabi\bblopts.cfg) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/babel/locale/es\babel-spanish.tex) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/latex/babel-spanish\spanish.ldf)) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
+For additional information on amsmath, use the `?' option.
+(C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty)) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty)) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.sty)) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/latex/fancyhdr\fancyhdr.sty) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstpatch.sty) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cfg))
+==> First Aid for listings.sty no longer applied!
+    Expected:
+        2024/09/23 1.10c (Carsten Heinz)
+    but found:
+        2025/11/14 1.11b (Carsten Heinz)
+    so I'm assuming it got fixed.
+(C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.sty) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefinekeys.sty) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescape.sty (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcmds.sty (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.sty))) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\gettitlestring.sty (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty))) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\stringenc.sty) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintcalc.sty))) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfilecheck.sty (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\uniquecounter.sty))) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.cfg) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def))) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/latex/pgf/frontendlayer\tikz.sty (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgf.sty (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfrcs.sty (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil-common.tex) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil-latex.def) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfrcs.code.tex (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/pgf\pgf.revision.tex))) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgfcore.sty (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/latex/pgf/systemlayer\pgfsys.sty (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsys.code.tex (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys.code.tex (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeyslibraryfiltered.code.tex)) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgf.cfg) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsys-pdftex.def (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsys-common-pdf.def))) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsyssoftpath.code.tex) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsysprotocol.code.tex)) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx)) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore.code.tex (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code.tex (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathutil.code.tex) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathparser.code.tex) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.code.tex) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.basic.code.tex) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.trigonometric.code.tex) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.random.code.tex) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.comparison.code.tex) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.base.code.tex) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.round.code.tex) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.misc.code.tex) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.integerarithmetics.code.tex) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathcalc.code.tex) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfloat.code.tex)) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfint.code.tex) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepoints.code.tex) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepathconstruct.code.tex) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepathusage.code.tex) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorescopes.code.tex) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoregraphicstate.code.tex) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoretransformations.code.tex) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorequick.code.tex) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreobjects.code.tex) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepathprocessing.code.tex) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorearrows.code.tex) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreshade.code.tex) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreimage.code.tex) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreexternal.code.tex) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorelayers.code.tex) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoretransparency.code.tex) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepatterns.code.tex) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorerdf.code.tex))) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmoduleshapes.code.tex) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmoduleplot.code.tex) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfcomp-version-0-65.sty) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfcomp-version-1-18.sty)) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgffor.sty (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfkeys.sty (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys.code.tex)) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/latex/pgf/math\pgfmath.sty (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code.tex)) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgffor.code.tex)) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz\tikz.code.tex (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibraryplothandlers.code.tex) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodulematrix.code.tex) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarytopaths.code.tex))) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/latex/framed\framed.sty) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg)) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/soul\soul.sty (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/soul\soul-ori.sty) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/generic/etexcmds\etexcmds.sty)) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/latex/bold-extra\bold-extra.sty) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/latex/ragged2e\ragged2e.sty) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty)
+
+Package geometry Warning: Over-specification in `h'-direction.
+    `width' (455.24408pt) is ignored.
+
+
+Package geometry Warning: Over-specification in `v'-direction.
+    `height' (725.54527pt) is ignored.
+
+
+Package hyperref Warning: Option `bookmarks' has already been used,
+(hyperref)                setting the option has no effect on input line 86.
+
+(C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang2.sty) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang3.sty) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty)) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/latex/tools\tabularx.sty) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/latex/graphics\rotating.sty (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty)) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/latex/pdflscape\pdflscape.sty (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/latex/pdflscape\pdflscape-nometadata.sty (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/latex/graphics\lscape.sty))) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def) (ejemplo-memoria.aux) (ejemplo-memoria.out) (ejemplo-memoria.out) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg))
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+(C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd) (C:\Users\cpiquerm\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd) [1{C:/Users/cpiquerm/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./figs/ETSE.jpg> <./figs/escudo_logo_UV.jpg>] [2] [3 <./figs/logo-contraportada.png>] [4] [5] [6] [7] [8] [9] [10] [11] [12] [13] [14] (ejemplo-memoria.toc [15] [16])
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[17]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[18]
+Cap\'{\i }tulo 1.
+(tex/introduccion.tex [19]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[20])
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[21]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[22]
+Cap\'{\i }tulo 2.
+(tex/estado_arte.tex [23]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[24]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[25
+pdfTeX warning (ext4): destination with the same identifier (name{table.2.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.121 
+      ]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[26]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[27
+pdfTeX warning (ext4): destination with the same identifier (name{table.2.2}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.203 \textbf{Ventajas:}
+                        ]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[28]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[29
+pdfTeX warning (ext4): destination with the same identifier (name{table.2.3}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.278 \end{itemize}
+                   ]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[30]
+Overfull \hbox (92.73264pt too wide) in paragraph at lines 323--332
+ [][] 
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[31
+pdfTeX warning (ext4): destination with the same identifier (name{table.2.4}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.359 \end{table}
+                 ]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[32
+pdfTeX warning (ext4): destination with the same identifier (name{table.2.5}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.392 \end{itemize}
+                   ]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[33])
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[34
+pdfTeX warning (ext4): destination with the same identifier (name{table.2.6}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.92 \chapter
+             {Requisitos, especificaciones, coste, riesgos, viabilidad}]
+Cap\'{\i }tulo 3.
+(tex/requisitos.tex [35]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[36]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[37
+pdfTeX warning (ext4): destination with the same identifier (name{table.3.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.98 \clearpage
+               ]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[38
+pdfTeX warning (ext4): destination with the same identifier (name{table.3.2}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.145 \clearpage
+                ]
+
+pdfTeX warning: pdflatex (file ./figs/GanttTodo.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[39]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[40
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.161 \clearpage
+                 <./figs/GanttTodo.pdf>]
+Overfull \hbox (14.04881pt too wide) in paragraph at lines 188--212
+ [][] 
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[41
+pdfTeX warning (ext4): destination with the same identifier (name{table.3.3}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.216 \clearpage
+                
+pdfTeX warning (ext4): destination with the same identifier (name{table.3.4}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.216 \clearpage
+                ]
+
+LaTeX Warning: Citation `Indeed2025' on page 42 undefined on input line 228.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[42]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[43
+pdfTeX warning (ext4): destination with the same identifier (name{table.3.5}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.291 
+      ])
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[44]
+Cap\'{\i }tulo 4.
+(tex/analisis.tex
+Overfull \hbox (22.76723pt too wide) in paragraph at lines 14--15
+ [][] 
+[45
+pdfTeX warning (ext4): destination with the same identifier (name{figure.4.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.18 \clearpage
+                <./figs/Caso_de uso_def.png>]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[46
+pdfTeX warning (ext4): destination with the same identifier (name{figure.4.2}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.38 \clearpage
+                <./figs/CasosdeUsoAnalisis.png>]
+Underfull \hbox (badness 3128) in paragraph at lines 91--91
+[]|\T1/cmr/bx/n/10.95 Requisitos fun-cio-na-les
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[47
+pdfTeX warning (ext4): destination with the same identifier (name{figure.4.3}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.96 
+      <./figs/DSGS.png>]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[48
+pdfTeX warning (ext4): destination with the same identifier (name{table.4.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.97 \clearpage
+               ])
+Cap\'{\i }tulo 5.
+(tex/diseno.tex [49]
+Overfull \hbox (22.75977pt too wide) in paragraph at lines 42--43
+ [][] 
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[50
+pdfTeX warning (ext4): destination with the same identifier (name{figure.5.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.46 \clearpage
+                <./figs/clasesdef.png>]
+Underfull \hbox (badness 3128) in paragraph at lines 96--96
+[]|\T1/cmr/bx/n/10.95 Requisitos fun-cio-na-les
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[51
+pdfTeX warning (ext4): destination with the same identifier (name{figure.5.2}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.100 
+       <./figs/Gestiondecarrito.jpg>]
+Underfull \hbox (badness 3128) in paragraph at lines 148--148
+[]|\T1/cmr/bx/n/10.95 Requisitos fun-cio-na-les
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[52
+pdfTeX warning (ext4): destination with the same identifier (name{table.5.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.153 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{figure.5.3}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.153 
+       <./figs/Compra_estandar_1.png>]
+Underfull \hbox (badness 3128) in paragraph at lines 199--199
+[]|\T1/cmr/bx/n/10.95 Requisitos fun-cio-na-les
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[53
+pdfTeX warning (ext4): destination with the same identifier (name{table.5.2}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.204 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{figure.5.4}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.204 
+       <./figs/Compra_estandar_2.png>]
+Underfull \hbox (badness 3128) in paragraph at lines 244--244
+[]|\T1/cmr/bx/n/10.95 Requisitos fun-cio-na-les
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[54
+pdfTeX warning (ext4): destination with the same identifier (name{table.5.3}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.255 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{figure.5.5}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.255 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{table.5.4}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.255 
+       <./figs/Compra_estandar_3.png>]
+Underfull \hbox (badness 3128) in paragraph at lines 295--295
+[]|\T1/cmr/bx/n/10.95 Requisitos fun-cio-na-les
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[55
+pdfTeX warning (ext4): destination with the same identifier (name{figure.5.6}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.300 \clearpage
+                
+pdfTeX warning (ext4): destination with the same identifier (name{table.5.5}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.300 \clearpage
+                 <./figs/Generaciondefactura.jpg>]
+Underfull \hbox (badness 3128) in paragraph at lines 346--346
+[]|\T1/cmr/bx/n/10.95 Requisitos fun-cio-na-les
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[56
+pdfTeX warning (ext4): destination with the same identifier (name{figure.5.7}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.351 \clearpage
+                
+pdfTeX warning (ext4): destination with the same identifier (name{table.5.6}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.351 \clearpage
+                 <./figs/Abandonodecarrito.jpg>]
+Underfull \hbox (badness 3128) in paragraph at lines 397--397
+[]|\T1/cmr/bx/n/10.95 Requisitos fun-cio-na-les
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[57
+pdfTeX warning (ext4): destination with the same identifier (name{figure.5.8}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.402 \clearpage
+                
+pdfTeX warning (ext4): destination with the same identifier (name{table.5.7}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.402 \clearpage
+                 <./figs/Bajostock.jpg>]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[58]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[59
+pdfTeX warning (ext4): destination with the same identifier (name{figure.5.9}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.426 \clearpage
+                 <./figs/prototipoBD.png>]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[60
+pdfTeX warning (ext4): destination with the same identifier (name{figure.5.10}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.447 \clearpage
+                 <./figs/prototipoinicio.png>]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[61
+pdfTeX warning (ext4): destination with the same identifier (name{figure.5.11}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.460 \clearpage
+                 <./figs/catalogo_de_productos.png>]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[62
+pdfTeX warning (ext4): destination with the same identifier (name{figure.5.12}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.473 \clearpage
+                 <./figs/carrito_de_compra.png>])
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[63
+pdfTeX warning (ext4): destination with the same identifier (name{figure.5.13}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.101 \chapter
+              {Implementación y pruebas} <./figs/checkout_pago.png>]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[64]
+Cap\'{\i }tulo 6.
+(tex/implementacion_pruebas.tex [65]
+Overfull \hbox (8.06628pt too wide) in paragraph at lines 37--38
+[]\T1/cmr/m/n/12 El m�-du-lo de re-cu-pe-ra-ci�n de con-tra-se-�a, im-ple-men-ta-do en \T1/cmtt/m/n/12 PasswordController.java\T1/cmr/m/n/12 ,
+
+tex/implementacion_pruebas.tex:40: LaTeX Error: Invalid UTF-8 byte sequence (�\lst@EC�\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.40 // PASO 1 — 
+                   Generar token con caducidad de 1 hora
+
+tex/implementacion_pruebas.tex:50: LaTeX Error: Invalid UTF-8 byte sequence (�\lst@EC�\lst@EC�).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.50 // PASO 2 — 
+                   Comprobar caducidad y actualizar contraseña
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[66])
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[67]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[68]
+Cap\'{\i }tulo 7.
+(tex/conclusiones.tex) [69]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[70]
+Ap\'{e}ndice A.
+(tex/apendice.texSyntax Error: Couldn't read xref table
+Syntax Warning: PDF file is damaged - attempting to reconstruct xref table...
+
+
+LaTeX Warning: Citation `latexcompanion' on page 71 undefined on input line 4.
+
+
+LaTeX Warning: Citation `einstein' on page 71 undefined on input line 5.
+
+
+LaTeX Warning: Citation `knuthwebsite' on page 71 undefined on input line 5.
+
+
+LaTeX Warning: Citation `latexcompanion' on page 71 undefined on input line 6.
+
+
+LaTeX Warning: Citation `knuthwebsite' on page 71 undefined on input line 6.
+
+
+Overfull \hbox (41.5594pt too wide) in paragraph at lines 36--37
+[]\T1/cmr/m/n/12 En la fi-gu-ra [][]A.1[][] se mues-tra un dia-gra-ma rea-li-za-do con [][]https://www.yworks.com/products/yed[][]: 
+[71 <./figs/diagrama.pdf>]) (ejemplo-memoria.bbl
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[72
+pdfTeX warning (ext4): destination with the same identifier (name{figure.Alph1.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1 \begin{thebibliography}{10}
+                               ] [73])
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[74] (ejemplo-memoria.aux)
+
+LaTeX Warning: There were undefined references.
+
+ )
+(see the transcript file for additional information) <C:\Users\cpiquerm\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcti0800.pk> <C:\Users\cpiquerm\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1000.pk> <C:\Users\cpiquerm\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0700.pk> <C:\Users\cpiquerm\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti0800.pk> <C:\Users\cpiquerm\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1095.pk> <C:\Users\cpiquerm\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbi1440.pk> <C:\Users\cpiquerm\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1200.pk> <C:\Users\cpiquerm\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk> <C:\Users\cpiquerm\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1095.pk> <C:\Users\cpiquerm\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1095.pk> <C:\Users\cpiquerm\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0800.pk> <C:\Users\cpiquerm\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcbx1200.pk> <C:\Users\cpiquerm\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk> <C:\Users\cpiquerm\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\cpiquerm\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk> <C:\Users\cpiquerm\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1200.pk> <C:\Users\cpiquerm\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2488.pk> <C:\Users\cpiquerm\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\cpiquerm\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\cpiquerm\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecxc1440.pk> <C:\Users\cpiquerm\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc2074.pk><C:/Users/cpiquerm/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/cpiquerm/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/cpiquerm/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/cpiquerm/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/cpiquerm/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb>pdflatex: major issue: So far, you have not checked for MiKTeX updates.
+
+Output written on ejemplo-memoria.pdf (74 pages, 4137237 bytes).
+SyncTeX written on ejemplo-memoria.synctex.gz.
+Transcript written on ejemplo-memoria.log.
