@@ -1,43 +1,91 @@
-● Para un TFG lo más sencillo y visual es usar dos herramientas que ya tienes sin instalar nada:
+====================================================
+PRUEBAS DE RENDIMIENTO — TFG DROGUERÍA
+====================================================
 
-  ---
-  Herramienta 1 — Google Lighthouse (Chrome DevTools)
-  Abre Chrome, ve a cada página, pulsa F12 → pestaña Lighthouse → Generate report. Tarda 30 segundos por página.
+----------------------------------------------------
+HERRAMIENTA 1 — GOOGLE LIGHTHOUSE (Chrome DevTools)
+Configuración: preset desktop, build de producción
+----------------------------------------------------
 
-  Páginas a analizar:
-  - Página de inicio
-  - Catálogo de productos
-  - Carrito de compra
-  - Panel de administración
+RESULTADOS CON BUILD DE DESARROLLO (ng serve - localhost:4200):
 
-  Anota de cada una: Performance score, LCP (Largest Contentful Paint), FCP (First Contentful Paint) y TBT (Total
-  Blocking Time).
+  Página de Inicio:
+    - Performance: 59
+    - FCP (First Contentful Paint): 3.3 s
+    - LCP (Largest Contentful Paint): 5.5 s
+    - TBT (Total Blocking Time):     50 ms
 
-  ---
-  Herramienta 2 — Postman (tiempos de respuesta de la API)
-  Ejecuta cada petición y anota el tiempo que aparece abajo a la derecha.
+  Catálogo de Productos:
+    - Performance: 57
+    - FCP: 3.3 s
+    - LCP: 6.4 s
+    - TBT: 100 ms
 
-  Endpoints a medir:
-  - GET /api/productos — listar todos los productos
-  - GET /api/productos/{id} — obtener un producto
-  - POST /api/pedidos — crear un pedido
-  - GET /api/stats — estadísticas del admin
-  - GET /api/pedidos/historial — historial de pedidos
 
-  ---
-  Lo que me tienes que mandar en el txt:
+RESULTADOS CON BUILD DE PRODUCCIÓN (ng build - localhost:5000):
 
-  LIGHTHOUSE
-  Inicio: score=X, LCP=Xs, FCP=Xs, TBT=Xms
-  Catálogo: score=X, LCP=Xs, FCP=Xs, TBT=Xms
-  Carrito: score=X, LCP=Xs, FCP=Xs, TBT=Xms
-  Admin: score=X, LCP=Xs, FCP=Xs, TBT=Xms
+  Página de Inicio:
+    - Performance: 89
+    - FCP: 0.7 s
+    - LCP: 2.1 s
+    - TBT: 40 ms
 
-  POSTMAN
-  GET /api/productos → Xms
-  GET /api/productos/{id} → Xms
-  POST /api/pedidos → Xms
-  GET /api/stats → Xms
-  GET /api/pedidos/historial → Xms
+  Catálogo de Productos (tras optimización de imágenes):
+    - Performance: 93
+    - FCP: 0.8 s
+    - LCP: 1.6 s
+    - TBT: 60 ms
 
-  Con eso redacto las tablas.
+  Carrito de Compra:
+    - Performance: 92
+    - FCP: 0.7 s
+    - LCP: 1.7 s
+    - TBT: 110 ms
+
+  Panel de Administración:
+    - Performance: 92
+    - FCP: 0.8 s
+    - LCP: 1.1 s
+    - TBT: 180 ms
+
+
+OPTIMIZACIONES APLICADAS DURANTE LAS PRUEBAS:
+  1. Build de producción (ng build) en lugar de ng serve:
+     - Minificación y tree-shaking de JavaScript/CSS
+     - Mejora media de +30 puntos en Performance
+     - LCP reducido de ~5-6 s a ~1-3 s
+
+  2. Optimización de imágenes en el catálogo:
+     - Añadido loading="lazy" en <img> de tarjetas de producto
+     - Añadido width="160" height="160" explícitos
+     - Catálogo subió de 82 a 93 en Performance
+     - LCP del catálogo bajó de 2.9 s a 1.6 s
+
+
+----------------------------------------------------
+HERRAMIENTA 2 — POSTMAN (Tiempos de respuesta API)
+Base URL: http://localhost:8080
+----------------------------------------------------
+
+  GET  /api/productos              →   37 ms
+  GET  /api/productos/{id}         →   14 ms
+  GET  /api/stats                  →   43 ms
+  GET  /api/pedidos/usuario/{id}   →   27 ms
+  POST /api/pedidos/crear          → 1870 ms
+
+
+NOTAS SOBRE LOS RESULTADOS DE LA API:
+  - Los 4 endpoints GET responden en menos de 50 ms,
+    tiempos excelentes para una API REST.
+
+  - El POST /api/pedidos/crear tarda 1.87 s porque
+    ejecuta de forma síncrona:
+      · Validación de usuario y stock
+      · Escritura en base de datos (pedido + detalles)
+      · Envío de email de confirmación al cliente
+      · Notificación via Telegram al administrador
+    En un entorno de producción real estas operaciones
+    secundarias (email, Telegram) se procesarían de
+    forma asíncrona para reducir el tiempo de respuesta.
+
+====================================================
