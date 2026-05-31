@@ -1,13 +1,72 @@
-● Lo más natural sería añadirlo como una nueva subsección en \section{Implementación}, justo después de las tres que
-  ya tienes — quedaría como 6.1.4 Gestión de imágenes con Cloudinary.
+====================================================
+INFORMACIÓN PARA SECCIÓN 6.1.4 — GESTIÓN DE IMÁGENES CON CLOUDINARY
+====================================================
 
-  Encaja perfectamente ahí porque es una decisión de implementación concreta: elegiste Cloudinary para que el
-  administrador pueda subir imágenes desde cualquier sitio sin necesidad de acceso al servidor.
+DESDE DÓNDE SE SUBE LA IMAGEN:
+  Desde el panel de administración (/admin) en Angular.
+  El administrador abre un modal para crear o editar un producto.
+  Dentro del formulario hay un campo <input type="file">.
+  En cuanto selecciona el archivo, la subida se lanza
+  automáticamente (sin esperar a guardar el producto).
 
-  Para escribirlo necesito que me digas o me pongas en el txt:
-  - ¿Desde dónde se sube la imagen? (formulario en el panel de admin en Angular, directamente al subir/editar un
-  producto)
-  - ¿El frontend sube directamente a Cloudinary o pasa por el backend?
-  - Un fragmento pequeño del código relevante (el método que hace la subida, puede ser TypeScript o Java)
+FLUJO COMPLETO (Angular → Backend → Cloudinary):
+  La imagen NO va directamente de Angular a Cloudinary.
+  El frontend envía el archivo al backend, y es el backend
+  quien lo sube a Cloudinary usando el SDK oficial de Java.
+  El flujo paso a paso es:
 
-  Con eso lo redacto igual que las otras tres subsecciones.
+    1. Admin selecciona imagen en el formulario del panel.
+    2. Angular llama a POST /api/productos/upload con
+       el archivo en multipart/form-data.
+    3. Spring Boot recibe el fichero y lo sube a Cloudinary
+       en la carpeta "drogueria".
+    4. Cloudinary devuelve la URL pública de la imagen.
+    5. El backend retorna esa URL a Angular.
+    6. Angular la guarda en nuevoProducto.urlImagen.
+    7. Al guardar el producto, esa URL se persiste en la BD.
+    8. El catálogo carga las imágenes directamente desde
+       la CDN de Cloudinary usando esa URL.
+
+FRAGMENTOS DE CÓDIGO RELEVANTES:
+
+-- Angular (TypeScript) — admin.component.ts --
+
+  onFileSelected(event: any) {
+    const file: File = event.target.files[0];
+    if (file) {
+      this.subiendoImagen = true;
+      this.productoService.uploadImage(file).subscribe({
+        next: (response: any) => {
+          this.nuevoProducto.urlImagen = response.url;
+          this.subiendoImagen = false;
+        },
+        error: () => { this.subiendoImagen = false; },
+      });
+    }
+  }
+
+-- Angular (TypeScript) — producto.service.ts --
+
+  uploadImage(file: File): Observable<any> {
+    const formData = new FormData();
+    formData.append('file', file);
+    return this.http.post(`${this.apiUrl}/upload`, formData);
+  }
+
+-- Java (Spring Boot) — ProductoController.java --
+
+  @PostMapping("/upload")
+  public ResponseEntity<?> subirImagen(@RequestParam("file") MultipartFile file) {
+    try {
+      Map uploadResult = cloudinary.uploader().upload(
+        file.getBytes(),
+        ObjectUtils.asMap("folder", "drogueria")
+      );
+      String url = (String) uploadResult.get("url");
+      return ResponseEntity.ok().body("{\"url\": \"" + url + "\"}");
+    } catch (Exception e) {
+      return ResponseEntity.badRequest().body("Error subida: " + e.getMessage());
+    }
+  }
+
+====================================================
