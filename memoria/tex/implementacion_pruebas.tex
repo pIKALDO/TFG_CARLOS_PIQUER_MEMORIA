@@ -90,6 +90,124 @@ La comparativa de ingresos entre el mes actual y el mes anterior permite al admi
 
 \section{Pruebas funcionales}
 
+Las pruebas funcionales tienen como objetivo verificar que cada requisito funcional del sistema se satisface correctamente bajo condiciones reales de uso. Para ello, se han definido casos de prueba agrupados por bloque funcional, ejecutados de forma manual sobre la aplicación desplegada en local. Cada caso recoge la acción realizada, el resultado esperado y el estado final de la prueba.
+
+\subsection{Registro y autenticación (RF-01)}
+
+Este bloque valida el módulo de gestión de usuarios: el registro de nuevas cuentas, el inicio de sesión y la recuperación de contraseña. Las pruebas comprueban tanto el flujo correcto como la respuesta del sistema ante entradas inválidas o duplicadas.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|L{5.5cm}|L{6cm}|c|}
+\hline
+\textbf{ID} & \textbf{Caso de prueba} & \textbf{Resultado esperado} & \textbf{Estado} \\
+\hline
+PF-01 & Registro con datos válidos & Usuario creado y redirección al inicio & OK \\
+\hline
+PF-02 & Registro con email ya existente & Mensaje de error & OK \\
+\hline
+PF-03 & Login con credenciales correctas & Acceso a la cuenta & OK \\
+\hline
+PF-04 & Login con contraseña incorrecta & Mensaje de error & OK \\
+\hline
+PF-05 & Recuperación de contraseña con email válido & Envío de correo con enlace de recuperación & OK \\
+\hline
+\end{tabular}
+\caption{Pruebas funcionales — Registro y autenticación (RF-01).}
+\label{tab:pf-rf01}
+\end{table}
+
+\subsection{Catálogo y carrito (RF-02, RF-03)}
+
+Este bloque cubre la navegación por el catálogo de productos y la gestión del carrito de compra. Se comprueba que los filtros y la búsqueda devuelven resultados coherentes, y que las operaciones sobre el carrito —añadir, modificar cantidad y eliminar— se reflejan correctamente en la interfaz.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|L{5.5cm}|L{6cm}|c|}
+\hline
+\textbf{ID} & \textbf{Caso de prueba} & \textbf{Resultado esperado} & \textbf{Estado} \\
+\hline
+PF-06 & Filtrar productos por categoría & Solo se muestran los productos de esa categoría & OK \\
+\hline
+PF-07 & Buscar producto por nombre & El producto aparece en los resultados & OK \\
+\hline
+PF-08 & Añadir producto al carrito & El contador del carrito se incrementa & OK \\
+\hline
+PF-09 & Modificar cantidad de un producto en el carrito & El total se actualiza & OK \\
+\hline
+PF-10 & Eliminar producto del carrito & El producto desaparece de la lista & OK \\
+\hline
+\end{tabular}
+\caption{Pruebas funcionales — Catálogo y carrito (RF-02, RF-03).}
+\label{tab:pf-rf02-03}
+\end{table}
+
+\subsection{Proceso de compra (RF-04, RF-06)}
+
+Este bloque verifica el flujo completo de compra, incluyendo el pago mediante Stripe y la generación de facturas. Asimismo, se comprueba que el sistema reacciona correctamente ante un pago rechazado y que el stock se descuenta de forma apropiada tras confirmar el pedido.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|L{5.5cm}|L{6cm}|c|}
+\hline
+\textbf{ID} & \textbf{Caso de prueba} & \textbf{Resultado esperado} & \textbf{Estado} \\
+\hline
+PF-11 & Completar compra con tarjeta Stripe válida & Pedido confirmado y factura generada & OK \\
+\hline
+PF-12 & Intentar compra con tarjeta rechazada & Mensaje de error de pago & OK \\
+\hline
+PF-13 & Verificar descuento de stock tras la compra & El stock del producto disminuye en la cantidad pedida & OK \\
+\hline
+\end{tabular}
+\caption{Pruebas funcionales — Proceso de compra (RF-04, RF-06).}
+\label{tab:pf-rf04-06}
+\end{table}
+
+\subsection{Administrador (RF-05, RF-08)}
+
+Este bloque valida las funcionalidades reservadas al administrador: la gestión del catálogo de productos y la consulta del historial de pedidos. Se comprueba que las operaciones de creación, edición y eliminación se reflejan de forma inmediata en el catálogo, y que el listado de pedidos muestra la información y los estados correctamente.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|L{5.5cm}|L{6cm}|c|}
+\hline
+\textbf{ID} & \textbf{Caso de prueba} & \textbf{Resultado esperado} & \textbf{Estado} \\
+\hline
+PF-14 & Crear producto nuevo & El producto aparece en el catálogo & OK \\
+\hline
+PF-15 & Editar precio de un producto & El precio se actualiza en el catálogo & OK \\
+\hline
+PF-16 & Eliminar producto & El producto desaparece del catálogo & OK \\
+\hline
+PF-17 & Ver historial de pedidos & Lista de pedidos con estados correctos & OK \\
+\hline
+\end{tabular}
+\caption{Pruebas funcionales — Administrador (RF-05, RF-08).}
+\label{tab:pf-rf05-08}
+\end{table}
+
+\subsection{Bot de Telegram (RF-07, RF-09)}
+
+Este bloque verifica las automatizaciones gestionadas por el bot de Telegram: la notificación de nuevos pedidos, el aviso de bajo stock y la eliminación automática de carritos inactivos. Durante las pruebas se detectó una incidencia en la alerta de bajo stock: inicialmente, la notificación solo se disparaba cuando el stock descendía como consecuencia de un pedido, pero no cuando el administrador modificaba el stock manualmente desde el panel de administración. Dicha incidencia fue corregida, de modo que la alerta se genera en ambos escenarios.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|L{5.5cm}|L{6cm}|c|}
+\hline
+\textbf{ID} & \textbf{Caso de prueba} & \textbf{Resultado esperado} & \textbf{Estado} \\
+\hline
+PF-18 & Completar una compra & Notificación de nuevo pedido al administrador por Telegram & OK \\
+\hline
+PF-19 & Bajar stock a $\leq$5 mediante un pedido & Alerta de bajo stock al administrador por Telegram & OK \\
+\hline
+PF-20 & Bajar stock a $\leq$5 desde el panel de administración & Alerta de bajo stock al administrador por Telegram & OK \\
+\hline
+PF-21 & Dejar un carrito sin completar durante el tiempo configurado & El carrito se elimina automáticamente & OK \\
+\hline
+\end{tabular}
+\caption{Pruebas funcionales — Bot de Telegram (RF-07, RF-09).}
+\label{tab:pf-rf07-09}
+\end{table}
 
 \section{Pruebas de rendimiento}
 

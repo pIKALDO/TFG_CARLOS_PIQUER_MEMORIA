@@ -1,0 +1,43 @@
+● Para un TFG lo más sencillo y visual es usar dos herramientas que ya tienes sin instalar nada:
+
+  ---
+  Herramienta 1 — Google Lighthouse (Chrome DevTools)
+  Abre Chrome, ve a cada página, pulsa F12 → pestaña Lighthouse → Generate report. Tarda 30 segundos por página.
+
+  Páginas a analizar:
+  - Página de inicio
+  - Catálogo de productos
+  - Carrito de compra
+  - Panel de administración
+
+  Anota de cada una: Performance score, LCP (Largest Contentful Paint), FCP (First Contentful Paint) y TBT (Total
+  Blocking Time).
+
+  ---
+  Herramienta 2 — Postman (tiempos de respuesta de la API)
+  Ejecuta cada petición y anota el tiempo que aparece abajo a la derecha.
+
+  Endpoints a medir:
+  - GET /api/productos — listar todos los productos
+  - GET /api/productos/{id} — obtener un producto
+  - POST /api/pedidos — crear un pedido
+  - GET /api/stats — estadísticas del admin
+  - GET /api/pedidos/historial — historial de pedidos
+
+  ---
+  Lo que me tienes que mandar en el txt:
+
+  LIGHTHOUSE
+  Inicio: score=X, LCP=Xs, FCP=Xs, TBT=Xms
+  Catálogo: score=X, LCP=Xs, FCP=Xs, TBT=Xms
+  Carrito: score=X, LCP=Xs, FCP=Xs, TBT=Xms
+  Admin: score=X, LCP=Xs, FCP=Xs, TBT=Xms
+
+  POSTMAN
+  GET /api/productos → Xms
+  GET /api/productos/{id} → Xms
+  POST /api/pedidos → Xms
+  GET /api/stats → Xms
+  GET /api/pedidos/historial → Xms
+
+  Con eso redacto las tablas.

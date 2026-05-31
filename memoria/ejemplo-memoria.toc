@@ -87,12 +87,17 @@
 \contentsline {subsection}{\numberline {6.1.2}Recuperación de contraseña}{66}{subsection.6.1.2}%
 \contentsline {subsection}{\numberline {6.1.3}Estadísticas del panel de administración}{67}{subsection.6.1.3}%
 \contentsline {section}{\numberline {6.2}Pruebas funcionales}{67}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Pruebas de rendimiento}{67}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Pruebas de usabilidad}{67}{section.6.4}%
-\contentsline {chapter}{\numberline {7}Conclusiones}{69}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Revisión de costes}{69}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Conclusiones}{69}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Trabajo futuro}{69}{section.7.3}%
-\contentsline {chapter}{\numberline {A}Apéndice}{71}{appendix.Alph1}%
-\contentsline {section}{\numberline {A.1}Ejemplos del lenguaje de marcado Latex}{71}{section.Alph1.1}%
-\contentsline {chapter}{Bibliografía}{72}{lstnumber.-2.4}%
+\contentsline {subsection}{\numberline {6.2.1}Registro y autenticación (RF-01)}{68}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}Catálogo y carrito (RF-02, RF-03)}{68}{subsection.6.2.2}%
+\contentsline {subsection}{\numberline {6.2.3}Proceso de compra (RF-04, RF-06)}{68}{subsection.6.2.3}%
+\contentsline {subsection}{\numberline {6.2.4}Administrador (RF-05, RF-08)}{69}{subsection.6.2.4}%
+\contentsline {subsection}{\numberline {6.2.5}Bot de Telegram (RF-07, RF-09)}{69}{subsection.6.2.5}%
+\contentsline {section}{\numberline {6.3}Pruebas de rendimiento}{70}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Pruebas de usabilidad}{70}{section.6.4}%
+\contentsline {chapter}{\numberline {7}Conclusiones}{71}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Revisión de costes}{71}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Conclusiones}{71}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Trabajo futuro}{71}{section.7.3}%
+\contentsline {chapter}{\numberline {A}Apéndice}{73}{appendix.Alph1}%
+\contentsline {section}{\numberline {A.1}Ejemplos del lenguaje de marcado Latex}{73}{section.Alph1.1}%
+\contentsline {chapter}{Bibliografía}{74}{lstnumber.-2.4}%
