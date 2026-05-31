@@ -211,5 +211,67 @@ PF-21 & Dejar un carrito sin completar durante el tiempo configurado & El carrit
 
 \section{Pruebas de rendimiento}
 
+Las pruebas de rendimiento tienen como objetivo evaluar la velocidad de carga del frontend y los tiempos de respuesta del backend bajo condiciones de uso normal. Para ello se han empleado dos herramientas: \textit{Google Lighthouse}, integrada en Chrome DevTools, para analizar el rendimiento de las páginas del frontend; y \textit{Postman}, para medir los tiempos de respuesta de los principales endpoints de la API REST.
+
+\subsection{Rendimiento del frontend — Google Lighthouse}
+
+Las pruebas de Lighthouse se han ejecutado en modo escritorio (\textit{desktop}) sobre las páginas principales de la aplicación. Se realizaron dos baterías de mediciones: la primera sobre el entorno de desarrollo (\texttt{ng serve}), y la segunda sobre el \textbf{build de producción} (\texttt{ng build}), que aplica minificación y \textit{tree-shaking} de JavaScript y CSS. Las métricas registradas son el índice de rendimiento general (\textit{Performance}), el tiempo hasta el primer renderizado de contenido (\textit{FCP}), el tiempo hasta el renderizado del elemento más grande (\textit{LCP}) y el tiempo de bloqueo total (\textit{TBT}).
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+\textbf{Página} & \textbf{Performance} & \textbf{FCP} & \textbf{LCP} & \textbf{TBT} \\
+\hline
+\multicolumn{5}{|l|}{\textit{Build de desarrollo (ng serve)}} \\
+\hline
+Página de inicio   & 59 & 3,3 s & 5,5 s & 50 ms \\
+\hline
+Catálogo de productos & 57 & 3,3 s & 6,4 s & 100 ms \\
+\hline
+\multicolumn{5}{|l|}{\textit{Build de producción (ng build)}} \\
+\hline
+Página de inicio      & 89 & 0,7 s & 2,1 s & 40 ms \\
+\hline
+Catálogo de productos & 93 & 0,8 s & 1,6 s & 60 ms \\
+\hline
+Carrito de compra     & 92 & 0,7 s & 1,7 s & 110 ms \\
+\hline
+Panel de administración & 92 & 0,8 s & 1,1 s & 180 ms \\
+\hline
+\end{tabular}
+\caption{Resultados de Lighthouse en build de desarrollo y producción.}
+\end{table}
+
+Los resultados evidencian una mejora media de 30 puntos en el índice de rendimiento al pasar del entorno de desarrollo al build de producción, con reducciones del LCP de entre 3 y 5 segundos. Adicionalmente, durante las pruebas del catálogo se detectó que las imágenes de los productos penalizaban significativamente el LCP. Para corregirlo se aplicó \textit{lazy loading} mediante el atributo \texttt{loading="lazy"} y se añadieron dimensiones explícitas (\texttt{width} y \texttt{height}) en las tarjetas de producto, lo que redujo el LCP del catálogo de 2,9 s a 1,6 s y elevó su puntuación de 82 a 93.
+
+\subsection{Rendimiento del backend — Tiempos de respuesta de la API}
+
+Los tiempos de respuesta de los principales endpoints del backend se han medido con \textit{Postman} sobre el servidor local (\texttt{http://localhost:8080}). Cada petición se ha ejecutado con el sistema en estado de uso normal, con datos reales cargados en la base de datos.
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{|l|l|c|}
+\hline
+\textbf{Método} & \textbf{Endpoint} & \textbf{Tiempo de respuesta} \\
+\hline
+GET  & /api/productos              & 37 ms \\
+\hline
+GET  & /api/productos/\{id\}       & 14 ms \\
+\hline
+GET  & /api/stats                  & 43 ms \\
+\hline
+GET  & /api/pedidos/usuario/\{id\} & 27 ms \\
+\hline
+POST & /api/pedidos/crear          & 1.870 ms \\
+\hline
+\end{tabular}
+\caption{Tiempos de respuesta de los principales endpoints de la API REST.}
+\end{table}
+
+Los cuatro endpoints de consulta responden en menos de 50 ms, resultados que se consideran óptimos para una API REST en entorno local. El endpoint \texttt{POST /api/pedidos/crear} presenta un tiempo notablemente superior (1.870 ms) debido a que ejecuta de forma síncrona varias operaciones encadenadas: la validación de usuario y stock, la escritura del pedido y sus detalles en la base de datos, el envío del correo de confirmación al cliente y la notificación al administrador mediante el bot de Telegram. En un entorno de producción real, estas operaciones secundarias se procesarían de forma \textbf{asíncrona} para reducir el tiempo de respuesta percibido por el usuario.
+
 
 \section{Pruebas de usabilidad}

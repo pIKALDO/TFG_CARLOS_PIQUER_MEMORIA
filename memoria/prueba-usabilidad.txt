@@ -1,0 +1,37 @@
+ Para un TFG lo más habitual y fácil de documentar es el cuestionario SUS (System Usability Scale). Es el estándar
+  académico: 10 preguntas, escala del 1 al 5, y da una puntuación de 0 a 100.
+
+  ---
+  Cómo hacerlo:
+  Busca 3 o 4 personas (amigos, familia) que no hayan visto la app. Pídeles que hagan estas tareas:
+
+  1. Regístrate como usuario nuevo
+  2. Busca un producto y añádelo al carrito
+  3. Modifica la cantidad en el carrito
+  4. Completa una compra (usa tarjeta de prueba Stripe: 4242 4242 4242 4242)
+  5. Consulta tu historial de pedidos
+
+  Cuando terminen, que respondan este cuestionario (del 1 = totalmente en desacuerdo al 5 = totalmente de acuerdo):
+
+  ---
+  Cuestionario SUS:
+
+  1. Creo que me gustaría usar este sistema con frecuencia
+  2. Encontré el sistema innecesariamente complejo
+  3. Pensé que el sistema era fácil de usar
+  4. Creo que necesitaría el apoyo de un técnico para poder usar este sistema
+  5. Encontré que las distintas funciones del sistema estaban bien integradas
+  6. Pensé que había demasiada inconsistencia en el sistema
+  7. Imagino que la mayoría de personas aprendería a usar este sistema muy rápidamente
+  8. Encontré el sistema muy complicado de usar
+  9. Me sentí muy seguro usando el sistema
+  10. Necesité aprender muchas cosas antes de poder empezar a usar el sistema
+
+  ---
+  Lo que me mandas en el txt:
+
+  Usuario 1 (perfil: amigo/familiar, edad aprox): 4,1,5,1,4,2,5,1,5,1
+  Usuario 2: X,X,X,X,X,X,X,X,X,X
+  Usuario 3: X,X,X,X,X,X,X,X,X,X
+
+  Con eso calculo el SUS de cada uno, la media, y redacto la sección.

@@ -93,11 +93,13 @@
 \contentsline {subsection}{\numberline {6.2.4}Administrador (RF-05, RF-08)}{69}{subsection.6.2.4}%
 \contentsline {subsection}{\numberline {6.2.5}Bot de Telegram (RF-07, RF-09)}{69}{subsection.6.2.5}%
 \contentsline {section}{\numberline {6.3}Pruebas de rendimiento}{70}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Pruebas de usabilidad}{70}{section.6.4}%
-\contentsline {chapter}{\numberline {7}Conclusiones}{71}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Revisión de costes}{71}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Conclusiones}{71}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Trabajo futuro}{71}{section.7.3}%
-\contentsline {chapter}{\numberline {A}Apéndice}{73}{appendix.Alph1}%
-\contentsline {section}{\numberline {A.1}Ejemplos del lenguaje de marcado Latex}{73}{section.Alph1.1}%
-\contentsline {chapter}{Bibliografía}{74}{lstnumber.-2.4}%
+\contentsline {subsection}{\numberline {6.3.1}Rendimiento del frontend — Google Lighthouse}{70}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}Rendimiento del backend — Tiempos de respuesta de la API}{71}{subsection.6.3.2}%
+\contentsline {section}{\numberline {6.4}Pruebas de usabilidad}{71}{section.6.4}%
+\contentsline {chapter}{\numberline {7}Conclusiones}{73}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Revisión de costes}{73}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Conclusiones}{73}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Trabajo futuro}{73}{section.7.3}%
+\contentsline {chapter}{\numberline {A}Apéndice}{75}{appendix.Alph1}%
+\contentsline {section}{\numberline {A.1}Ejemplos del lenguaje de marcado Latex}{75}{section.Alph1.1}%
+\contentsline {chapter}{Bibliografía}{76}{lstnumber.-2.4}%
