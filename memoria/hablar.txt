@@ -1,0 +1,13 @@
+● Lo más natural sería añadirlo como una nueva subsección en \section{Implementación}, justo después de las tres que
+  ya tienes — quedaría como 6.1.4 Gestión de imágenes con Cloudinary.
+
+  Encaja perfectamente ahí porque es una decisión de implementación concreta: elegiste Cloudinary para que el
+  administrador pueda subir imágenes desde cualquier sitio sin necesidad de acceso al servidor.
+
+  Para escribirlo necesito que me digas o me pongas en el txt:
+  - ¿Desde dónde se sube la imagen? (formulario en el panel de admin en Angular, directamente al subir/editar un
+  producto)
+  - ¿El frontend sube directamente a Cloudinary o pasa por el backend?
+  - Un fragmento pequeño del código relevante (el método que hace la subida, puede ser TypeScript o Java)
+
+  Con eso lo redacto igual que las otras tres subsecciones.
