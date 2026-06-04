@@ -1,0 +1,28 @@
+● Perfecto, la revisión de costes la dejamos para cuando tengas los datos. Respóndeme solo estas:
+  ---
+  Conclusiones
+
+  1. ¿Se cumplieron todos los objetivos del capítulo 1 o alguno quedó a medias?
+
+  se cumplieron practicamente todos los objetivos, es una web totalmente funcional que mi tia puede tambien darle uso para controlar stock y subir nuevos productos
+  lo q mas tiro en falta es quizas el poder haber hecho pedidos pero no se pudo y luego que mi tia en un futuro quiere poder subirlo a un servidor y desplegarlo pero Ahora
+  mismo no. si que he adquirido experiencia porq es literalmente las tecnologias donde estoy haciendo las practicas y que es totalmente gratuito las herramientas que he utilizado
+  2. ¿Qué es lo que más te ha aportado a nivel técnico o personal? (dos o tres cosas concretas)
+Sobre todo la enseñanza de front y de back con angular y spring boot y luego algo q nunca habia programado es lo del bot de telegram.
+
+  3. ¿Hubo algo que te costó especialmente resolver?
+  Creo q he seguido unos pasos idoneos primero aprendiendo las bases de cada tecnologia y luego ya profundizandome cada vez mas y mas, quizas lo q mas me costo es el bot de telegram
+  porq nunca habia hecho algo parecido.
+
+  4. ¿Tu tía ya usa la app o está pendiente de desplegarse?
+Mi tia ya ha visto la app y eso pero todavia no la hemos desplegado es un trabajo a futuro.
+  ---
+  Trabajo futuro
+Para trabajos a futuros habia pensado q se puede usar tambien para moviles es decir el adaptarla para telefonos moviles y tables, luego el desplegar todo el proyecto
+para que sea accesible para todo el mundo, eso ya es algo q no depende de mi lo de los envios, yo se lo puedo implementar pero ella tiene q tratar con los transportistas.
+quizas tambien hacer un apartado de reseñas de los productos para gente que ya ha comprado el producto pueda opinar.
+  5. ¿Quieres mencionar la mejora de hacer el email y Telegram asíncronos en la creación de pedidos?
+  6. ¿Quieres mencionar la mejora de usabilidad en el checkout para perfiles con poca experiencia digital?
+  7. ¿Hay alguna funcionalidad que no llegaste a implementar por tiempo? Por ejemplo: reseñas, cupones de descuento, app
+  móvil, despliegue en la nube...
+

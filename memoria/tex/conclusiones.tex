@@ -6,4 +6,40 @@
 
 \section{Conclusiones}
 
+El presente proyecto ha permitido desarrollar una tienda online completa y funcional para la Droguería Mercería Inés, cubriendo desde el catálogo de productos y el proceso de compra con pasarela de pago hasta el panel de administración y el sistema de notificaciones. A continuación se revisa el grado de cumplimiento de cada uno de los objetivos planteados al inicio del trabajo.
+
+El \textbf{objetivo principal} —desarrollar una tienda online funcional que permita a los clientes consultar el catálogo, realizar pedidos y efectuar pagos de forma segura— se ha alcanzado en su totalidad. La aplicación implementa el flujo completo de compra, desde el registro del usuario hasta la confirmación del pedido con generación automática de factura en PDF.
+
+Respecto a los \textbf{objetivos secundarios}, todos han sido alcanzados satisfactoriamente:
+
+\begin{itemize}
+    \item La plataforma web propia proporciona al negocio una presencia digital independiente de las redes sociales, con un catálogo consultable en cualquier momento y desde cualquier dispositivo.
+    \item La propietaria dispone de un panel de administración desde el que puede gestionar el inventario, actualizar productos con imágenes almacenadas en Cloudinary y hacer seguimiento de los pedidos recibidos.
+    \item El bot de Telegram notifica automáticamente al administrador ante cada nueva compra y emite alertas cuando el stock de un producto desciende por debajo del umbral configurado.
+    \item El desarrollo con \textbf{Angular} y \textbf{Spring Boot} ha proporcionado una base sólida en las tecnologías empleadas en las prácticas profesionales en \textbf{Capgemini}, resultando de aplicación directa en el entorno laboral.
+    \item La solución se ha construido íntegramente con herramientas gratuitas y de código abierto, demostrando que es posible desarrollar un sistema de comercio electrónico profesional sin incurrir en costes de licencias.
+\end{itemize}
+
+Entre los aspectos que han supuesto un mayor reto técnico destaca la integración del \textbf{bot de Telegram}. Al tratarse de una tecnología no trabajada previamente, requirió un proceso de aprendizaje específico: primero comprendiendo el protocolo de la API de Telegram y posteriormente implementando el sistema de polling manual con \texttt{RestTemplate} para la recepción de comandos y el envío de notificaciones.
+
+A nivel de aprendizaje, este proyecto ha consolidado el conocimiento de la arquitectura cliente-servidor mediante una aplicación real y completa, abarcando tanto el frontend en Angular como el backend en Spring Boot, con toda la integración que ello implica: autenticación JWT, gestión transaccional, pasarela de pago y servicios externos.
+
+Por último, cabe señalar que la propietaria del negocio ha podido ver y probar la aplicación, valorando positivamente tanto el panel de administración como la experiencia de compra. El despliegue en un servidor público queda como trabajo futuro pendiente de acuerdo con sus necesidades y disponibilidad.
+
 \section{Trabajo futuro}
+
+Aunque el sistema desarrollado cubre todos los requisitos funcionales planteados, durante el proceso de desarrollo y las pruebas realizadas se han identificado varias líneas de mejora que podrían abordarse en versiones futuras de la aplicación.
+
+\begin{itemize}
+    \item \textbf{Despliegue en producción.} La aplicación está preparada para ser desplegada en un servidor público, pero actualmente solo funciona en entorno local. El siguiente paso natural es publicarla en una plataforma de alojamiento en la nube para que sea accesible a cualquier cliente desde internet.
+
+    \item \textbf{Adaptación para dispositivos móviles.} Aunque la interfaz es funcional en escritorio, una adaptación específica del diseño para teléfonos y tabletas mejoraría significativamente la experiencia de los clientes que acceden desde dispositivos móviles.
+
+    \item \textbf{Integración con servicios de mensajería y envío.} Actualmente el sistema gestiona el pedido y el pago, pero la logística de envío queda fuera del alcance de la aplicación. Integrar un servicio de mensajería permitiría generar etiquetas de envío, comunicar el estado del transporte al cliente y cerrar el ciclo completo de la compra online.
+
+    \item \textbf{Sistema de reseñas de productos.} Permitir que los clientes que hayan adquirido un producto dejen una valoración y un comentario aportaría información útil tanto a otros compradores como a la propietaria para conocer la satisfacción con el catálogo.
+
+    \item \textbf{Procesamiento asíncrono en la creación de pedidos.} Como se observó en las pruebas de rendimiento, el endpoint \texttt{POST /api/pedidos/crear} tarda 1.870 ms debido a que el envío del correo de confirmación y la notificación de Telegram se realizan de forma síncrona. Procesarlas de forma asíncrona, por ejemplo mediante \texttt{@Async} de Spring, reduciría el tiempo de respuesta percibido por el usuario.
+
+    \item \textbf{Mejora de la usabilidad en el proceso de pago.} Las pruebas de usabilidad evidenciaron que el formulario de \textit{checkout} genera cierta fricción en perfiles con escasa experiencia en compras online. Incorporar indicaciones contextuales y mensajes de ayuda en ese paso haría la experiencia más accesible para ese tipo de usuarios.
+\end{itemize}

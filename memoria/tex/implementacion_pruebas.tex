@@ -3,7 +3,7 @@
 % necesariamente la organización que debe tener este capítulo.
 \section{Implementación}
 
-En este capítulo se describe el proceso de desarrollo de la aplicación, haciendo especial énfasis en los fragmentos de código más representativos del backend. Se han seleccionado tres funciones que ilustran aspectos clave del sistema: la gestión del flujo de compra, la seguridad en la recuperación de contraseñas y la generación de estadísticas para el panel de administración.
+En este capítulo se describe el proceso de desarrollo de la aplicación, haciendo especial énfasis en los fragmentos de código más representativos del sistema. Se han seleccionado cuatro fragmentos que ilustran aspectos clave del desarrollo: la gestión del flujo de compra, la seguridad en la recuperación de contraseñas, la generación de estadísticas para el panel de administración y la integración con Cloudinary para la gestión de imágenes de productos.
 
 \subsection{Creación de pedido}
 
@@ -88,6 +88,52 @@ for (Object[] row : detallePedidoRepository
 La comparativa de ingresos entre el mes actual y el mes anterior permite al administrador detectar tendencias de ventas de forma inmediata. El cálculo excluye los pedidos cancelados y los pendientes de pago, de modo que el valor mostrado refleja únicamente ingresos reales confirmados. En cuanto al inventario, el panel diferencia entre productos sin stock (\texttt{stock = 0}) y productos con stock bajo (\texttt{stock} $\leq$ \texttt{5}), proporcionando dos niveles de alerta independientes. El listado de los cinco productos más vendidos se obtiene mediante una consulta JPQL con agregación y paginación controlada con \texttt{PageRequest}, limitando el resultado a los primeros cinco registros.
 
 
+\subsection{Gestión de imágenes con Cloudinary}
+
+La subida de imágenes de producto se gestiona a través de \textit{Cloudinary}, un servicio de almacenamiento y distribución de contenido multimedia en la nube. Esta integración permite al administrador o al empleado añadir y actualizar las fotografías del catálogo desde cualquier dispositivo con acceso al panel de administración, sin necesidad de intervención técnica ni acceso al servidor.
+
+El flujo de subida sigue una arquitectura en la que el frontend no se comunica directamente con Cloudinary, sino que envía el archivo al backend, que actúa como intermediario. De esta forma, las credenciales de la cuenta de Cloudinary permanecen en el servidor y nunca quedan expuestas al cliente. El proceso completo es el siguiente: el administrador selecciona una imagen en el formulario del panel; Angular envía el archivo mediante una petición \texttt{POST} a \texttt{/api/productos/upload} en formato \textit{multipart/form-data}; Spring Boot recibe el fichero, lo sube a Cloudinary en la carpeta \texttt{drogueria} usando el SDK oficial de Java, y retorna la URL pública generada; Angular almacena esa URL en el objeto del producto, que se persiste en la base de datos al guardar el formulario. A partir de ese momento, el catálogo carga las imágenes directamente desde la CDN de Cloudinary.
+
+El fragmento siguiente corresponde al endpoint del backend responsable de la subida:
+
+\begin{lstlisting}[language=Java, caption={Endpoint de subida de imágenes a Cloudinary (ProductoController.java).}]
+@PostMapping("/upload")
+public ResponseEntity<?> subirImagen(
+        @RequestParam("file") MultipartFile file) {
+    try {
+        Map uploadResult = cloudinary.uploader().upload(
+            file.getBytes(),
+            ObjectUtils.asMap("folder", "drogueria")
+        );
+        String url = (String) uploadResult.get("url");
+        return ResponseEntity.ok()
+            .body("{\"url\": \"" + url + "\"}");
+    } catch (Exception e) {
+        return ResponseEntity.badRequest()
+            .body("Error subida: " + e.getMessage());
+    }
+}
+\end{lstlisting}
+
+En el lado del frontend, el método \texttt{onFileSelected} de \texttt{admin.component.ts} lanza la subida en cuanto el administrador selecciona el archivo, sin esperar a que se guarde el formulario del producto, lo que proporciona una respuesta inmediata en la interfaz:
+
+\begin{lstlisting}[language=Java, caption={Gestión de la selección de imagen en el panel de administración (admin.component.ts).}]
+onFileSelected(event: any) {
+  const file: File = event.target.files[0];
+  if (file) {
+    this.subiendoImagen = true;
+    this.productoService.uploadImage(file).subscribe({
+      next: (response: any) => {
+        this.nuevoProducto.urlImagen = response.url;
+        this.subiendoImagen = false;
+      },
+      error: () => { this.subiendoImagen = false; },
+    });
+  }
+}
+\end{lstlisting}
+
+\clearpage
 \section{Pruebas funcionales}
 
 Las pruebas funcionales tienen como objetivo verificar que cada requisito funcional del sistema se satisface correctamente bajo condiciones reales de uso. Para ello, se han definido casos de prueba agrupados por bloque funcional, ejecutados de forma manual sobre la aplicación desplegada en local. Cada caso recoge la acción realizada, el resultado esperado y el estado final de la prueba.
@@ -215,7 +261,7 @@ Las pruebas de rendimiento tienen como objetivo evaluar la velocidad de carga de
 
 \subsection{Rendimiento del frontend — Google Lighthouse}
 
-Las pruebas de Lighthouse se han ejecutado en modo escritorio (\textit{desktop}) sobre las páginas principales de la aplicación. Se realizaron dos baterías de mediciones: la primera sobre el entorno de desarrollo (\texttt{ng serve}), y la segunda sobre el \textbf{build de producción} (\texttt{ng build}), que aplica minificación y \textit{tree-shaking} de JavaScript y CSS. Las métricas registradas son el índice de rendimiento general (\textit{Performance}), el tiempo hasta el primer renderizado de contenido (\textit{FCP}), el tiempo hasta el renderizado del elemento más grande (\textit{LCP}) y el tiempo de bloqueo total (\textit{TBT}).
+Las pruebas de Lighthouse se han ejecutado en modo escritorio (\textit{desktop}) sobre el \textbf{build de producción} (\texttt{ng build}) de las páginas principales de la aplicación. Las métricas registradas son el índice de rendimiento general (\textit{Performance}), el tiempo hasta el primer renderizado de contenido (\textit{FCP}), el tiempo hasta el renderizado del elemento más grande (\textit{LCP}) y el tiempo de bloqueo total (\textit{TBT}).
 
 \begin{table}[H]
 \centering
@@ -223,14 +269,6 @@ Las pruebas de Lighthouse se han ejecutado en modo escritorio (\textit{desktop})
 \begin{tabular}{|l|c|c|c|c|}
 \hline
 \textbf{Página} & \textbf{Performance} & \textbf{FCP} & \textbf{LCP} & \textbf{TBT} \\
-\hline
-\multicolumn{5}{|l|}{\textit{Build de desarrollo (ng serve)}} \\
-\hline
-Página de inicio   & 59 & 3,3 s & 5,5 s & 50 ms \\
-\hline
-Catálogo de productos & 57 & 3,3 s & 6,4 s & 100 ms \\
-\hline
-\multicolumn{5}{|l|}{\textit{Build de producción (ng build)}} \\
 \hline
 Página de inicio      & 89 & 0,7 s & 2,1 s & 40 ms \\
 \hline
@@ -241,10 +279,10 @@ Carrito de compra     & 92 & 0,7 s & 1,7 s & 110 ms \\
 Panel de administración & 92 & 0,8 s & 1,1 s & 180 ms \\
 \hline
 \end{tabular}
-\caption{Resultados de Lighthouse en build de desarrollo y producción.}
+\caption{Resultados de Lighthouse (build de producción).}
 \end{table}
 
-Los resultados evidencian una mejora media de 30 puntos en el índice de rendimiento al pasar del entorno de desarrollo al build de producción, con reducciones del LCP de entre 3 y 5 segundos. Adicionalmente, durante las pruebas del catálogo se detectó que las imágenes de los productos penalizaban significativamente el LCP. Para corregirlo se aplicó \textit{lazy loading} mediante el atributo \texttt{loading="lazy"} y se añadieron dimensiones explícitas (\texttt{width} y \texttt{height}) en las tarjetas de producto, lo que redujo el LCP del catálogo de 2,9 s a 1,6 s y elevó su puntuación de 82 a 93.
+Las cuatro páginas principales obtienen una puntuación de rendimiento igual o superior a 89, con tiempos LCP por debajo de 2,1 s en todos los casos. Durante las pruebas del catálogo se detectó que las imágenes de los productos penalizaban significativamente el LCP. Para corregirlo se aplicó \textit{lazy loading} mediante el atributo \texttt{loading="lazy"} y se añadieron dimensiones explícitas (\texttt{width} y \texttt{height}) en las tarjetas de producto, lo que redujo el LCP del catálogo de 2,9 s a 1,6 s y elevó su puntuación de 82 a 93.
 
 \subsection{Rendimiento del backend — Tiempos de respuesta de la API}
 
@@ -275,3 +313,70 @@ Los cuatro endpoints de consulta responden en menos de 50 ms, resultados que se 
 
 
 \section{Pruebas de usabilidad}
+
+Las pruebas de usabilidad se han llevado a cabo mediante el \textit{System Usability Scale} (SUS), un cuestionario estándar compuesto por 10 ítems con escala Likert del 1 al 5. La puntuación final, entre 0 y 100, se obtiene sumando \((x_i - 1)\) para los ítems impares y \((5 - x_i)\) para los pares, y multiplicando el resultado por 2,5. Según los baremos establecidos por Bangor, Kortum y Miller~\cite{Bangor2008}, puntuaciones superiores a 68 se consideran aceptables y superiores a 80, excelentes.
+
+\subsection{Participantes y tareas}
+
+Se seleccionaron cuatro participantes con perfiles diferenciados para cubrir tanto el público objetivo de la tienda como el perfil de administración:
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{|c|l|c|l|}
+\hline
+\textbf{Usuario} & \textbf{Perfil} & \textbf{Edad} & \textbf{Nivel digital} \\
+\hline
+U1 & Consumidor habitual de e-commerce         & 24 & Alto   \\
+\hline
+U2 & Propietaria de la tienda (cliente objetivo) & 45 & Medio  \\
+\hline
+U3 & Usuaria con dificultades informáticas      & 55 & Bajo   \\
+\hline
+U4 & Graduado en Ingeniería Informática         & 24 & Experto \\
+\hline
+\end{tabular}
+\caption{Perfiles de los participantes en las pruebas de usabilidad.}
+\end{table}
+
+Cada participante realizó de forma autónoma las siguientes cinco tareas, sin instrucciones previas sobre el uso de la aplicación:
+
+\begin{enumerate}
+    \item Registrarse como nuevo usuario en la plataforma.
+    \item Localizar un producto del catálogo y añadirlo al carrito.
+    \item Modificar la cantidad de un artículo en el carrito.
+    \item Completar el proceso de compra mediante la pasarela de pago Stripe.
+    \item Consultar el historial de pedidos en el área personal.
+\end{enumerate}
+
+\subsection{Resultados}
+
+La tabla~\ref{tab:sus} recoge las respuestas individuales de cada participante y la puntuación SUS resultante.
+
+\begin{table}[H]
+\centering
+\small
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+\textbf{Usuario} & \textbf{P1} & \textbf{P2} & \textbf{P3} & \textbf{P4} & \textbf{P5} & \textbf{P6} & \textbf{P7} & \textbf{P8} & \textbf{P9} & \textbf{P10} & \textbf{SUS} \\
+\hline
+U1 (24 a., consumidor)       & 4 & 2 & 4 & 1 & 4 & 2 & 5 & 2 & 4 & 1 & 82,5 \\
+\hline
+U2 (45 a., propietaria)      & 5 & 1 & 4 & 2 & 4 & 1 & 4 & 1 & 5 & 2 & 87,5 \\
+\hline
+U3 (55 a., baja competencia) & 3 & 3 & 3 & 3 & 4 & 2 & 4 & 3 & 4 & 2 & 62,5 \\
+\hline
+U4 (24 a., técnico)          & 4 & 1 & 5 & 1 & 5 & 1 & 5 & 1 & 5 & 1 & 97,5 \\
+\hline
+\multicolumn{11}{|r|}{\textbf{Puntuación media}} & \textbf{82,5} \\
+\hline
+\end{tabular}%
+}
+\caption{Respuestas individuales y puntuaciones SUS.}
+\label{tab:sus}
+\end{table}
+
+La puntuación media obtenida es de \textbf{82,5 sobre 100}, lo que sitúa al sistema en la categoría de \textbf{excelente}.
+
+El usuario técnico (U4, 97,5) valoró positivamente la consistencia de la navegación y la correcta persistencia del estado de sesión. La propietaria de la tienda (U2, 87,5) encontró el panel de administración intuitivo y destacó la claridad en la gestión de pedidos, que es el uso que hará de la aplicación en el día a día. La usuaria con menor competencia digital (U3, 62,5) se situó por debajo del umbral de aceptable (68); la fricción se concentró en el paso del \textit{checkout}, donde el recelo habitual ante formularios de pago requirió una breve explicación inicial. No obstante, una vez superado ese paso, completó el resto de las tareas de forma autónoma gracias a la claridad visual de los formularios. Este resultado apunta a una posible mejora futura: añadir indicaciones contextuales en el formulario de pago para usuarios menos familiarizados con el e-commerce.
