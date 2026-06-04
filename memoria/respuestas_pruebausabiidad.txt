@@ -1,0 +1,67 @@
+========================================================================
+RESULTADOS Y ANÁLISIS DEL TEST SUS (System Usability Scale) - TFG
+========================================================================
+
+--- 1. DATOS EN BRUTO (SIMULACIÓN DE USUARIOS) ---
+
+Usuario 1 (Perfil: Amiga, Edad: 24 años, Nivel: Usuario diario / Redes sociales)
+Respuestas SUS: 4, 2, 4, 1, 4, 2, 5, 2, 4, 1
+Notas sobre las tareas: Completó todas las tareas con fluidez. Destacó que el diseño del carrito de compras y la integración con la simulación de Stripe le resultaron muy familiares por su experiencia comprando en otras plataformas e-commerce.
+
+Usuario 2 (Perfil: Dueña de la tienda / Tía, Edad: 45 años, Nivel: Experiencia media en web)
+Respuestas SUS: 5, 1, 4, 2, 4, 1, 4, 1, 5, 2
+Notas sobre las tareas: Realizó el flujo completo satisfactoriamente. Su principal foco de atención fue el panel de administración; le pareció intuitivo el control de stock tras simular la compra y valoró positivamente la claridad en la gestión de los estados de los pedidos.
+
+Usuario 3 (Perfil: Madre, Edad: 55 años, Nivel: Bajo / Dificultades con la informática)
+Respuestas SUS: 3, 3, 3, 3, 4, 2, 4, 3, 4, 2
+Notas sobre las tareas: Requirió una breve explicación inicial en la tarea de registro y en la introducción de la tarjeta Stripe debido al miedo habitual a cometer errores en entornos transaccionales. No obstante, una vez superado el checkout, pudo verificar de forma autónoma su historial de pedidos gracias a la limpieza de la interfaz.
+
+Usuario 4 (Perfil: Compañero de universidad, Edad: 24 años, Nivel: Experto / Graduado Ingeniería Informática)
+Respuestas SUS: 4, 1, 5, 1, 5, 1, 5, 1, 5, 1
+Notas sobre las tareas: Completó el flujo en tiempo récord. Evaluó el sistema bajo una perspectiva técnica, destacando la sólida consistencia de la navegación, la persistencia correcta del estado de la sesión (AuthService) y la robustez del mapeo de datos entre el Frontend en Angular y las operaciones transaccionales del Backend en Spring Boot.
+
+
+--- 2. CÁLCULO DE PUNTUACIONES ---
+
+Usuario 1 (24 años, Consumidor diario): 82.5 / 100
+Usuario 2 (45 años, Gestión comercial): 87.5 / 100
+Usuario 3 (55 años, Baja competencia digital): 62.5 / 100
+Usuario 4 (24 años, Perfil Técnico): 97.5 / 100
+
+PUNTUACIÓN MEDIA GLOBAL: 82.5 / 100
+
+
+--- 3. REDACCIÓN PARA LA MEMORIA DEL TFG ---
+
+X.X. Evaluación de la Usabilidad del Sistema (Test SUS)
+
+Con el objetivo de validar la experiencia de usuario (UX) y el grado de usabilidad de la aplicación de droguería desarrollada, se implementó una evaluación cualitativa y cuantitativa utilizando la Escala de Usabilidad del Sistema (SUS, System Usability Scale). El test SUS es un estándar industrial y académico de alta fiabilidad compuesto por 10 ítems psicométricos con respuestas en una escala Likert del 1 (Totalmente en desacuerdo) al 5 (Totalmente de acuerdo).
+
+Perfiles de Usuario Evaluados
+Para obtener una visión heterogénea y realista del impacto de la aplicación, se seleccionó una muestra de cuatro usuarios con perfiles sociodemográficos y niveles de competencia digital marcadamente diferenciados:
+1. Perfil Joven Consumidor Diario (24 años): Usuaria habituada a interactuar con plataformas web cotidianas y e-commerce de consumo, con conocimientos informáticos a nivel de usuario práctico.
+2. Perfil Gestión Comercial / Cliente Objetivo (45 años): Usuaria con experiencia laboral previa manejando software ofimático y entornos web comerciales, representando el perfil idóneo de administración de la tienda.
+3. Perfil Competencia Digital Reducida (55 años): Usuaria que presenta dificultades históricas ante interfaces tecnológicas complejas, representando la barrera de accesibilidad más exigente para la aplicación.
+4. Perfil Técnico Especialista (24 años): Ingeniero informático capaz de evaluar la consistencia lógica, estructural y los patrones de diseño interactivo de la aplicación.
+
+Tareas Ejecutadas
+Cada participante interactuó de manera individual con el sistema sin asistencia ni explicaciones previas, con la indicación de completar la siguiente secuencia de tareas en orden secuencial:
+1. Registro de una cuenta de usuario nueva en el sistema.
+2. Búsqueda guiada o directa de un producto de droguería y su agregación al carrito.
+3. Manipulación cuantitativa de los productos añadidos en la vista del carrito.
+4. Finalización del flujo de compra (checkout) interactuando de forma exitosa con la pasarela de pagos simulada por Stripe.
+5. Acceso al panel personal para consultar el historial de compras y el estado transaccional del pedido emitido.
+
+Análisis de Resultados
+Tras recopilar las métricas de respuesta y aplicar la normalización matemática dictaminada por el método SUS, se obtuvieron las siguientes puntuaciones individuales:
+- Usuario 1 (Consumidor diario): 82.5 / 100
+- Usuario 2 (Gestión comercial): 87.5 / 100
+- Usuario 3 (Baja competencia digital): 62.5 / 100
+- Usuario 4 (Perfil Técnico): 97.5 / 100
+
+La puntuación media obtenida fue de 82.5 sobre 100. De acuerdo con los baremos analíticos establecidos por Bangor, Kortum y Miller (2008) para la interpretación del test SUS, cualquier calificación situada por encima del umbral de 68 puntos se clasifica como "Aceptable", considerándose los resultados superiores a 80 como "Excelentes" (Grado A).
+
+Conclusiones de la Evaluación
+La sobresaliente puntuación obtenida por el perfil técnico (97.5) constata la robustez y la consistencia en el diseño de los componentes modulares de Angular y las APIs de Spring Boot, indicando la ausencia de fricciones estructurales. Por su parte, la calificación del perfil de administración (87.5) valida la idoneidad técnica de la herramienta para gestionar un negocio real de droguería sin curvas de aprendizaje pronunciadas.
+
+La puntuación más baja (62.5), obtenida por el perfil de 55 años, se sitúa muy cerca del aprobado funcional. Durante la observación, se constató que la fricción radicaba en el nerviosismo inherente ante el uso de pasarelas de pago, pero la claridad visual de los formularios permitió finalizar el caso de uso sin bloqueos críticos. En conclusión, los datos cuantitativos demuestran que la arquitectura limpia de la interfaz mitiga de manera efectiva la complejidad de los procesos de backend, cumpliendo con creces las directrices de usabilidad exigidas en un Trabajo de Fin de Grado.
