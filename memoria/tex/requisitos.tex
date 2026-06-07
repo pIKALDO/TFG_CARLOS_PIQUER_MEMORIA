@@ -155,7 +155,7 @@ Se ha generado a partir de las estimaciones realizadas mediante la técnica PERT
 \begin{sidewaysfigure}
 \centering
 \includegraphics[width=\textwidth]{figs/GanttTodo.pdf}
-\caption{Diagrama de Gantt del proyecto (01/10/2025–07/01/2026).}
+\caption{Diagrama de Gantt del proyecto (01/10/2025–12/06/2026).}
 \end{sidewaysfigure}
 
 \clearpage
@@ -224,9 +224,7 @@ Además, se incluyen las características del equipo utilizado durante el desarr
     \item \textbf{Sistema operativo:} Windows 11
 \end{itemize}
 
-Para la planificación temporal se ha aplicado la técnica \textbf{PERT}, combinada con el \textbf{juicio de expertos}, 
-comparando los valores calculados con estimaciones de proyectos similares y con referencias salariales obtenidas de portales como Indeed \cite{Indeed2025}. 
-Además, se consultaron tres perfiles con diferente nivel de experiencia en el desarrollo de software, lo que permitió contrastar las horas estimadas y ajustar los tiempos de las tareas.
+Las tarifas horarias aplicadas se han estimado a partir de referencias salariales publicadas en portales de empleo especializados \cite{Indeed2025}.
 
 Finalmente, el coste total del proyecto se obtiene mediante la siguiente expresión:
 
@@ -275,17 +273,17 @@ Falta de experiencia inicial con el bot de Telegram & Media & Media & Técnica \
 A continuación, se describen las medidas generales de \textbf{mitigación y contingencia} aplicadas a los riesgos identificados:
 
 \begin{itemize}
-    \item \textbf{Problemas de integración entre módulos Angular–Spring Boot:} se intentará detectar pronto cualquier error realizando pruebas cada vez que se conecten nuevas partes del sistema. También se mantendrá una buena organización del código para facilitar la comunicación entre ambos módulos.
-    
-    \item \textbf{Fallos en la pasarela de pago (Stripe):} antes de activar los pagos reales, se harán pruebas en el modo de simulación que ofrece la plataforma. En caso de error, se podrá reintentar el pago o registrar el pedido para revisarlo después.
-    
-    \item \textbf{Cambios en los requisitos durante el desarrollo:} se dejará algo de margen en la planificación para poder adaptarse a posibles cambios sin afectar al trabajo principal. Además, se priorizarán las funciones más importantes para tener siempre una versión funcional.
-    
-    \item \textbf{Sobrecarga de trabajo o retrasos en la planificación:} se dividirá el trabajo en tareas pequeñas y se intentará cumplir objetivos semanales. También se reservará algo de tiempo extra para posibles imprevistos o revisiones de última hora.
-    
-    \item \textbf{Fallos de seguridad en la aplicación o base de datos:} se harán copias de seguridad con frecuencia y se guardarán las contraseñas de forma segura. Además, se mantendrán las herramientas actualizadas para evitar problemas.
-    
-    \item \textbf{Falta de experiencia con el bot de Telegram:} se dedicará tiempo a aprender el funcionamiento de la librería antes de integrarlo por completo. Se probarán ejemplos sencillos para entender cómo gestionar comandos y notificaciones, y se consultará la documentación cuando sea necesario.
+    \item \textbf{Problemas de integración entre módulos Angular–Spring Boot:} se establecerán pruebas de integración progresivas conforme se incorporen nuevos módulos al sistema, garantizando la detección temprana de errores. Asimismo, se mantendrá una estructura de código modular que facilite la interoperabilidad entre el frontend y el backend.
+
+    \item \textbf{Fallos en la pasarela de pago (Stripe):} con anterioridad a la activación de los pagos reales, se realizarán pruebas exhaustivas en el entorno de simulación que proporciona la plataforma. Ante un eventual fallo, el sistema contempla la posibilidad de reintentar el pago o registrar el pedido pendiente para su revisión posterior.
+
+    \item \textbf{Cambios en los requisitos durante el desarrollo:} se reservará un margen de tiempo en la planificación que permita absorber cambios de alcance sin comprometer las funcionalidades principales. Asimismo, se mantendrá en todo momento una versión operativa del sistema, priorizando los requisitos de mayor relevancia.
+
+    \item \textbf{Sobrecarga de trabajo o retrasos en la planificación:} el trabajo se organizará en tareas de alcance reducido con objetivos semanales verificables. Adicionalmente, se incorporará un margen de contingencia en la planificación para absorber posibles imprevistos o revisiones no previstas inicialmente.
+
+    \item \textbf{Fallos de seguridad en la aplicación o base de datos:} se realizarán copias de seguridad periódicas y se aplicarán mecanismos de almacenamiento seguro de credenciales. Asimismo, se mantendrán actualizadas las dependencias y herramientas del proyecto para minimizar la exposición a vulnerabilidades conocidas.
+
+    \item \textbf{Falta de experiencia con el bot de Telegram:} se destinará un periodo de aprendizaje previo a la integración completa, durante el cual se desarrollarán prototipos sencillos para comprender la gestión de comandos y notificaciones. La documentación oficial de la librería servirá como referencia principal durante todo el proceso.
 \end{itemize}
 Gracias a estas medidas, se espera que los riesgos identificados tengan un impacto limitado en el desarrollo y no comprometan los objetivos principales del proyecto.
 

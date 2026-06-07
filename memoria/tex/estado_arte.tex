@@ -3,9 +3,7 @@
 % ======================================
 
 \section{Análisis de aplicaciones similares}
-En el mercado actual la gran variedad de plataformas que nos ofrecen servicios para
-crear nuestra propia tienda online sin necesidad de tener algún tipo de conocimiento sobre
-programar es muy extenso. Algunas de las más representativas son:
+El mercado actual ofrece una amplia variedad de plataformas orientadas a la creación de tiendas online sin necesidad de conocimientos de programación. A continuación se analizan las soluciones más representativas:
 
 \subsection{Wix eCommerce}
 Wix proporciona un sistema de creación de páginas basado en el uso de herramientas
@@ -340,8 +338,40 @@ Despliegue en proyecto Java & Complejo & Complejo & Simple \\ \hline
 \subsubsection{SQL}
 Las bases de datos relacionales, como MySQL o PostgreSQL, utilizan un modelo basado en tablas y relaciones entre ellas \cite{mysqlDocs}. Destacan por su consistencia, su alto nivel de seguridad y por el uso del lenguaje SQL, que es un estándar ampliamente adoptado en el entorno empresarial.
 
+\textbf{Ventajas:}
+\begin{itemize}
+    \item Integridad referencial garantizada mediante claves primarias y foráneas.
+    \item Lenguaje SQL estándar, ampliamente adoptado en entornos empresariales.
+    \item Soporte transaccional completo (ACID).
+    \item Alta consistencia y fiabilidad de los datos.
+\end{itemize}
+
+\textbf{Desventajas:}
+\begin{itemize}
+    \item Menor flexibilidad frente a estructuras de datos cambiantes.
+    \item Escalabilidad horizontal más limitada que las alternativas NoSQL.
+    \item Requiere definir el esquema de datos con antelación.
+    \item Puede resultar menos eficiente para grandes volúmenes de datos no estructurados.
+\end{itemize}
+
 \subsubsection{NoSQL}
-Las bases de datos NoSQL, como MongoDB, almacenan la información en estructuras más flexibles, como documentos o grafos. Ofrecen mayor escalabilidad y rapidez en ciertas operaciones, aunque sacrifican consistencia y mecanismos de seguridad más avanzados. \cite{mongodbDocs}.
+Las bases de datos NoSQL, como MongoDB, almacenan la información en estructuras más flexibles, como documentos o grafos \cite{mongodbDocs}. Ofrecen mayor escalabilidad y rapidez en ciertas operaciones, aunque sacrifican consistencia y mecanismos de control más avanzados.
+
+\textbf{Ventajas:}
+\begin{itemize}
+    \item Alta escalabilidad horizontal, adecuada para grandes volúmenes de datos.
+    \item Mayor flexibilidad en el modelo de datos, sin esquema fijo.
+    \item Buen rendimiento en operaciones de lectura y escritura masivas.
+    \item Idóneas para datos no estructurados o semiestructurados.
+\end{itemize}
+
+\textbf{Desventajas:}
+\begin{itemize}
+    \item Menor consistencia en comparación con las bases de datos relacionales.
+    \item Ausencia de un lenguaje de consulta estándar.
+    \item Soporte limitado para transacciones complejas.
+    \item Mecanismos de seguridad y control de acceso menos maduros.
+\end{itemize}
 
 \subsubsection{Comparación y elección}
 Para este TFG se ha optado por utilizar \textbf{MySQL} como sistema de gestión de bases de datos. La elección se debe a su estabilidad, su integración nativa con Spring Boot y su capacidad para garantizar la seguridad de los datos. Además, a lo largo de la carrera se ha trabajado ampliamente con bases de datos SQL, mientras que NoSQL apenas se ha tratado, por lo que MySQL resulta una opción más familiar y adecuada para el desarrollo del proyecto.
