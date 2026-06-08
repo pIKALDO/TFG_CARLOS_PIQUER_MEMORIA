@@ -414,15 +414,29 @@ Estas relaciones garantizan la integridad referencial mediante el uso de claves 
 
 \subsection{Modelo relacional y prototipo inicial}
 
-El modelo relacional resultante se compone de tablas como \texttt{usuarios}, \texttt{productos}, \texttt{carritos}, \texttt{carrito\_items}, \texttt{pedidos}, \texttt{pagos} y \texttt{facturas}.  
-La Figura~\ref{fig:prototipoBD} muestra el esquema final diseñado.
+El modelo relacional resultante se compone de las siguientes tablas principales:
+\texttt{usuarios}, \texttt{productos}, \texttt{carritos}, \texttt{carrito\_items},
+\texttt{pedidos}, \texttt{pagos} y \texttt{direcciones}. La Figura~\ref{fig:prototipo-bd}
+muestra el esquema inicial diseñado durante la fase de análisis, elaborado mediante
+la herramienta \textit{dbdiagram.io}.
+
+Este prototipo sirvió como base para el desarrollo de la base de datos definitiva,
+que fue refinada durante la implementación para incorporar elementos adicionales
+derivados del análisis de requisitos. Entre los principales ajustes realizados
+destacan la incorporación de la tabla \texttt{categorias} para la clasificación
+de productos, el atributo \texttt{stock\_minimo} en la tabla \texttt{productos}
+---necesario para la lógica de alertas del bot de Telegram---, el atributo
+\texttt{precio\_unitario} en las líneas de pedido para preservar el precio
+en el momento de la compra, y la relación entre \texttt{pedidos} y
+\texttt{direcciones} para gestionar el envío. El modelo entidad--relación
+definitivo se presenta en la Figura~\ref{fig:modelo-er}.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.95\textwidth]{figs/prototipoBD.png}
     \caption{Prototipo de la base de datos relacional}
-    \label{fig:prototipoBD}
-\end{figure} 
+    \label{fig:prototipo-bd}
+\end{figure}
 \clearpage
 \section{Diseño de la interfaz de usuario}
 
