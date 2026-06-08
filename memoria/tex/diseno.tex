@@ -406,12 +406,6 @@ El administrador recibe un aviso para reponer el stock. \\ \hline
 El diseño de la base de datos se llevó a cabo inicialmente mediante \textit{dbdiagram.io}, para definir de manera visual las entidades, sus atributos y relaciones.  
 Posteriormente, el modelo se validó e implementó en \textit{MySQL Workbench}, comprobando su coherencia con el backend en \textit{Spring Boot}.
 
-\subsection{Modelo entidad–relación}
-
-El modelo E/R del sistema representa las entidades principales (\textit{usuarios, productos, carritos, pedidos, pagos, facturas}) y las relaciones entre ellas.  
-Estas relaciones garantizan la integridad referencial mediante el uso de claves primarias, foráneas y restricciones de unicidad.
-\clearpage  
-
 \subsection{Modelo relacional y prototipo inicial}
 
 El modelo relacional resultante se compone de las siguientes tablas principales:
@@ -436,6 +430,26 @@ definitivo se presenta en la Figura~\ref{fig:modelo-er}.
     \includegraphics[width=0.95\textwidth]{figs/prototipoBD.png}
     \caption{Prototipo de la base de datos relacional}
     \label{fig:prototipo-bd}
+\end{figure}
+\clearpage
+
+\subsection{Modelo entidad–relación}
+
+El modelo E/R del sistema representa las entidades principales (\textit{usuarios, productos, carritos, pedidos, pagos, facturas}) y las relaciones entre ellas.
+Estas relaciones garantizan la integridad referencial mediante el uso de claves primarias, foráneas y restricciones de unicidad.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth, keepaspectratio]{figs/ENTIDAD-RELACION.png}
+    \caption{Modelo entidad--relación del sistema.}
+    \label{fig:modelo-er}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth, keepaspectratio]{figs/LEYENDAENTIDAD-RELACION.png}
+    \caption{Leyenda del modelo entidad--relación.}
+    \label{fig:leyenda-er}
 \end{figure}
 \clearpage
 \section{Diseño de la interfaz de usuario}
