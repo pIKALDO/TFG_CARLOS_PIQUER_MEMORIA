@@ -30,6 +30,15 @@ if (nuevoStock <= 5) {
 
 Los cálculos monetarios se realizan con \texttt{BigDecimal} en lugar de tipos de coma flotante primitivos, evitando los errores de precisión habituales en operaciones aritméticas con decimales. Una vez completado el proceso, el sistema dispara dos notificaciones externas de forma automática: un correo electrónico de confirmación al cliente y un mensaje al administrador a través del bot de Telegram. Cabe destacar que el estado inicial del pedido depende del método de pago seleccionado: los pagos con Bizum arrancan en estado \texttt{PENDIENTE\_PAGO} hasta que el administrador confirma la transferencia de forma manual.
 
+La Figura~\ref{fig:captura_checkout} muestra la pantalla de \textit{checkout} de la aplicación, donde el cliente revisa el resumen del pedido y selecciona el método de pago antes de confirmar la compra.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth, keepaspectratio]{figs/captura_checkout.png}
+    \caption{Pantalla de \textit{checkout} con resumen del pedido y selección del método de pago.}
+    \label{fig:captura_checkout}
+\end{figure}
+
 \subsection{Recuperación de contraseña}
 
 El módulo de recuperación de contraseña, implementado en \texttt{PasswordController.java}, sigue un flujo en dos pasos diseñado con criterios de seguridad. En el primer paso, el sistema genera un token único mediante \texttt{UUID.randomUUID()} y lo almacena en la base de datos junto con una marca de caducidad de una hora. A continuación, envía al usuario un enlace de recuperación por correo electrónico. En el segundo paso, el sistema valida el token recibido, comprueba que no haya expirado y actualiza la contraseña con el nuevo valor proporcionado.
@@ -55,6 +64,22 @@ usuario.setTokenExpiration(null);
 \end{lstlisting}
 
 Merece especial mención el mensaje de respuesta del primer paso: la formulación \textit{"Si el correo existe, se ha enviado un enlace"} es intencionalmente ambigua. Esta técnica evita la enumeración de usuarios (\textit{user enumeration}), impidiendo que un atacante pueda deducir qué direcciones de correo están registradas en el sistema a partir de las respuestas del servidor. Tras completar el reset, el token se elimina de la base de datos para que no pueda reutilizarse, y la nueva contraseña se almacena hasheada con \textit{BCrypt}, garantizando que nunca se persista en texto plano.
+
+Las Figuras~\ref{fig:captura_recuperar} y~\ref{fig:captura_email} ilustran el flujo completo: el formulario donde el usuario introduce su correo electrónico y el correo de recuperación recibido con el enlace de restablecimiento y el aviso de caducidad de una hora.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth, keepaspectratio]{figs/recuperacion1.png}
+    \caption{Formulario de recuperación de contraseña en la aplicación web.}
+    \label{fig:captura_recuperar}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth, keepaspectratio]{figs/recuperacion2.png}
+    \caption{Correo electrónico de recuperación generado por el sistema, con el enlace de restablecimiento y el aviso de caducidad de una hora.}
+    \label{fig:captura_email}
+\end{figure}
 
 \clearpage
 \subsection{Estadísticas del panel de administración}
@@ -87,6 +112,14 @@ for (Object[] row : detallePedidoRepository
 
 La comparativa de ingresos entre el mes actual y el mes anterior permite al administrador detectar tendencias de ventas de forma inmediata. El cálculo excluye los pedidos cancelados y los pendientes de pago, de modo que el valor mostrado refleja únicamente ingresos reales confirmados. En cuanto al inventario, el panel diferencia entre productos sin stock (\texttt{stock = 0}) y productos con stock bajo (\texttt{stock} $\leq$ \texttt{5}), proporcionando dos niveles de alerta independientes. El listado de los cinco productos más vendidos se obtiene mediante una consulta JPQL con agregación y paginación controlada con \texttt{PageRequest}, limitando el resultado a los primeros cinco registros.
 
+La Figura~\ref{fig:captura_dashboard} muestra el panel de administración con las estadísticas en tiempo real: ingresos del mes actual frente al mes anterior, pedidos pendientes, stock crítico, historial de últimos pedidos y ranking de los cinco productos más vendidos.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth, keepaspectratio]{figs/captura_admin_dashbord.png}
+    \caption{Panel de administración con estadísticas de ventas, pedidos pendientes, stock crítico y productos más vendidos.}
+    \label{fig:captura_dashboard}
+\end{figure}
 
 \subsection{Gestión de imágenes con Cloudinary}
 
@@ -132,6 +165,15 @@ onFileSelected(event: any) {
   }
 }
 \end{lstlisting}
+
+La Figura~\ref{fig:captura_cloudinary} muestra el formulario de alta de producto en el panel de administración. El campo \textit{Imagen} permite seleccionar un archivo que se sube automáticamente a Cloudinary, almacenando la URL pública resultante en la base de datos.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth, keepaspectratio]{figs/captura_admin_producto.png}
+    \caption{Formulario de alta de producto en el panel de administración con el campo de subida de imagen a Cloudinary.}
+    \label{fig:captura_cloudinary}
+\end{figure}
 
 \clearpage
 \section{Pruebas funcionales}
@@ -257,7 +299,7 @@ PF-21 & Dejar un carrito sin completar durante el tiempo configurado & El carrit
 
 \section{Pruebas de rendimiento}
 
-Las pruebas de rendimiento tienen como objetivo evaluar la velocidad de carga del frontend y los tiempos de respuesta del backend bajo condiciones de uso normal. Para ello se han empleado dos herramientas: \textit{Google Lighthouse}, integrada en Chrome DevTools, para analizar el rendimiento de las páginas del frontend; y \textit{Postman}, para medir los tiempos de respuesta de los principales endpoints de la API REST.
+Las pruebas de rendimiento tienen como objetivo evaluar la velocidad de carga del frontend y los tiempos de respuesta del backend bajo condiciones de uso normal. Para ello se han empleado dos herramientas: \textit{Google Lighthouse}~\cite{lighthouseDocs}, integrada en Chrome DevTools, para analizar el rendimiento de las páginas del frontend; y \textit{Postman}, para medir los tiempos de respuesta de los principales endpoints de la API REST.
 
 \subsection{Rendimiento del frontend — Google Lighthouse}
 
@@ -286,7 +328,7 @@ Las cuatro páginas principales obtienen una puntuación de rendimiento igual o 
 
 \subsection{Rendimiento del backend — Tiempos de respuesta de la API}
 
-Los tiempos de respuesta de los principales endpoints del backend se han medido con \textit{Postman} sobre el servidor local (\texttt{http://localhost:8080}). Cada petición se ha ejecutado con el sistema en estado de uso normal, con datos reales cargados en la base de datos.
+Los tiempos de respuesta de los principales endpoints del backend se han medido con \textit{Postman}~\cite{postmanDocs} sobre el servidor local (\texttt{http://localhost:8080}). Cada petición se ha ejecutado con el sistema en estado de uso normal, con datos reales cargados en la base de datos.
 
 \begin{table}[H]
 \centering
@@ -314,7 +356,7 @@ Los cuatro endpoints de consulta responden en menos de 50 ms, resultados que se 
 
 \section{Pruebas de usabilidad}
 
-Las pruebas de usabilidad se han llevado a cabo mediante el \textit{System Usability Scale} (SUS), un cuestionario estándar compuesto por 10 ítems con escala Likert del 1 al 5. La puntuación final, entre 0 y 100, se obtiene sumando \((x_i - 1)\) para los ítems impares y \((5 - x_i)\) para los pares, y multiplicando el resultado por 2,5. Según los baremos establecidos por Bangor, Kortum y Miller~\cite{Bangor2008}, puntuaciones superiores a 68 se consideran aceptables y superiores a 80, excelentes.
+Las pruebas de usabilidad se han llevado a cabo mediante el \textit{System Usability Scale} (SUS)~\cite{Brooke1996}, un cuestionario estándar compuesto por 10 ítems con escala Likert del 1 al 5. La puntuación final, entre 0 y 100, se obtiene sumando \((x_i - 1)\) para los ítems impares y \((5 - x_i)\) para los pares, y multiplicando el resultado por 2,5. Según los baremos establecidos por Bangor, Kortum y Miller~\cite{Bangor2008}, puntuaciones superiores a 68 se consideran aceptables y superiores a 80, excelentes.
 
 \subsection{Participantes y tareas}
 
