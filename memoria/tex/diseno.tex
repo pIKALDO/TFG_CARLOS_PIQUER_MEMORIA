@@ -53,8 +53,7 @@ Los diagramas de secuencia reflejan los flujos de interacción entre los distint
 En este diagrama se representa el flujo de interacción entre el cliente, la aplicación web y los servicios del catálogo y del carrito.  
 El usuario puede añadir, modificar o eliminar productos del carrito, y el sistema actualiza los datos en tiempo real mostrando la información correspondiente a cada producto.
 
-\clearpage
-\begin{figure}[p]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.9\textwidth]{figs/Gestiondecarrito.jpg}
     \caption{Diagrama de secuencia — gestión del carrito}
@@ -107,8 +106,7 @@ A continuación, se muestra el flujo completo del proceso de compra.
 Incluye la autenticación del usuario, la creación del checkout, la comunicación con el servicio de pago \textit{Stripe} y la confirmación del pedido.  
 También se representa la respuesta automatizada del \textit{bot de Telegram} para confirmar la compra, descontar el stock y generar la factura.
 
-\clearpage
-\begin{figure}[p]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.95\textwidth]{figs/1CompraEstandar.png}
     \caption{Diagrama de secuencia — parte 1: autenticación y carrito}
@@ -157,8 +155,7 @@ El cliente queda autenticado y el carrito listo para proceder al pago. \\ \hline
 
 
 
-\clearpage
-\begin{figure}[p]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.95\textwidth]{figs/Compra_estandar_2.png}
     \caption{Diagrama de secuencia — parte 2: proceso de checkout y confirmación}
@@ -209,14 +206,12 @@ El pago se confirma, el pedido se marca como “pagado” y se notifica al bot d
 \endgroup
 
 
-\clearpage
-\begin{figure}[p]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.95\textwidth]{figs/Compra_estandar_3.png}
     \caption{Diagrama de secuencia — parte 3: flujo alternativo de pago fallido}
     \label{fig:compra3}
 \end{figure}
-\clearpage
 
 \subsubsection{DSGS-04 Compra estándar — Parte 3 (pago fallido)}
 \begingroup
@@ -261,14 +256,12 @@ El pedido no se completa y se informa al cliente del error. \\ \hline
 Este diagrama muestra el proceso automatizado de creación de facturas tras la confirmación de un pedido.
 Una vez validado el pago, el sistema genera el documento asociado y lo envía al cliente mediante el \textit{bot de Telegram}, garantizando así un flujo de trabajo totalmente automatizado.
 
-\clearpage
-\begin{figure}[p]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.9\textwidth]{figs/Generaciondefactura.jpg}
     \caption{Diagrama de secuencia — generación de factura}
     \label{fig:factura}
 \end{figure}
-\clearpage
 
 \subsubsection{DSGS-05 Generación de factura}
 \begingroup
@@ -314,14 +307,12 @@ La factura queda creada, almacenada y enviada al cliente. \\ \hline
 Este diagrama refleja el funcionamiento del proceso de detección y eliminación de carritos inactivos.  
 Si un usuario añade productos pero no completa la compra en un tiempo determinado, el sistema marca el carrito como abandonado y libera los productos reservados.
 
-\clearpage
-\begin{figure}[p]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.9\textwidth]{figs/Abandonodecarrito.jpg}
     \caption{Diagrama de secuencia — abandono de carrito}
     \label{fig:abandono}
 \end{figure}
-\clearpage
 
 \subsubsection{DSGS-06 Abandono de carrito}
 \begingroup
@@ -367,14 +358,12 @@ El carrito se marca como abandonado y el stock se libera. \\ \hline
 Por último, se representa el proceso de notificación de stock bajo.  
 Cuando el inventario de un producto alcanza un umbral mínimo, el sistema ejecuta una tarea automatizada que envía un aviso al administrador mediante el \textit{bot de Telegram}, permitiendo reponer el producto a tiempo.
 
-\clearpage
-\begin{figure}[p]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.9\textwidth]{figs/Bajo_stockgood.jpg}
     \caption{Diagrama de secuencia — notificación de bajo stock}
     \label{fig:bajo_stock}
 \end{figure}
-\clearpage
 
 \subsubsection{DSGS-07 Bajo stock}
 \begingroup
@@ -439,7 +428,6 @@ en el momento de la compra, y la relación entre \texttt{pedidos} y
 \texttt{direcciones} para gestionar el envío. El modelo entidad--relación
 definitivo se presenta en la Figura~\ref{fig:modelo-er}.
 
-\clearpage
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.95\textwidth]{figs/prototipoBD.png}
@@ -453,7 +441,6 @@ definitivo se presenta en la Figura~\ref{fig:modelo-er}.
 El modelo E/R del sistema representa las entidades principales (\textit{usuarios, productos, carritos, pedidos, pagos, facturas}) y las relaciones entre ellas.
 Estas relaciones garantizan la integridad referencial mediante el uso de claves primarias, foráneas y restricciones de unicidad.
 
-\clearpage
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth, keepaspectratio]{figs/ENTIDAD-RELACION.png}
@@ -461,7 +448,6 @@ Estas relaciones garantizan la integridad referencial mediante el uso de claves 
     \label{fig:modelo-er}
 \end{figure}
 
-\clearpage
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth, keepaspectratio]{figs/LEYENDAENTIDAD-RELACION.png}
@@ -483,7 +469,6 @@ En la parte superior se encuentra la barra de navegación, que incluye el logoti
 A continuación, se muestra un banner promocional con un mensaje destacado y un botón de acción. 
 Debajo se encuentran las categorías principales de productos, seguidas de una sección con artículos destacados y, finalmente, un pie de página con la información corporativa y enlaces a redes sociales.
 
-\clearpage
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth, keepaspectratio]{figs/prototipoinicio.png}
@@ -497,7 +482,6 @@ La Figura~\ref{fig:prototipo_catalogo} muestra el prototipo de la vista de catá
 La interfaz mantiene la coherencia visual con la página de inicio (mismo encabezado y pie de página) e incorpora una barra de filtros en la parte superior con búsqueda por texto, selección de categoría, rango de precio, opción de disponibilidad (\textit{En stock}) y un control de \textit{Ordenar por}. 
 Bajo dicha barra se presenta una rejilla de productos (tarjetas con imagen, nombre, precio y botón \textit{Añadir al carrito}) organizada en filas y columnas para facilitar el escaneo visual.
 
-\clearpage
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth, keepaspectratio]{figs/catalogo_de_productos.png}
@@ -511,7 +495,6 @@ La Figura~\ref{fig:prototipo_carrito} muestra el prototipo de la vista de carrit
 La interfaz mantiene la coherencia visual con el resto de pantallas (mismo encabezado y pie) y presenta una \textit{tabla de líneas} donde se visualiza cada producto añadido con su imagen, nombre, precio unitario, selector de cantidad y subtotal, además de la acción de eliminar. 
 En la parte inferior se destaca el importe \textbf{Total} y se incluyen los botones de navegación principales: \textit{Seguir comprando} y \textit{Finalizar compra}.
 
-\clearpage
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth, keepaspectratio]{\string figs/carrito_de_compra.png}
@@ -530,7 +513,6 @@ Cada sección incluye los campos necesarios para introducir la información corr
 En la parte inferior derecha se presenta el \textbf{resumen del pedido}, donde se muestran los productos seleccionados, el desglose de precios (subtotal, envío y total) y las acciones finales: 
 \textit{Volver al carrito} y \textit{Confirmar pedido}.
 
-\clearpage
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth, keepaspectratio]{\string figs/checkout_pago.png}
