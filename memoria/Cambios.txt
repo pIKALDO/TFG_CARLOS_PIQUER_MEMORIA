@@ -1,0 +1,7 @@
+Necesito 4 capturas, una por cada subsección de código, que colocaré inmediatamente después del bloque de código correspondiente con una breve frase de contexto:
+
+#	Subsección	Captura que necesito	Nombre sugerido para el fichero
+1	Creación de pedido	Pantalla de confirmación de pedido (la que ve el cliente tras pagar con éxito)	figs/captura_pedido_confirmado.png
+2	Recuperación de contraseña	Formulario de recuperación de contraseña (donde el usuario introduce su email)	figs/captura_recuperar_contrasena.png
+3	Estadísticas del panel	Dashboard del panel de administración con las métricas visibles (comparativa de ingresos, stock crítico, top productos)	figs/captura_admin_dashbord.png
+4	Gestión de imágenes con Cloudinary	Formulario de añadir/editar producto en el panel de administración, con el campo de subida de imagen visible	figs/captura_admin_producto.png
